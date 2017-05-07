@@ -4,8 +4,8 @@ layout: post
 date: 2017-05-07 9:20
 headerImage: false
 tag:
-- ubuntu
-- security
+- updates
+- jekyll
 star: true
 category: blog
 author: mattouille
