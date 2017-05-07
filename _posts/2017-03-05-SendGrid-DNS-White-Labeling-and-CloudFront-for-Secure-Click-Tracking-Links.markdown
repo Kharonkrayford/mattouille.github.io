@@ -21,11 +21,11 @@ description: Proxying with CloudFront for SendGrid white labeling
 SendGrid really only provides an out of the box solution for working with Cloudflare and like many other enterprises we use Dyn / Route 53 for DNS and CloudFront for CDN services. We obviously like our fine grained control. We had some motivation to change things because one of our customers apparently cannot follow any links that are plain text (HTTP). Our original setup with SendGrid was using their legacy whitelabeling system which involved a CNAME to refer to SendGrid.net.
 
 ### Our Original SendGrid Diagram
-<img src="http://mattouille.com/wp-content/uploads/2017/03/old_way.png" alt="" width="621" height="81" class="aligncenter size-full wp-image-49" />
+<img src="{{ site.url }}/assets/images/posts/old_way.png" alt="" width="621" height="81" class="aligncenter size-full wp-image-49" />
 
 Simple right? Simple isn't always best but it does get the job done fast. SendGrid does not have the ability to handle our SSL Certificate, therefore, we had to establish our own intermediary.
 
-When we looked at enabling HTTPS on the click tracking links we found out that SendGrid recommends a proxy method via CDN but only officially supports Cloudflare and another provider. Cloudflare lacks some GeoDNS and round robin functionality which can be quite nice in enterprise so obviously this solution was not for us.
+When we looked at enabling HTTPS on the click tracking links we found out that SendGrid recommends a proxy method via CDN but only officially supports Cloudflare and another provider. CloudFlare lacks some GeoDNS and round robin functionality which can be quite nice in enterprise so obviously this solution was not for us.
 
 Another solution we looked at was possibly including Cloudflare at the bottom of our resolution list and only letting it handle those records for click tracking. To us this was kind of messy and now involved a third DNS provider and eliminates the possibility of failover with another provider. We also got another challenge from management which was that this should be an exercise in maintaining legacy support. We had sent out thousands of emails with HTTP links so we should continue to support HTTP and just proxy the link to HTTPS.
 
@@ -33,7 +33,7 @@ My team mate and I came up with a solution to convert the DNS white label on Sen
 
 SendGrid provided us with the destination address and the destination for the CNAME records. Seemingly, they didn't care about what happens in the middle so long as the request is finally received via HTTPS with a trusted certificate. We built out the following plan:
 
-<img src="http://mattouille.com/wp-content/uploads/2017/03/new.png" alt="" width="707" height="171" class="aligncenter size-full wp-image-60" />
+<img src="{{ site.url }}/assets/images/posts/new.png" alt="" width="707" height="171" class="aligncenter size-full wp-image-60" />
 
 We take on a bit of cost via CloudFront, but we gain end to end encryption and we're retaining any old plain text traffic at the same time. The other challenge is that these URL's are production and SendGrid has a window of time that they implement your SSL links in. This can make for a theoretical downtime of sorts. A lot of this hinges on the fact that we use DynDNS whose changes propagate all around the world in minutes.
 
