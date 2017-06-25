@@ -13,7 +13,7 @@ author: mattouille
 description: A simple explanation of pointers in Go Lang
 ---
 
-I've been learning Go recently and I've been having some issues solidifying my understanding of pointers, so I thought I'd write a quick blog posts explaining what I've learned and how to easily understand it.
+I've been learning Go recently and I've been having some issues solidifying my understanding of pointers, so I thought I'd write a quick blog post explaining what I've learned and how to easily understand it.
 
 ## What are pointers and why are they useful?
 
