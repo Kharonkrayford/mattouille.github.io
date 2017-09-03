@@ -57,7 +57,7 @@ ADD . /code/
 
 * **FROM** we're using the _python_ image from [Docker Hub](https://hub.docker.com) with a [label of 3.6](https://hub.docker.com/_/python/).
 
-* **ENV** sets an environment variable in <Key> <Value> format. If you had multiple you'd use multiple **ENV**'s.
+* **ENV** sets an environment variable in _Key Value_ format. If you had multiple you'd use multiple **ENV**'s.
 
 * **RUN** This indicates executes a command using the default shell. We're making the preliminary directory called _code_ in the root of the guest OS (note the prefixed slash).
 
@@ -65,8 +65,8 @@ ADD . /code/
 
 *  **ADD** Copies a file to your Docker image. You might've noticed there's a command called `COPY` that is remarkably similar to `ADD`. There's two key differences.
 
- * Add allows the <src> to be a url.
- * Add will decompress recognized compressed files.
+   * Add allows the `<src>` to be a url.
+   * Add will decompress recognized compressed files.
 
 Choose wisely!
 
