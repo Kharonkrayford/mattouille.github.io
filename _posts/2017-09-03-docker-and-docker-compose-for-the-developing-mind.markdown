@@ -20,7 +20,7 @@ Docker is a powerful tool because the same image I generate locally on my machin
 **Terminology**
 
 | Term | Definition |
-| --- | --- |
+|:---|:---|
 | Host OS | Relatively, this is your machine or the server that has the container running on it. |
 | Guest OS | This usually is reserved for virtual machines, but it's fair to use the term when describing the operating system the container image is based on.|
 | Ephemeral | Temporary or short lived. |
