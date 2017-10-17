@@ -67,15 +67,15 @@ One of the unfortunate things that I see frequently is engineers or developers u
  }
  ```
 
- In this example not only have I attributed an explicit _ALLOW_ but I've also attributed an explicit _DENY_.
+In this example not only have I attributed an explicit _ALLOW_ but I've also attributed an explicit _DENY_.
 
- ### Reciprocity is worth mentioning
+### Reciprocity is worth mentioning
 
- A lot of folks that I find making unsafe S3 policies are doing so because they can't figure out the mess between ACL's and Policies (which I've now explained) as well as reciprocity between _IAM Policies_ and _Bucket Policies_. Anything that you reflect in your _Bucket Policy_ should reflect in your _IAM Policy_. IAM Policies are used conjoiningly with STS:AssumeRole and Trusts. If I grant _s3:GetObject_ in my Bucket Policy, I need to grant _s3:GetObject_ in my IAM Policy TO that resource. **AGAIN**, make it to the specific resource rather than `"*"` unless you have a very good reason.
+A lot of folks that I find making unsafe S3 policies are doing so because they can't figure out the mess between ACL's and Policies (which I've now explained) as well as reciprocity between _IAM Policies_ and _Bucket Policies_. Anything that you reflect in your _Bucket Policy_ should reflect in your _IAM Policy_. IAM Policies are used conjoiningly with STS:AssumeRole and Trusts. If I grant _s3:GetObject_ in my Bucket Policy, I need to grant _s3:GetObject_ in my IAM Policy TO that resource. **AGAIN**, make it to the specific resource rather than `"*"` unless you have a very good reason.
 
- ### Lock everything down to roles
+### Lock everything down to roles
 
- I always make a habit of **referencing roles with Principals**. A principal can be assigned to a variety of things such as an _account_, _user_, _role_, and _service_. That said, just because you _can_ doesn't mean you _should_. Rather than giving all your EC2 instances access with `Service: ec2.amazonaws.com` specify the rule and assign an STS Trust to that IAM Profile. You could equate this to the "Principal of least privilege", much like buckets and bucket permissions could be described as "Doing one thing and doing it well".
+I always make a habit of **referencing roles with Principals**. A principal can be assigned to a variety of things such as an _account_, _user_, _role_, and _service_. That said, just because you _can_ doesn't mean you _should_. Rather than giving all your EC2 instances access with `Service: ec2.amazonaws.com` specify the rule and assign an STS Trust to that IAM Profile. You could equate this to the "Principal of least privilege", much like buckets and bucket permissions could be described as "Doing one thing and doing it well".
 
 ### KMS and SSE
 
