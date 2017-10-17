@@ -16,25 +16,25 @@ There's been a litany of companies with unsecured S3 buckets including [Verizon]
 
 ## So what is a vulnerable S3 bucket?
 
-### ACL's and policies
+### ACLs and policies
 
 S3 has some quirks. First and foremost that I've identified is it's _permissions system_ known as _[ACL's](http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html)_ and _[Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html)_. I'm going to kick this off with **vanilla S3 buckets DENY by default.** There's a nice little ACL that comes with every bucket that allows access account wide and that's it. If you create an S3 bucket and do nothing else with it, this bucket is largely secure (unless someone gains access to your account, but that's out of scope here).
 
- ACL's are just as they sound, they're _access control lists_ where you can grant permissions or denies to accounts, users, groups, etc...
+ACL's are just as they sound, they're _access control lists_ where you can grant permissions or denies to accounts, users, groups, etc...
 
- Policies are very fine grained, expressive, and written in JSON. They're very comparable to ACL's, except they require referencing _existing_ resources with ARN's (Amazon Resource Names).
+Policies are very fine grained, expressive, and written in JSON. They're very comparable to ACL's, except they require referencing _existing_ resources with ARN's (Amazon Resource Names).
 
- **So what's the difference?** [Amazon regards S3 ACL's as legacy](https://aws.amazon.com/blogs/security/iam-policies-and-bucket-policies-and-acls-oh-my-controlling-access-to-s3-resources/), so I don't use them aside for the given ACL (_ALLOW_ to resources in your account). In fact, in most cases I'll remove that ACL and define a policy to reflect it if it's needed. The reason I do this is maintaining a _single source of truth_. **In many cases if you mix ACL's and policies determining the outcome can become very tricky and cumbersome.** Policies reflect on all the objects in an S3 bucket, Amazon phrases this as they're _postured at the bucket level_. **This means if you find yourself in a predicament where some objects need a policy and others don't they should likely be in different buckets.**
+**So what's the difference?** [Amazon regards S3 ACL's as legacy](https://aws.amazon.com/blogs/security/iam-policies-and-bucket-policies-and-acls-oh-my-controlling-access-to-s3-resources/), so I don't use them aside for the given ACL (_ALLOW_ to resources in your account). In fact, in most cases I'll remove that ACL and define a policy to reflect it if it's needed. The reason I do this is maintaining a _single source of truth_. **In many cases if you mix ACL's and policies determining the outcome can become very tricky and cumbersome.** Policies reflect on all the objects in an S3 bucket, Amazon phrases this as they're _postured at the bucket level_. **This means if you find yourself in a predicament where some objects need a policy and others don't they should likely be in different buckets.**
 
- Yes, I know you can apply policies to folders, but really in the age of IaaS I'm sure you've discovered this can be cumbersome as well. Let's examine that scenario below:
+Yes, I know you can apply policies to folders, but really in the age of IaaS I'm sure you've discovered this can be cumbersome as well. Let's examine that scenario below:
 
- Let's say I'm using Terraform (or CloudFormation) to provision an S3 bucket. The whole goal with IaaS is to provision and require _zero_ manual steps. I define my S3 Bucket, next I need to create a policy and specify the bucket it attaches to. _Keep in mind I can only reference things in my policy that already exist_. I would actually have to create a script that goes and creates a folder and then executes the policy creation and attachment. In this case it's not only easier but safer to provision different buckets for different policies.
+Let's say I'm using Terraform (or CloudFormation) to provision an S3 bucket. The whole goal with IaaS is to provision and require _zero_ manual steps. I define my S3 Bucket, next I need to create a policy and specify the bucket it attaches to. _Keep in mind I can only reference things in my policy that already exist_. I would actually have to create a script that goes and creates a folder and then executes the policy creation and attachment. In this case it's not only easier but safer to provision different buckets for different policies.
 
- ### Reining in the policies
+### Reining in the policies
 
- One of the unfortunate things that I see frequently is engineers or developers using `Principal: "*"` in policies. _Principal_ is the _who_ in _**who** can use **what**_ while _Resource_ refers to _what_. The `"*"` actually indicates that _any resource_ can use the bucket you've assigned this to, including resources or users outside your account. I can literally log onto another computer with AWS CLI installed and read or post files to your S3 bucket if your policies aren't specified correctly.
+One of the unfortunate things that I see frequently is engineers or developers using `Principal: "*"` in policies. _Principal_ is the _who_ in _**who** can use **what**_ while _Resource_ refers to _what_. The `"*"` actually indicates that _any resource_ can use the bucket you've assigned this to, including resources or users outside your account. I can literally log onto another computer with AWS CLI installed and read or post files to your S3 bucket if your policies aren't specified correctly.
 
- > You can try this by using a computer with no (or different) AWS credentials and the CLI installed. Simply create a file, apply a junk principal policy and copy it in with `aws s3 cp file.txt s3://yourbucket/`. Voila!
+> You can try this by using a computer with no (or different) AWS credentials and the CLI installed. Simply create a file, apply a junk principal policy and copy it in with `aws s3 cp file.txt s3://yourbucket/`. Voila!
 
 `Principal: "*"` is useful if you have a website hosted off of Amazon S3. I might use a policy like this:
 
