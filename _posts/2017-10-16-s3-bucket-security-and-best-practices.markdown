@@ -30,6 +30,8 @@ Yes, I know you can apply policies to folders, but really in the age of IaaS I'm
 
 Let's say I'm using Terraform (or CloudFormation) to provision an S3 bucket. The whole goal with IaaS is to provision and require _zero_ manual steps. I define my S3 Bucket, next I need to create a policy and specify the bucket it attaches to. _Keep in mind I can only reference things in my policy that already exist_. I would actually have to create a script that goes and creates a folder and then executes the policy creation and attachment. In this case it's not only easier but safer to provision different buckets for different policies.
 
+## Let the best practices begin.
+
 ### Reining in the policies
 
 One of the unfortunate things that I see frequently is engineers or developers using `Principal: "*"` in policies. _Principal_ is the _who_ in _**who** can use **what**_ while _Resource_ refers to _what_. The `"*"` actually indicates that _any resource_ can use the bucket you've assigned this to, including resources or users outside your account. I can literally log onto another computer with AWS CLI installed and read or post files to your S3 bucket if your policies aren't specified correctly.
