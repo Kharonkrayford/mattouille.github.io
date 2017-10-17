@@ -36,7 +36,7 @@ Let's say I'm using Terraform (or CloudFormation) to provision an S3 bucket. The
 
 One of the unfortunate things that I see frequently is engineers or developers using `Principal: "*"` in policies. _Principal_ is the _who_ in _**who** can use **what**_ while _Resource_ refers to _what_. The `"*"` actually indicates that _any resource_ can use the bucket you've assigned this to, including resources or users outside your account. I can literally log onto another computer with AWS CLI installed and read or post files to your S3 bucket if your policies aren't specified correctly.
 
-> You can try this by using a computer with no (or different) AWS credentials and the CLI installed. Simply create a file, apply a junk principal policy and copy it in with `aws s3 cp file.txt s3://yourbucket/`. Voila!
+> You can try this by using a computer with no (or different) AWS credentials and the CLI installed. Simply create a file, apply a junk principal policy and copy it in with `aws s3 cp file.txt s3://yourbucket/`. Voila! Go ahead, make it interesting and throw some ACL denies in there too. Watch as your efforts are futile.
 
 `Principal: "*"` is useful if you have a website hosted off of Amazon S3. I might use a policy like this:
 
