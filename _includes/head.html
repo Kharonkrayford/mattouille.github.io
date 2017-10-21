@@ -28,7 +28,7 @@
   <!-- Open Graph Tags -->
   <meta property="fb:app_id" content="121846515176363">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:image" content="{{ site.url }}/img/mattouille-com-logo.png">
