@@ -236,9 +236,9 @@ WORKDIR /code
 
 ADD requirements.txt /code/
 
-RUN pip install -r requirements.txt
+RUN pip install <span class="nt">-r</span> requirements.txt
 
-ADD . /code/</code></pre></figure>
+ADD <span class="nb">.</span> /code/</code></pre></figure>
 
 <ul>
   <li>
@@ -286,21 +286,21 @@ ADD . /code/</code></pre></figure>
 
 <p><strong>docker-compose.yml</strong></p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
 
-<span class="s">services</span><span class="pi">:</span>
-  <span class="s">db</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">postgres</span>
-    <span class="s">environment</span><span class="pi">:</span>
-      <span class="s">POSTGRES_PASSWORD</span><span class="pi">:</span> <span class="s">theseus</span>
-  <span class="s">web</span><span class="pi">:</span>
-    <span class="s">build</span><span class="pi">:</span> <span class="s">.</span>
-    <span class="s">command</span><span class="pi">:</span> <span class="s">python code/manage.py runserver 0.0.0.0:8000</span>
-    <span class="s">volumes</span><span class="pi">:</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">db</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">postgres</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="na">POSTGRES_PASSWORD</span><span class="pi">:</span> <span class="s">theseus</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">python code/manage.py runserver 0.0.0.0:8000</span>
+    <span class="na">volumes</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">.:/code</span>
-    <span class="s">ports</span><span class="pi">:</span>
+    <span class="na">ports</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">8000:8000"</span>
-    <span class="s">depends_on</span><span class="pi">:</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">db</span></code></pre></figure>
 
 <ul>

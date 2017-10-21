@@ -198,7 +198,7 @@
 
 <h2 id="visualizing-my-explanation">Visualizing my explanation</h2>
 
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -208,7 +208,8 @@
 8
 9
 10
-11</pre></td><td class="code"><pre><span class="k">type</span><span class="x"> </span><span class="n">Car</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
+11
+</pre></td><td class="code"><pre><span class="k">type</span><span class="x"> </span><span class="n">Car</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
   </span><span class="n">Brand</span><span class="x"> </span><span class="kt">string</span><span class="x">
   </span><span class="n">Model</span><span class="x"> </span><span class="kt">string</span><span class="x">
 </span><span class="p">}</span><span class="x">
@@ -218,25 +219,24 @@
     </span><span class="n">Brand</span><span class="o">:</span><span class="x"> </span><span class="n">brand</span><span class="p">,</span><span class="x">
     </span><span class="n">Model</span><span class="o">:</span><span class="x"> </span><span class="n">model</span><span class="p">,</span><span class="x">
   </span><span class="p">}</span><span class="x">
-</span><span class="p">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+</span><span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>In this instance, new car is pointing to the struct Car, and in it’s return value is accessing the memory allocation for Car and updating variables.</p>
 
 <p>In contrast:</p>
 
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-6</pre></td><td class="code"><pre><span class="k">func</span><span class="x"> </span><span class="n">NewCar</span><span class="p">(</span><span class="n">brand</span><span class="p">,</span><span class="x"> </span><span class="n">model</span><span class="x"> </span><span class="kt">string</span><span class="p">)</span><span class="x"> </span><span class="n">Car</span><span class="x"> </span><span class="p">{</span><span class="x">
+6
+</pre></td><td class="code"><pre><span class="k">func</span><span class="x"> </span><span class="n">NewCar</span><span class="p">(</span><span class="n">brand</span><span class="p">,</span><span class="x"> </span><span class="n">model</span><span class="x"> </span><span class="kt">string</span><span class="p">)</span><span class="x"> </span><span class="n">Car</span><span class="x"> </span><span class="p">{</span><span class="x">
   </span><span class="k">return</span><span class="x"> </span><span class="n">Car</span><span class="p">{</span><span class="x">
     </span><span class="n">Brand</span><span class="o">:</span><span class="x"> </span><span class="n">brand</span><span class="p">,</span><span class="x">
     </span><span class="n">Model</span><span class="o">:</span><span class="x"> </span><span class="n">model</span><span class="p">,</span><span class="x">
   </span><span class="p">}</span><span class="x">
-</span><span class="p">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+</span><span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>In this instance we’re bringing the entire struct “Car” into our method. While it’s light weight now, as the struct grows this will become quite cumbersome.</p>
 
@@ -249,7 +249,7 @@
 
 <p>Even more simply explained is this code:</p>
 
-<figure class="highlight"><pre><code class="language-go" data-lang="go"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -264,7 +264,8 @@
 13
 14
 15
-16</pre></td><td class="code"><pre><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+16
+</pre></td><td class="code"><pre><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
 
 </span><span class="k">import</span><span class="x"> </span><span class="s">"fmt"</span><span class="x">
 
@@ -279,8 +280,7 @@
 	</span><span class="n">p</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="o">&amp;</span><span class="n">j</span><span class="x">         </span><span class="c">// point to j</span><span class="x">
 	</span><span class="o">*</span><span class="n">p</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="o">*</span><span class="n">p</span><span class="x"> </span><span class="o">/</span><span class="x"> </span><span class="m">37</span><span class="x">   </span><span class="c">// divide j through the pointer</span><span class="x">
 	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="x"> </span><span class="c">// see the new value of j</span><span class="x">
-</span><span class="p">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+</span><span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h2 id="conclusion">Conclusion</h2>
 

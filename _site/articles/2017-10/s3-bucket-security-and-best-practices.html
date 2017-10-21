@@ -209,34 +209,33 @@
 
 <p><code class="highlighter-rouge">Principal: "*"</code> is useful if you have a website hosted off of Amazon S3. I might use a policy like this:</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="nt">"Version"</span><span class="p">:</span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"Id"</span><span class="p">:</span><span class="s2">"http referer policy example"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"Statement"</span><span class="p">:[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"Version"</span><span class="p">:</span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Id"</span><span class="p">:</span><span class="s2">"http referer policy example"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Statement"</span><span class="p">:[</span><span class="w">
      </span><span class="p">{</span><span class="w">
-       </span><span class="nt">"Sid"</span><span class="p">:</span><span class="s2">"Allow get requests originating from www.example.com and example.com."</span><span class="p">,</span><span class="w">
-       </span><span class="nt">"Effect"</span><span class="p">:</span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
-       </span><span class="nt">"Principal"</span><span class="p">:</span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-       </span><span class="nt">"Action"</span><span class="p">:</span><span class="s2">"s3:GetObject"</span><span class="p">,</span><span class="w">
-       </span><span class="nt">"Resource"</span><span class="p">:</span><span class="s2">"arn:aws:s3:::examplebucket/*"</span><span class="p">,</span><span class="w">
-       </span><span class="nt">"Condition"</span><span class="p">:{</span><span class="w">
-         </span><span class="nt">"StringLike"</span><span class="p">:{</span><span class="nt">"aws:Referer"</span><span class="p">:[</span><span class="s2">"http://www.example.com/*"</span><span class="p">,</span><span class="s2">"http://example.com/*"</span><span class="p">]}</span><span class="w">
+       </span><span class="s2">"Sid"</span><span class="p">:</span><span class="s2">"Allow get requests originating from www.example.com and example.com."</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"Effect"</span><span class="p">:</span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"Principal"</span><span class="p">:</span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"Action"</span><span class="p">:</span><span class="s2">"s3:GetObject"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"Resource"</span><span class="p">:</span><span class="s2">"arn:aws:s3:::examplebucket/*"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"Condition"</span><span class="p">:{</span><span class="w">
+         </span><span class="s2">"StringLike"</span><span class="p">:{</span><span class="s2">"aws:Referer"</span><span class="p">:[</span><span class="s2">"http://www.example.com/*"</span><span class="p">,</span><span class="s2">"http://example.com/*"</span><span class="p">]}</span><span class="w">
        </span><span class="p">}</span><span class="w">
      </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"Sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Explicit deny to ensure requests are allowed only from specific referer."</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deny"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"Principal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3:*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arn:aws:s3:::examplebucket/*"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"Condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"StringNotLike"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"aws:Referer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://www.example.com/*"</span><span class="p">,</span><span class="s2">"http://example.com/*"</span><span class="p">]}</span><span class="w">
+        </span><span class="s2">"Sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Explicit deny to ensure requests are allowed only from specific referer."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deny"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Principal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3:*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arn:aws:s3:::examplebucket/*"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Condition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"StringNotLike"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"aws:Referer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://www.example.com/*"</span><span class="p">,</span><span class="s2">"http://example.com/*"</span><span class="p">]}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>In this example not only have I attributed an explicit <em>ALLOW</em> but I’ve also attributed an explicit <em>DENY</em>.</p>
 
@@ -252,25 +251,24 @@
 
 <p>AWS provides the <em>Key Management Service</em> (For everything) and <em>Server Side Encryption</em> (For S3 Buckets). When you upload and download files/objects you can specify an AWS KMS Key to use. Furthermore you can restrict keys using policies! The same approach you used with bucket policies can be used with KMS Key policies, restricting them to certain roles is <em>always</em> a hardy best practice. This keeps everything segregated but also continuing to flow nicely without stoppages. Additionally, should an instance or resource with a particular role ever be compromised you can simply roll that <em>one</em> KMS key. You can refer to AWS KMS Key’s using Bucket Policy conditionals.</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"Version"</span><span class="p">:</span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"Id"</span><span class="p">:</span><span class="s2">"PutObjPolicy"</span><span class="p">,</span><span class="w">
-   </span><span class="nt">"Statement"</span><span class="p">:[{</span><span class="w">
-         </span><span class="nt">"Sid"</span><span class="p">:</span><span class="s2">"DenyUnEncryptedObjectUploads"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"Effect"</span><span class="p">:</span><span class="s2">"Deny"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"Principal"</span><span class="p">:</span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"Action"</span><span class="p">:</span><span class="s2">"s3:PutObject"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"Resource"</span><span class="p">:</span><span class="s2">"arn:aws:s3:::YourBucket/*"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"Condition"</span><span class="p">:{</span><span class="w">
-            </span><span class="nt">"StringNotEquals"</span><span class="p">:{</span><span class="w">
-               </span><span class="nt">"s3:x-amz-server-side-encryption"</span><span class="p">:</span><span class="s2">"aws:kms"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"Version"</span><span class="p">:</span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Id"</span><span class="p">:</span><span class="s2">"PutObjPolicy"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"Statement"</span><span class="p">:[{</span><span class="w">
+         </span><span class="s2">"Sid"</span><span class="p">:</span><span class="s2">"DenyUnEncryptedObjectUploads"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Effect"</span><span class="p">:</span><span class="s2">"Deny"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Principal"</span><span class="p">:</span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Action"</span><span class="p">:</span><span class="s2">"s3:PutObject"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Resource"</span><span class="p">:</span><span class="s2">"arn:aws:s3:::YourBucket/*"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Condition"</span><span class="p">:{</span><span class="w">
+            </span><span class="s2">"StringNotEquals"</span><span class="p">:{</span><span class="w">
+               </span><span class="s2">"s3:x-amz-server-side-encryption"</span><span class="p">:</span><span class="s2">"aws:kms"</span><span class="w">
             </span><span class="p">}</span><span class="w">
          </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>The above policy allows you to use <em>any</em> or the <em>default</em> KMS key, however, you can further specify keys in your conditional: <code class="highlighter-rouge">"s3:x-amz-server-side-encryption-aws-kms-key-id": "arn:aws:kms:region:acct-id:key/key-id"</code>.</p>
 

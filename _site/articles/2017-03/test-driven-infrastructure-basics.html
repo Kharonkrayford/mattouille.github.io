@@ -201,30 +201,30 @@
 <p>Depending on what Configuration Management software you use, you’ll have to configure your resource to be tested differently. Here’s my .kitchen.yml file</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
-<span class="s">driver</span><span class="pi">:</span>
-  <span class="s">name</span><span class="pi">:</span> <span class="s">vagrant</span>
+<span class="na">driver</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">vagrant</span>
 
-<span class="s">provisioner</span><span class="pi">:</span>
-  <span class="s">name</span><span class="pi">:</span> <span class="s">chef_zero</span>
+<span class="na">provisioner</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">chef_zero</span>
   <span class="c1"># You may wish to disable always updating cookbooks in CI or other testing environments.</span>
   <span class="c1"># For example:</span>
   <span class="c1">#   always_update_cookbooks: &lt;%= !ENV['CI'] %&gt;</span>
-  <span class="s">always_update_cookbooks</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="na">always_update_cookbooks</span><span class="pi">:</span> <span class="no">true</span>
 
-<span class="s">verifier</span><span class="pi">:</span>
-  <span class="s">name</span><span class="pi">:</span> <span class="s">inspec</span>
+<span class="na">verifier</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">inspec</span>
 
-<span class="s">platforms</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">ubuntu-16.04</span>
+<span class="na">platforms</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ubuntu-16.04</span>
 
-<span class="s">suites</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">default</span>
-    <span class="s">run_list</span><span class="pi">:</span>
+<span class="na">suites</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">default</span>
+    <span class="na">run_list</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">recipe[mattouille::default]</span>
-    <span class="s">verifier</span><span class="pi">:</span>
-      <span class="s">inspec_tests</span><span class="pi">:</span>
+    <span class="na">verifier</span><span class="pi">:</span>
+      <span class="na">inspec_tests</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">test/smoke/default</span>
-    <span class="s">attributes</span><span class="pi">:</span></code></pre></figure>
+    <span class="na">attributes</span><span class="pi">:</span></code></pre></figure>
 
 <p>Our tests will be located relative to the .kitchen.yml file. Notice we specified <code class="highlighter-rouge">test/smoke/default</code>. It’s labeled <code class="highlighter-rouge">default</code> because it’s in reference to default.rb. This helps us stay organized. Next create <code class="highlighter-rouge">default_test.rb</code> in the <code class="highlighter-rouge">default</code> folder you just created.</p>
 
@@ -293,7 +293,7 @@
 <p>Each framework has their own grouping mechanisms. InSpec calls theirs profiles. Review the changes I’ve made to our script below:</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">control</span> <span class="s1">'Apache Daemon'</span> <span class="k">do</span>
-	<span class="n">impact</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+	<span class="n">impact</span> <span class="mf">1.0</span>
 	<span class="n">title</span> <span class="s1">'Server: Configure daemon and service port'</span>
 	<span class="n">desc</span> <span class="s1">'
 		Enable the service and specify the port used.
@@ -315,7 +315,7 @@
 <span class="k">end</span>
 
 <span class="n">control</span> <span class="s1">'MySQL Daemon'</span> <span class="k">do</span>
-	<span class="n">impact</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span>
+	<span class="n">impact</span> <span class="mf">1.0</span>
 	<span class="n">title</span> <span class="s1">'Server: Configure daemon and service port'</span>
 	<span class="n">desc</span> <span class="s1">'
 		Enable the service and specify the port and address used.
@@ -340,7 +340,7 @@
 
 <p>I’ve added some additional information to cover the impact, group each test, and provide a brief description. At this point we could go ahead and write our configuration code. Once we’re done we can run our tests and make sure everything lined up. Let’s see what happens when I run <code class="highlighter-rouge">kitchen verify</code> on my code:</p>
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">-----&gt; </span>Verifying &lt;default-ubuntu-1604&gt;...
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nt">-----</span><span class="o">&gt;</span> Verifying &lt;default-ubuntu-1604&gt;...
        Loaded  
 
 Target:  ssh://vagrant@127.0.0.1:2222
@@ -362,8 +362,8 @@ Target:  ssh://vagrant@127.0.0.1:2222
 
 Profile Summary: 2 successful, 0 failures, 0 skipped
 Test Summary: 12 successful, 0 failures, 0 skipped
-       Finished verifying &lt;default-ubuntu-1604&gt; <span class="o">(</span>0m3.64s<span class="o">)</span>.
-<span class="gp">-----&gt; </span>Kitchen is finished. <span class="o">(</span>0m4.66s<span class="o">)</span></code></pre></figure>
+       Finished verifying &lt;default-ubuntu-1604&gt; <span class="o">(</span>0m3.64s<span class="o">)</span><span class="nb">.</span>
+<span class="nt">-----</span><span class="o">&gt;</span> Kitchen is finished. <span class="o">(</span>0m4.66s<span class="o">)</span></code></pre></figure>
 
 <p>You probably can’t see it very well so I’ve highlighted the lines, but there’s checks out to the left of each test and profile. This means they passed! There’s obviously a lot more to discuss about TDI as well as testing that automated deployments occur correctly but that’s for a follow-on article.</p>
 
