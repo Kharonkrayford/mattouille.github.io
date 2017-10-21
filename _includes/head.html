@@ -1,11 +1,15 @@
 {% if page.title %}
   {% capture title %}{{ page.title }} | {{ site.title }}{% endcapture %}
+{% elsif post.title %}
+  {% capture title %}{{ post.title }} | {{ site.title }}{% endcapture %}
 {% else %}
   {% capture title %}{{ site.title }}{% endcapture %}
 {% endif %}
 
 {% if page.excerpt %}
   {% capture description %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
+{% elsif post.excerpt %}
+  {% capture description %}{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
 {% else %}
   {% capture description %}{{ site.description }}{% endcapture %}
 {% endif %}
