@@ -5,9 +5,108 @@
     <description>Tutorials, OpEds, and Musings by Matt Ouille</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Oct 2017 17:24:12 +0200</pubDate>
-    <lastBuildDate>Sat, 21 Oct 2017 17:24:12 +0200</lastBuildDate>
+    <pubDate>Sat, 21 Oct 2017 20:18:26 +0200</pubDate>
+    <lastBuildDate>Sat, 21 Oct 2017 20:18:26 +0200</lastBuildDate>
     <generator>Jekyll v3.6.1</generator>
+    
+      <item>
+        <title>A Big Thank You</title>
+        <description>&lt;p&gt;I owe everyone a tremendous debt of gratitude. I’ve been posting on this blog for quite some time. I’ve made some transitions from &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt;, to &lt;a href=&quot;https://wordpress.org/&quot;&gt;Wordpress&lt;/a&gt;, and now to &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. In that time I also tried out some SaaS platforms like &lt;a href=&quot;https://medium.com/&quot;&gt;Medium&lt;/a&gt; and &lt;a href=&quot;https://blogger.com&quot;&gt;Blogger&lt;/a&gt; but I’d rather not remember those times. Thus, you see the articles that are on my current blog - I’ve lost a lot but I’ve gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: &lt;em&gt;why I write&lt;/em&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;why-i-write&quot;&gt;Why I write&lt;/h1&gt;
+
+&lt;p&gt;I gave a bit of a brief synopsis of this on LinkedIn on Friday before I headed off to work. I started writing as sort of a documentation of what I was learning in hopes that my own discovery would speed up someone elses. I always liked the sharing of information and skills. I remember when I discovered my first closed source application all those years ago and was like, “Why can’t I see how they got here?”&lt;/p&gt;
+
+&lt;p&gt;On Friday I was fairly astounded to find out that I receive between 40-100 active users on any given day. This may not seem like a lot but I remember the days of paying for a &lt;a href=&quot;https://linode.com&quot;&gt;Linode&lt;/a&gt; server that literally never got hit unless someone was trying to backdoor my Wordpress installation. In the words of &lt;a href=&quot;https://martinfowler.com&quot;&gt;Martin Fowler&lt;/a&gt;, “&lt;a href=&quot;https://martinfowler.com/bliki/PedestalPhobia.html&quot;&gt;I know many people who are every bit as good, indeed better, than I am at design&lt;/a&gt;.” My writing has not really been a reflection of myself but more a reflection of the things I’ve learned and experienced from &lt;em&gt;others&lt;/em&gt; over the years. I make a habit of surrounding myself with incredibly gifted and intelligent people so my writing reflects that in a way.&lt;/p&gt;
+
+&lt;p&gt;If you aren’t on this list please don’t take offense. I’ve met a lot of really great people here that are likely missing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;David Meidam&lt;/strong&gt;. I met David at Saddleback Leather, he’s the manager the gave me the opportunity to jump into DevOps. The most valuable thing I think I’ve learned over the years that he introduced me to is “freedom with responsibility”, though he never phrased it in this light it was always at the core of what David was doing. He also took a personal stake in a team members success and when it was time for me to grow he acknowledged that. Ultimately David is a large reason this blog has readers today. David also forced me to get behind a debugger again, which I’ll forever be thankful for.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Brandon Klutey&lt;/strong&gt;. Brandon doesn’t have a large online presence but he’s an integral part of my vision in software. I worked with Brandon as a Network Engineer and he’s since gone on to become a Software Engineer. Brandon, as a peer, showed me how fluid teams are supposed to use confrontation. He showed me how people can drop emotional ties to an idea and push forward together to a common goal. There is no negotiation in software, just common goals and routes to attain them. We learned a lot in coordination and people regularly reflected how mesmerizing it was to watch us bounce ideas off each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;My Parents&lt;/strong&gt;. My parents live a pretty quiet life now but when I grew up I was attached at the hip to computers. My dad and I bonded over video games &lt;em&gt;a lot&lt;/em&gt;. We played nearly every early title we could get our hands on. Back then Half Priced Books sold video games and we were always buying them. My dad brought home a computer when I was around nine. It had no OS on it and I decided to make it into a server for our house. I loaded RedHat Linux on it from a book I bought at Barnes and Noble. The rest is history. This was during a time when parents were being scorned for letting their kids spend too much time on a computer, my parents never did that and much of my success in this industry has been because of them. I have now worked on 12+ languages, an uncountable amount of operating system variations, and built more applications from source than I care to think about. This is all attributed to their ability to give me the freedom to discover.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Marines I’ve served with&lt;/strong&gt;. This is kind of a group shout out. I learned from good and bad leaders here. I learned how to stand firm in the face of challenge and most importantly I learned a lot of follow through. Though I eventually left the Marine Corps the skills and way of life I learned will not be forgotten.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Charlie Zascavage&lt;/strong&gt;. I don’t really know where the man’s gone and I don’t hear from him much. That said, Coach Z was my high school wrestling coach. I didn’t even like wrestling that much, but the lessons he taught on the mat were much more than just how to turn someone on their back which is why I stayed. In life the most important lesson he taught was, I think, how to fail. Sometimes life, or projects in software, just don’t work out the way you want or expect them to. That said, there is always success from failure. The whole reason I joined the Marines after losing my job was because I thought, “There has to be a way to succeed from here.” Just because you fail once doesn’t mean you’ll continue to fail or that &lt;em&gt;you&lt;/em&gt; are a failure, instead you should acknowledge your failure, learn from it, and get to work again. This tireless mentality was at the core of what Coach Z preached. I’ve failed a lot in life but I’ve succeeded a lot too. I wouldn’t have made it from screaming in frustration inside my garage to typing this article without that life lesson.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;FreeNode&lt;/strong&gt;. FreeNode IRC is the best. I chat and idle in way too many channels to list. FreeNode is what got me through some troublesome problems in software and has acted as a great resource when there were no resources. If you’re ever bored FreeNode is also a constant source of quality entertainment.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-future&quot;&gt;The future&lt;/h1&gt;
+
+&lt;p&gt;Who ever really knows what the future holds? Life is a sort of hour glass hidden inside a box that you can’t open. I could be dead in a year, my ideals could be outdated and rejected, or I could be thriving. That said my goal is to help make a thoughtful and lasting impact on this industry and firstly the people in it. My chief ambition is always finding a new way to do exactly that.&lt;/p&gt;
+
+&lt;p&gt;I’ve been starting to do speaking engagements and have been a regular attendee of several DFW Meet Ups (Yes, I probably want to go to your Meet Up). Seeing other people in this industry is really cool, the even better part is being to help mentor and guide people along their own journeys. I intend to keep making great software and systems but I’d be lying if I said I didn’t want to find a way to reach more people. I don’t get paid for this website nor do I ask for money when I speak; my old ritualistic values of sharing information come first and foremost in my life.&lt;/p&gt;
+
+&lt;p&gt;In the end thank you all for taking me here whether you’ve liked or shared my posts, provided me a feedback loop, or have just been a casual observer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Here’s to another hundred viewers.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+I owe everyone a tremendous debt of gratitude. I’ve been posting on this blog for quite some time. I’ve made some transitions from Ghost, to Wordpress, and now to Jekyll. In that time I also tried out some SaaS platforms like Medium and Blogger but I’d rather not remember those time. Thus, you see the articles that are on my current blog - I’ve lost a lot but I’ve gained a lot. Just like myself my blog had to evolve for how I was writing. One thing has remained fairly consistent though: why I write.
+
+Why I write
+
+I gave a bit of a brief synopsis of this on LinkedIn on Friday before I headed off to work. I started writing as sort of a documentation of what I was learning in hopes that my own discovery would speed up someone elses. I always liked the sharing of information and skills. I remember when I discovered my first closed source application all those years ago and was like, “Why can’t I see how they got here?”
+
+On Friday I was fairly astounded to find out that I received 40-100 active users on any given day. This may not seem like a lot but I remember the days of paying for a Linode server that literally never got hit unless someone was trying to backdoor my Wordpress installation. In the words of Martin Fowler, “I know many people who are every bit as good, indeed better, than I am at design.” My writing has not really been a reflection of myself but more a reflection of the things I’ve learned and experienced from others over the years. I make a habit of surrounding myself with incredibly gifted and intelligent people so my writing reflects that in a way.
+
+If you aren’t on this list please don’t take offense. I’ve met a lot of really great people here that are likely missing.
+
+David Meidam. I met David at Saddleback Leather, he’s the manager the gave me the opportunity to jump into DevOps. The most valuable thing I think I’ve learned over the years that he introduced me to is “freedom with responsibility”, though he never phrased it in this light it was always at the core of what David was doing. He also took a personal stake in a team members success and when it was time for me to grow he acknowledged that. Ultimately David is a large reason this blog has readers today. David also forced me to get behind a debugger again, which I’ll forever be thankful for.
+
+Brandon Klutey. Brandon doesn’t have a large online presence but he’s an integral part of my vision in software. I worked with Brandon as a Network Engineer and he’s since gone on to become a Software Engineer. Brandon, as a peer, showed me how fluid teams are supposed to use confrontation. He showed me how people can drop emotional ties to an idea and push forward together to a common goal. There is no negotiation in software, just common goals and routes to attain them. We learned a lot in coordination and people regularly reflected how mesmerizing it was to watch us bounce ideas off each other.
+
+My Parents. My parents live a pretty quiet life now but when I grew up I was attached at the hip to computers. My dad and I bonded over video games a lot. We played nearly every early title we could get our hands on. Back then Half Priced Books sold video games and we were always buying them. My dad brought home a computer when I was around nine. It had no OS on it and I decided to make it into a server for our house. I loaded RedHat Linux on it from a book I bought at Barnes and Noble. The rest is history. This was during a time when parents were being scorned for letting their kids spend too much time on a computer, my parents never did that and much of my success in this industry has been because of them. I have now worked on 12+ languages, an uncountable amount of operating system variations, and built more applications from source than I care to think about. This is all attributed to their ability to give me the freedom to discover.
+
+The Marines I’ve served with. This is kind of a group shout out. I learned from good and bad leaders here. I learned how to stand firm in the face of challenge and most importantly I learned a lot of follow through. Though I eventually left the Marine Corps the skills and way of life I learned will not be forgotten.
+
+Charlie Zascavage. I don’t really know where the man’s gone and I don’t hear from him much. That said, Coach Z was my high school wrestling coach. I didn’t even like wrestling that much, but the lessons he taught on the mat were much more than just how to turn someone on their back which is why I stayed. In life the most important lesson he taught was, I think, how to fail. Sometimes life, or projects in software, just don’t work out the way you want or expect them to. That said, there is always success from failure. The whole reason I joined the Marines after losing my job was because I thought, “There has to be a way to succeed from here.” Just because you fail once doesn’t mean you’ll continue to fail or that you are a failure, instead you should acknowledge your failure, learn from it, and get to work again. This tireless mentality was at the core of what Coach Z preached. I’ve failed a lot in life but I’ve succeeded a lot too. I wouldn’t have made it from screaming in frustration inside my garage to typing this article without that life lesson.
+
+FreeNode. FreeNode IRC is the best. I chat and idle in way too many channels to list. FreeNode is what got me through some troublesome problems in software and has acted as a great resource when there were no resources. If you’re ever bored FreeNode is also a constant source of quality entertainment.
+
+The future
+
+Who ever really knows what the future holds? Life is a sort of hour glass hidden inside a box that you can’t open. I could be dead in a year, my ideals could be outdated and rejected, or I could be thriving. That said my goal is to help make a thoughtful and lasting impact on this industry and firstly the people in it. My chief ambition is always finding a new way to do exactly that.
+
+I’ve been starting to do speaking engagements and have been a regular attendee of several DFW Meet Ups (Yes, I probably want to go to your Meet Up). Seeing other people in this industry is really cool, the even better part is being to help mentor and guide people along their own journeys. I intend to keep making great software and systems but I’d be lying if I said I didn’t want to find a way to reach more people. I don’t get paid for this website nor do I ask for money when I speak; my old ritualistic values of sharing information come first and foremost in my life.
+
+In the end thank you all for taking me here whether you’ve liked or shared my posts, provided me a feedback loop, or have just been a casual observer.
+
+Here’s to another hundred viewers.
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+wsFcBAABCgAGBQJZ6488AAoJEDbfZkwHpnoIlFMP/1x9NnhTQycuYpYFrA2SFlvG
+nDX+/HrYsfdHaPFrsAyo+khad67wuQkeNRf0Et6dQalvyEAttDWDARSIkSb+uBr1
+pY22Ijqj1DkJawF4nUEvmu1jY7kvNipAYDlW54DYnZMF1jU5j67V6hi1BHRyMOOF
+aiD8Qp0LkHdkWPjKoblsKrnWZFO9MbIamw2s4O5dwFceCgXMk01+WuXkkc8hOG9M
+q/VBlhPMEI8Ug8AjTa2icmjIcrbEGqLVuRWFQjoxaP6M3ZAnZpbYZM2TICFoM2Et
+HhVBLnTmcq/78j5xYWYy6mKB/N24CmdRhP3KBA1N4KdDRzVbO6DKyzaP4go4XVn/
+tA9T9ROjnNq0QXqn+DdNWPFY0vyr9GQT4ByRRh30jbLj0fetvRBHJeYGnIb7mZpH
+fpLlt9wN+f3RawARoH2BDiuhpJnky2kt4jyb0lRjayaZ9Az7iI+FP0FgBo0rmWUy
+yfOzUKeRY00OmLMCLPVXdLi674zb1T+tJaLeQUL7/HXpWe5ILG8ys8cMyKzyrWtd
+KeNyD41bERsTdd4F/tsy5WGdqoLyg7iGfPJY665H+2zMjFbYmKHWpEG7XHApGu0C
+3qKtNwvATAtEBt5ES19ExXQrSkXbNbJ+OS1/aA+YqQ0rKxY6k7dYsGqymWV5aESI
+NQI9LJ01kC3J+rXleKhd
+=iNYr
+-----END PGP SIGNATURE-----
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 21 Oct 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/articles/2017-10/a-big-thank-you</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-10/a-big-thank-you</guid>
+        
+        
+        <category>Blog</category>
+        
+      </item>
     
       <item>
         <title>S3 Bucket Security and Best Practices</title>
@@ -945,69 +1044,6 @@ Source: https://aws.amazon.com/message/41926/&lt;/p&gt;
         
         
         <category>Infrastructure</category>
-        
-      </item>
-    
-      <item>
-        <title>Starting a Career in DevOps</title>
-        <description>&lt;p&gt;A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;&lt;em&gt;“What is DevOps?”&lt;/em&gt; is probably one of the chief questions most people ask when they hear it. Some people regard DevOps as a fad rather than an actual solution, or something that programmers are already doing. That said, many people regarded Lean, Agile, and OOP as fads as they emerged and now they’re quite the staples of our industry. Explaining what exactly DevOps is isn’t really the direction of this article, but there are many resources at hand to help you find your way if you feel lost.&lt;/p&gt;
-
-&lt;h4 id=&quot;for-a-junior-devops-engineer-there-are-a-few-things-you-need-to-know-and-understand-in-order-to-be-successful&quot;&gt;For a junior DevOps Engineer there are a few things you need to know and understand in order to be successful.&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;Ruby and Python.&lt;/strong&gt; There are many other languages that are popular but these two are chief in automation and metrics collection. They are virtually system agnostic, although, libraries can tend to favor certain operating systems. This is why having a good foundation in reading and understanding code is imperative. Believe it or not many Linux System Engineers cannot read and understand non-procedural code or don’t understand OOP design principles.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Linux.&lt;/strong&gt; In this writers humble opinion Linux is the old trusty of DevOps. Nearly every enterprise is using Linux and even Microsoft has it’s own take on the bourne shell with powershell. Linux has been the beacon of efficiency and security for decades and will only continue to grow. Familiarize yourself with the standards and practices of both GNU/Linux and Redhat variations. That is, the five most important, being Debian, Ubuntu, CentOS, Redhat (RHEL), and Fedora. It’s also worth looking at distros like Alpine which are advertised as container ready and minimal.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Virtualization.&lt;/strong&gt; Whether you’re in development or production a working knowledge of virtualization is paramount. Tools like Virtualbox in combination with Hashicorp’s Vagrant have revolutionized the way we test expected outcomes. Even classical developers are starting to use Vagrant, realizing the power that it holds to mimic a production environment.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Configuration Correction &amp;amp; Automation.&lt;/strong&gt; The modern enterprise no longer desires to consist of hundreds of teams of systems administrators. Now, using code such as Ruby, Python and Perl, small teams are orchestrating wide arrays of configuration management for hundreds if not thousands of servers at a time. Just a few titles in this category are Puppet, Chef, Ansible and Salt but there are many more. This in combination with automated provisioning puts these tools above all else. I have not mentioned automated provisioning as it’s not really entirely required at a junior level for most organizations.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;DNS.&lt;/strong&gt; Any configuration management or automation tool such as Puppet, Chef, Ansible or Salt all require some sort of private authoritative DNS server, so it’s important to know and understand how DNS works. In order to understand DNS you will need a very basic understanding of subnetting. That said, a lot of DevOps Engineers in their junior years will also be tasked with managing day to day operations with a DNS CDN such as Cloudflare. You should have a working knowledge of how DNS is managed, the difference between A records and CNAME‘s as well as some DNS management principles.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Monitoring.&lt;/strong&gt; Monitoring resources on a virtual machine is pretty important too. Lots of organizations use Open Source tools such as Bosun, Zabbix, Icinga or, the old trusty, Nagios. Some organizations prefer a simple yet powerful implementation of Ganglia and collectd or statsd. All of these are acceptable solutions and really you just need to be familiar with common terms in statistics collection and configuration to make useful outputs. Whether you’re monitoring system resources, file changes or API uptimes the concepts are virtually all the same.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Database Management.&lt;/strong&gt; Commonly DevOps Engineers are asked to build queries. This isn’t so much a DBA job, as DBA’s usually manage the configuration of large scale long term or short term storage technology, it’s more coming up with stored procedures that can be useful. Most organizations will accept a working knowledge of mySQL and common commands/queries. If you already know a lot of things I’ve listed then check out MongoDB, Redis, and Hadoop – you will surely see this further down your career path.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Logging.&lt;/strong&gt; Aggregating logs is important in the troubleshooting process. Now I can go to one simple place and query the logs of a particular server, group of servers, etc… Some of the tools organizations are using today are ELK Stack, Greylog and Splunk. All of these have their own advantages and disadvantages but GreyLog is by far the easiest to get up and running on RHEL, while ELK will take some specific knowledge.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Git &amp;amp; SSH.&lt;/strong&gt; Git is a code repository software used to manage changes, push to production and other useful things. Many coders have turned their entire website into Git Repositories. With this comes a working knowledge of SSH. That’s any implementation of ssh such as SCP, tunneling, key pairs and more. Check out a fun video of what Bo Jeanes did with SSH!&lt;/p&gt;
-
-&lt;h3 id=&quot;other-things-you-can-expect-out-of-a-devops-position&quot;&gt;Other things you can expect out of a DevOps Position&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Be ready to be challenged every day&lt;/li&gt;
-  &lt;li&gt;Know the basics of Agile&lt;/li&gt;
-  &lt;li&gt;Once you’re familiar with all of the above, think about how you can implement DevOps philosophies&lt;/li&gt;
-  &lt;li&gt;Be ready to code!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;UDemy (Same as Code Academy but with academic courses)&lt;/li&gt;
-  &lt;li&gt;Code Academy (Git, Python, Ruby, Shell) It’s free!&lt;/li&gt;
-  &lt;li&gt;DevOps Bookmarks&lt;/li&gt;
-  &lt;li&gt;The Agile Admin blog&lt;/li&gt;
-  &lt;li&gt;Reddit DevOps&lt;/li&gt;
-  &lt;li&gt;Freenode IRC ##devops&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;DevOps is a beautiful career path with lots of daily challenges and problem solving. DevOps Engineers usually rest in a space between Developers and Systems Administrators with a special adeptness for details. It’s a fun and exciting career field and I look forward to everyone making their way there.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 24 Feb 2017 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/articles/2017-02/starting-a-career-in-devops</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2017-02/starting-a-career-in-devops</guid>
-        
-        <category>DevOps</category>
-        
-        
-        <category>DevOps</category>
-        
-        <category>OpEd</category>
         
       </item>
     
