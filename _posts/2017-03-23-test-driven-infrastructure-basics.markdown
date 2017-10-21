@@ -1,17 +1,14 @@
 ---
 title: "Test Driven Infrastructure Basics"
 layout: post
-date: 2017-03-23 19:15
-headerImage: false
 tag:
-- inspec
-star: true
-category: blog
-author: mattouille
-description: My take on TDI with InSpec
+- Inspec
+category: [Infrastructure, Programming]
 ---
 
 Today I'm going to go over the basics of Test Driven Infrastructure, what it means, how to do it, when it applies, and why. In this tutorial I'm going to use Chef, but you can use whatever you want.
+
+<!--more-->
 
 **Test Driven Infrastructure** (TDI) is a term that's been somewhat borrowed from the software engineering concept of **Test Driven Development** (TDD). While TDD is somewhat questioned in certain facets, everybody can agree that automated testing is the best way forward. TDI basically implies that we build the tests before we build out infrastructure. If this sounds a little shocking, let me explain:
 

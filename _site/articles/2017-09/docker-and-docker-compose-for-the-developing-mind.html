@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Introducing docker and docker-compose to developers for developing powerful local development environments and easy to deploy production environments.">
+  <meta name="keywords" content="Python, Linux, DevOps, SRE, Site Reliability Engineering, and Automation">
+  <meta name="author" content="Docker and Docker-Compose for the developing mind | MattOuille.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Docker and Docker-Compose for the developing mind | MattOuille.com">
+  <meta name="twitter:description" content="Introducing docker and docker-compose to developers for developing powerful local development environments and easy to deploy production environments.">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="Docker and Docker-Compose for the developing mind | MattOuille.com">
+  <meta property="og:description" content="Introducing docker and docker-compose to developers for developing powerful local development environments and easy to deploy production environments.">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>Docker and Docker-Compose for the developing mind | MattOuille.com</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind">
+  <link rel="alternate" type="application/rss+xml" title="MattOuille.com" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Matt Ouille</a>
+  <span class="author_job">Site Reliability Engineer</span>
+  <span class="author_bio mbm">A software engineer focused on infrastructure automation, Linux, and service reliability.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/about-me/">About Me</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('matthew.ouille@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/mattouille" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/mattouille" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://stackoverflow.com/users/5854293/matt-o" class="social-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Docker and Docker-Compose for the developing mind">Docker and Docker-Compose for the developing mind</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        3 SEP 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    7 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p><strong>What’s docker?</strong>
+I think a lot of folks that read my blog will already know what Docker is, however, I’ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API’s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.</p>
+
+<p>Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your <em>CI/CD Pipeline</em>. Other local development environment tools such as vagrant use virtual machines which are based on <em>Xen</em>, <em>KVM</em>, or <em>VMWare</em>. Unfortunately, building a vagrant box doesn’t really translate to building an image that can be deployed to AWS or Google Cloud. There are products that facilitate this like <em>Packer</em> (From HashiCorp as well), however, it’s a bit of a stretch to get developers to start using this, much less to start using it to bring up local environments.</p>
+
+<p><strong>Terminology</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Term</th>
+      <th style="text-align: left">Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Host OS</td>
+      <td style="text-align: left">Relatively, this is your machine or the server that has the container running on it.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Guest OS</td>
+      <td style="text-align: left">This usually is reserved for virtual machines, but it’s fair to use the term when describing the operating system the container image is based on.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Ephemeral</td>
+      <td style="text-align: left">Temporary or short lived.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Immutable</td>
+      <td style="text-align: left">Indicates a lack of data persistence. No data is stored on something that is immutable. The underlying term actually means ‘<em>replaceable</em>’.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Dockerfile</strong>
+The Dockerfile basically describes how to build your image. Dockerfiles are relatively simple. In fact, <a href="https://docs.docker.com/engine/reference/builder/">here’s the entire reference for Dockerfile</a>, take a quick glance over it. You can do simple things like exposing ports to the host OS (making things externally accessible), you can attach volumes that can add persistence to Docker (Docker and Linux Containers are ephemeral and immutable by nature), you can add existing directories, etc… The Dockerfile is the quintessential for building custom images that run on Docker containers.</p>
+
+<p><strong>docker-compose</strong>
+Docker has an accompanying application called <strong>docker-compose</strong>. If you’re using OSX then the install for Docker already comes with it, if you’re using Linux or Windows you’ll need to download it separately.</p>
+
+<p>Rarely do we ever just run one application by itself. Frequently we need to run an application, a data source, and any other piece of infrastructure it may be dependent on. In this example I’m going to use a real Dockerfile and docker-compose that I wrote for a FOSS project I’ve been working on. The docker-compose is yaml based and represents various container and images pairs as <em>services</em>.</p>
+
+<p><strong>Building our Dockerfile</strong>
+The framework I’m using is called Django which is python based. All I need is an OS with Python 3. All publicly available Docker images are based on some type of OS with all the non-essentials removed.</p>
+
+<p><strong>Dockerfile</strong></p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">FROM python:3.6
+
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /code
+
+WORKDIR /code
+
+ADD requirements.txt /code/
+
+RUN pip install -r requirements.txt
+
+ADD . /code/</code></pre></figure>
+
+<ul>
+  <li>
+    <p><strong>FROM</strong> we’re using the <em>python</em> image from <a href="https://hub.docker.com">Docker Hub</a> with a <a href="https://hub.docker.com/_/python/">label of 3.6</a>.</p>
+  </li>
+  <li>
+    <p><strong>ENV</strong> sets an environment variable in <em>Key Value</em> format. If you had multiple you’d use multiple <strong>ENV</strong>’s.</p>
+  </li>
+  <li>
+    <p><strong>RUN</strong> This indicates executes a command using the default shell. We’re making the preliminary directory called <em>code</em> in the root of the guest OS (note the prefixed slash).</p>
+  </li>
+  <li>
+    <p><strong>WORKDIR</strong> Changes the working directory to <code class="highlighter-rouge">/code</code>. The commands using this context are specific to <code class="highlighter-rouge">RUN</code>, <code class="highlighter-rouge">CMD</code>, <code class="highlighter-rouge">ENTRYPOINT</code>, <code class="highlighter-rouge">COPY</code> and <code class="highlighter-rouge">ADD</code>.</p>
+  </li>
+  <li>
+    <p><strong>ADD</strong> Copies a file to your Docker image. You might’ve noticed there’s a command called <code class="highlighter-rouge">COPY</code> that is remarkably similar to <code class="highlighter-rouge">ADD</code>. There’s two key differences.</p>
+
+    <ul>
+      <li>Add allows the <code class="highlighter-rouge">&lt;src&gt;</code> to be a url.</li>
+      <li>Add will decompress recognized compressed files.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Choose wisely!</p>
+
+<ul>
+  <li>
+    <p><strong>RUN</strong> I need pip to process my requirements.txt. We’re executing a normal shell command here, just as if we were sitting at the terminal.</p>
+  </li>
+  <li>
+    <p><strong>ADD</strong> We’re now copying my existing code repository to Docker image.</p>
+  </li>
+</ul>
+
+<p>That’s it! If all we wanted to do was build the image and run the container then Django would come up. You’d simply:</p>
+
+<p><code class="highlighter-rouge">docker build .</code></p>
+
+<p><em>This indicates to docker: Build my image, search for the Dockerfile in this directory (.)</em></p>
+
+<p><code class="highlighter-rouge">docker create &lt;image id&gt;</code></p>
+
+<p>At this point your docker container would run but would not be externally accessible (we never specified <code class="highlighter-rouge">EXPOSE</code>).</p>
+
+<p><strong>docker-compose.yml</strong></p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.3'</span>
+
+<span class="s">services</span><span class="pi">:</span>
+  <span class="s">db</span><span class="pi">:</span>
+    <span class="s">image</span><span class="pi">:</span> <span class="s">postgres</span>
+    <span class="s">environment</span><span class="pi">:</span>
+      <span class="s">POSTGRES_PASSWORD</span><span class="pi">:</span> <span class="s">theseus</span>
+  <span class="s">web</span><span class="pi">:</span>
+    <span class="s">build</span><span class="pi">:</span> <span class="s">.</span>
+    <span class="s">command</span><span class="pi">:</span> <span class="s">python code/manage.py runserver 0.0.0.0:8000</span>
+    <span class="s">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">.:/code</span>
+    <span class="s">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8000:8000"</span>
+    <span class="s">depends_on</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">db</span></code></pre></figure>
+
+<ul>
+  <li>
+    <p><strong>version</strong> specifies which version of the <a href="https://docs.docker.com/compose/compose-file/">docker-compose reference</a> to use.</p>
+  </li>
+  <li>
+    <p><strong>services</strong> Each top level is essentially a different container. Services are special because they can resolve each other by their service name. For instance, I can reach <em>db</em> from <em>web</em> by <code class="highlighter-rouge">ping db</code>.</p>
+  </li>
+  <li>
+    <p><strong>db/image</strong> In this case I’m telling docker-compose to use the Docker Hub image for postgres. Notice there’s no label selected, Docker will assume <em>latest</em>.</p>
+  </li>
+  <li>
+    <p><strong>db/environment</strong> I’m setting an environment variable in a Key: Value format. The postgres page on Docker Hub has some nice instructions on features they’ve put into the postgres image.</p>
+  </li>
+  <li>
+    <p><strong>web/build</strong> I’m indicating to docker-compose to run a docker build in ‘.’. This will build my Docker image. If I had multiple custom images I’d just place a Dockerfile in different directories.</p>
+  </li>
+  <li>
+    <p><strong>web/command</strong> this is the command to run when the container starts. Notice I lost my context behind <code class="highlighter-rouge">WORKDIR</code> in the Dockerfile. There’s a way to fix this, but I wanted to point it out.</p>
+  </li>
+  <li>
+    <p><strong>web/volumes</strong> I’m telling docker-compose that I want to mount /code as a volume. Changes I make in my code will be reflected into the container <strong>AND</strong> vice versa. I’ll get into this later.</p>
+  </li>
+  <li>
+    <p><strong>web/ports</strong> This is the exposed port on the Host OS to the Guest OS.</p>
+  </li>
+  <li>
+    <p><strong>web/depends_on</strong> This tells docker-compose that it can’t start the web container until the db container is online.</p>
+  </li>
+</ul>
+
+<p><strong>Using docker-compose</strong>. Before we were able to use the <code class="highlighter-rouge">docker</code> command to build, create, run etc… Now that we’re using docker-compose though, we have to use the <code class="highlighter-rouge">docker-compose</code> command. If you don’t, you can still reach your containers but they’ll be without some of the essential networking that docker-compose gives you.</p>
+
+<p>You’ll need to create your code folder and generate a Django app, but after that simply run <code class="highlighter-rouge">docker-compose up -d</code>. This launches docker-compose in daemon mode. Leave out <code class="highlighter-rouge">-d</code> when you’re troubleshooting. You can run <code class="highlighter-rouge">docker-compose ps</code> to get the names of your containers and run commands on them like this: <code class="highlighter-rouge">docker-compose run -it &lt;container name&gt; &lt;command&gt;</code>.</p>
+
+<p>Technically we’re all done, but I wanted to show you something neat. Remember how I said in docker-compose you can reference services by name and they’ll resolve? In case it didn’t click, here’s an excerpt from my Django settings.py:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># Database</span>
+<span class="c"># https://docs.djangoproject.com/en/1.11/ref/settings/#databases</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.postgresql_psycopg2'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="s">'postgres'</span><span class="p">,</span>
+        <span class="s">'USER'</span><span class="p">:</span> <span class="s">'postgres'</span><span class="p">,</span>
+        <span class="s">'PASSWORD'</span><span class="p">:</span> <span class="s">'theseus'</span><span class="p">,</span>
+        <span class="s">'HOST'</span><span class="p">:</span> <span class="s">'db'</span><span class="p">,</span>
+        <span class="s">'PORT'</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>My host is using ‘<em>db</em>’. That’s all for today, hopefully that’s helped get the gears spinning. There’s a lot more you can do with docker-compose and docker, so be sure to explore!</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2017 Matt Ouille. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-49694865-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

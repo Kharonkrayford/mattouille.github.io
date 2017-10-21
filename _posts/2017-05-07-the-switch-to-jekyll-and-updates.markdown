@@ -1,15 +1,10 @@
 ---
 title: "The switch to Jekyll and updates"
 layout: post
-date: 2017-05-07 9:20
-headerImage: false
 tag:
-- updates
-- jekyll
-star: true
-category: blog
-author: mattouille
-description: Talking about switching to Jekyll and some general updates
+- Updates
+- Jekyll
+category: [Blog]
 ---
 
 2017 has been really good to me and I've had the opportunity to grow a lot both

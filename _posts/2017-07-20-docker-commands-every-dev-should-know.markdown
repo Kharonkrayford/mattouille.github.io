@@ -1,17 +1,14 @@
 ---
 title: "Docker commands every dev should know"
 layout: post
-date: 2017-07-20 18:30
-headerImage: false
 tag:
-- docker
-star: true
-category: blog
-author: mattouille
-description: A sampling of useful docker commands and insight when dealing with Docker.
+- Docker
+category: [Systems, Docker]
 ---
 
 Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you're not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.
+
+<!--more-->
 
 ## Logging into a container
 

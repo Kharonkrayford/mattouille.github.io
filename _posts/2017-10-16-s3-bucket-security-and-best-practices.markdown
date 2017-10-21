@@ -1,15 +1,12 @@
 ---
 title: "S3 Bucket Security and Best Practices"
 layout: post
-date: 2017-10-16 20:52
-headerImage: false
 tag:
-- security
-- aws s3
-star: true
-category: blog
-author: mattouille
-description: I cover S3 bucket ACL's and policies and a definitive strategy for using them.
+- Security
+- AWS
+- S3
+category: [Cloud, Infrastructure]
+excerpt: "In this write up I explore some of the intricacies of Amazon S3's permission matrix. I go over best practices, ACL's, Policies, KMS, and Server Side Encryption. Read on for more!"
 ---
 
 There's been a litany of companies with unsecured S3 buckets including [Verizon](https://www.theregister.co.uk/2017/09/22/verizon_falls_for_the_old_unguarded_aws_s3_bucket_trick_exposes_internal_system/), [Accenture](https://www.theregister.co.uk/2017/10/10/accenture_amazon_aws_s3/), [TimeWarner](https://threatpost.com/four-million-time-warner-cable-records-left-on-misconfigured-aws-s3/127807/), and the list goes on.

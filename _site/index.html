@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Tutorials, OpEds, and Musings by Matt Ouille">
+  <meta name="keywords" content="Python, Linux, DevOps, SRE, Site Reliability Engineering, and Automation">
+  <meta name="author" content="MattOuille.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f5">
+
+  <!-- Twitter Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MattOuille.com">
+  <meta name="twitter:description" content="Tutorials, OpEds, and Musings by Matt Ouille">
+  <meta name="twitter:image" content="http://localhost:4000/img/leonids-logo.png">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="MattOuille.com">
+  <meta property="og:description" content="Tutorials, OpEds, and Musings by Matt Ouille">
+  <meta property="og:image" content="http://localhost:4000/img/leonids-logo.png">
+  <title>MattOuille.com</title>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="MattOuille.com" href="http://localhost:4000 /feed.xml " />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Matt Ouille</a>
+  <span class="author_job">Site Reliability Engineer</span>
+  <span class="author_bio mbm">A software engineer focused on infrastructure automation, Linux, and service reliability.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/about-me/">About Me</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('matthew.ouille@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/mattouille" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/mattouille" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://stackoverflow.com/users/5854293/matt-o" class="social-link-item" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        16 OCT 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Cloud">Cloud</a>
+        
+        <span>/</span>
+        
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Infrastructure">Infrastructure</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-10/s3-bucket-security-and-best-practices" class="post-title" title="S3 Bucket Security and Best Practices">S3 Bucket Security and Best Practices</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        In this write up I explore some of the intricacies of Amazon S3's permission matrix. I go over best practices, ACL's, Policies, KMS, and Server Side Encryption. Read on for more!
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        3 SEP 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Docker">Docker</a>
+        
+        <span>/</span>
+        
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Systems">Systems</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind" class="post-title" title="Docker and Docker-Compose for the developing mind">Docker and Docker-Compose for the developing mind</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        Introducing docker and docker-compose to developers for developing powerful local development environments and easy to deploy production environments.
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        20 JUL 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Systems">Systems</a>
+        
+        <span>/</span>
+        
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Docker">Docker</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-07/docker-commands-every-dev-should-know" class="post-title" title="Docker commands every dev should know">Docker commands every dev should know</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you’re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.</p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        25 JUN 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Programming">Programming</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-06/pointers-in-go" class="post-title" title="Pointers in Go">Pointers in Go</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        I've been learning Go recently and I've been having some issues solidifying my understanding of pointers, so I thought I'd write a quick blog post explaining what I've learned and how to easily understand it. Click the title to read on!
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        30 MAY 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#OpEd">OpEd</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-05/the-most-forgotten-pattern" class="post-title" title="“The Most Forgotten Pattern”">“The Most Forgotten Pattern”</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly. Every time we sit down to solve problems with software we apply design patterns to overcome situations that would be contentious if we hadn’t already solved them years ago. There’s no point in reinventing the wheel, right? So why are we sitting here planning development of software for months on end still?</p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        7 MAY 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Blog">Blog</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-05/the-switch-to-jekyll-and-updates" class="post-title" title="The switch to Jekyll and updates">The switch to Jekyll and updates</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>2017 has been really good to me and I’ve had the opportunity to grow a lot both
+as as person and in my career. I’m currently writing this post sitting on my
+back porch watching my dogs play.</p>
+
+<p>That said, earlier versions of my website were always based on Wordpress. While
+Wordpress is a great functional FOSS blogging platform, it was really a bit
+bloated for my needs. As a developer, and someone who is trying to make more
+efficient use of their time, I was looking for something that got down to the
+nuts and bolts of what I wanted without sacrificing too much functionality.</p>
+
+<p>In that I found Jekyll and GitHub pages. I kind of wrote this off as a poor
+man’s solution to a common problem, however, I’ve discovered the elegance in
+what Jekyll provides. Jekyll is categorized as a Static Site Generator written in
+Ruby and extended through plugins and API driven services such as Disqus. You
+can checkout Jekyll <a href="https://jekyllrb.com/">here</a>.</p>
+
+<p>I use a Mac and haven’t done a lot of Ruby focused projects so I was really
+unaware of how to start. What I’ve figured out though is that between RVM and
+HomeBrew you can get a sustainable environment going. I could probably also have
+written a Dockerfile to do a lot of the dependency management for me, but I’m
+only using one gem and that’s Jekyll itself.</p>
+
+<p>As for deployment, I already pay for GitHub. I was a little disappointed to
+discover GitHub pages doesn’t support a CDN proxy to run SSL on custom domains
+but I looped in CloudFlare for that. All in all, a blog post is just a commit
+away and I can use Atom as a post editor.</p>
+
+<p>While I’ve been writing a lot of specific ‘getting started’ tutorials lately
+I think it’s time that I start writing more Site Reliaibility Engineering focused
+work. I currently work in an AWS environment but dumping my virtual machine
+provider frees me up to do some AWS and GCP tutorials. Who knows, maybe I’ll get
+froggy and do some Azure too.</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        23 MAR 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Infrastructure">Infrastructure</a>
+        
+        <span>/</span>
+        
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Programming">Programming</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-03/test-driven-infrastructure-basics" class="post-title" title="Test Driven Infrastructure Basics">Test Driven Infrastructure Basics</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>Today I’m going to go over the basics of Test Driven Infrastructure, what it means, how to do it, when it applies, and why. In this tutorial I’m going to use Chef, but you can use whatever you want.</p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        5 MAR 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Opinion">Opinion</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-03/user-error-caused-a-massive-s3-blackout" class="post-title" title="User error caused a massive S3 blackout">User error caused a massive S3 blackout</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <blockquote>
+  <p>At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
+source: https://aws.amazon.com/message/41926/</p>
+</blockquote>
+
+<p>Is this where we echo one of the great pillars of Linux? <strong>With great power comes great responsibility.</strong></p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        5 MAR 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Infrastructure">Infrastructure</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-03/SendGrid-DNS-White-Labeling-and-CloudFront-for-Secure-Click-Tracking-Links" class="post-title" title="SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links">SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        24 FEB 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#DevOps">DevOps</a>
+        
+        <span>/</span>
+        
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#OpEd">OpEd</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-02/starting-a-career-in-devops" class="post-title" title="Starting a Career in DevOps">Starting a Career in DevOps</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        24 FEB 2017
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Linux">Linux</a>
+        
+        <span>/</span>
+        
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Security">Security</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2017-02/basic-ubuntu-security" class="post-title" title="Basic Ubuntu Security">Basic Ubuntu Security</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p>Especially in 2017 everyone should be concerned about security. You don’t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you’ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort.</p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+
+        <footer>
+  &copy; 2017 Matt Ouille. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-49694865-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>

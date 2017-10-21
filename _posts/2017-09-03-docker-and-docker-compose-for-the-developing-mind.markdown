@@ -1,15 +1,11 @@
 ---
 title: "Docker and Docker-Compose for the developing mind"
 layout: post
-date: 2017-09-03 10:44
-headerImage: false
 tag:
-- docker
-- docker-compose
-star: true
-category: blog
-author: mattouille
-description: Introducing docker and docker-compose to developers for developing powerful local development environments
+- Docker
+- Docker-Compose
+category: [Docker, Systems]
+excerpt: Introducing docker and docker-compose to developers for developing powerful local development environments and easy to deploy production environments.
 ---
 
 **What's docker?**

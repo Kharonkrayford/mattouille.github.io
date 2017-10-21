@@ -1,16 +1,12 @@
 ---
 title: "Pointers in Go"
 layout: post
-date: 2017-06-25 16:32
-headerImage: false
 tag:
-- go-lang
-- pointers
-- software development
-star: true
-category: blog
-author: mattouille
-description: A simple explanation of pointers in Go Lang
+- Go-lang
+- Pointers
+- Programming
+category: [Programming]
+excerpt: "I've been learning Go recently and I've been having some issues solidifying my understanding of pointers, so I thought I'd write a quick blog post explaining what I've learned and how to easily understand it. Click the title to read on!"
 ---
 
 I've been learning Go recently and I've been having some issues solidifying my understanding of pointers, so I thought I'd write a quick blog post explaining what I've learned and how to easily understand it.
@@ -32,7 +28,7 @@ The key here is efficiency. In this case the car is a variable or struct. It's q
 
 ## Visualizing my explanation
 
-{% highlight go %}
+{% highlight go linenos %}
 type Car struct {
   Brand string
   Model string
@@ -50,7 +46,7 @@ In this instance, new car is pointing to the struct Car, and in it's return valu
 
 In contrast:
 
-{% highlight go %}
+{% highlight go linenos %}
 func NewCar(brand, model string) Car {
   return Car{
     Brand: brand,
@@ -70,7 +66,7 @@ The best way I can portray this in simple English is this:
 
 Even more simply explained is this code:
 
-{% highlight go %}
+{% highlight go linenos %}
 package main
 
 import "fmt"

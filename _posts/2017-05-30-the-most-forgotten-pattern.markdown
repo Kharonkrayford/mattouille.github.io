@@ -1,18 +1,15 @@
 ---
 title: “The Most Forgotten Pattern”
 layout: post
-date: 2017-05-30 19:30
-headerImage: false
 tag:
-- design patterns
-- iterative development
+- Iterative Development
 star: true
-category: blog
-author: mattouille
-description: Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly.
+category: [OpEd]
 ---
 
 Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly. Every time we sit down to solve problems with software we apply design patterns to overcome situations that would be contentious if we hadn’t already solved them years ago. There’s no point in reinventing the wheel, right? So why are we sitting here planning development of software for months on end still?
+
+<!--more-->
 
 ### Some men just like to watch the world burn
 

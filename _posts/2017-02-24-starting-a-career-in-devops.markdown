@@ -1,17 +1,15 @@
 ---
 title: "Starting a Career in DevOps"
 layout: post
-date: 2017-02-24 22:27
-headerImage: false
-tag:
-- devops
-star: true
-category: blog
-author: mattouille
-description: My opinion on the qualities and skills of a DevOps based profession
+tags:
+- DevOps
+category: [DevOps, OpEd]
+excerpt: "A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing."
 ---
 
 A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.
+
+<!--more-->
 
 *“What is DevOps?”* is probably one of the chief questions most people ask when they hear it. Some people regard DevOps as a fad rather than an actual solution, or something that programmers are already doing. That said, many people regarded Lean, Agile, and OOP as fads as they emerged and now they’re quite the staples of our industry. Explaining what exactly DevOps is isn’t really the direction of this article, but there are many resources at hand to help you find your way if you feel lost.
 

@@ -1,22 +1,19 @@
 ---
 title: "User error caused a massive S3 blackout"
 layout: post
-date: 2017-03-05 20:32
-image: /assets/images/markdown.jpg
-headerImage: false
 tag:
 - AWS
 - S3
-star: true
-category: blog
-author: mattouille
-description: My retrospective of the S3 outage
+- Post Mortem
+category: [Opinion]
 ---
 
 > At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
 source: https://aws.amazon.com/message/41926/
 
 Is this where we echo one of the great pillars of Linux? **With great power comes great responsibility.**
+
+<!--more-->
 
 Amazon actually has DevOps Engineering departments that build and manage their internal tooling. It's very interesting that, even with a DevOps department, one of the foremost constructs of DevOps was not followed:
 
