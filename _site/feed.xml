@@ -3,11 +3,11 @@
   <channel>
     <title>MattOuille.com</title>
     <description>Tutorials, OpEds, and Musings by Matt Ouille</description>
-    <link>https://www.mattouille.com/</link>
-    <atom:link href="https://www.mattouille.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Oct 2017 17:02:09 +0200</pubDate>
-    <lastBuildDate>Sat, 21 Oct 2017 17:02:09 +0200</lastBuildDate>
-    <generator>Jekyll v3.6.0</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 21 Oct 2017 17:24:12 +0200</pubDate>
+    <lastBuildDate>Sat, 21 Oct 2017 17:24:12 +0200</lastBuildDate>
+    <generator>Jekyll v3.6.1</generator>
     
       <item>
         <title>S3 Bucket Security and Best Practices</title>
@@ -112,8 +112,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 16 Oct 2017 00:00:00 +0200</pubDate>
-        <link>https://www.mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices</guid>
+        <link>http://localhost:4000/articles/2017-10/s3-bucket-security-and-best-practices</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-10/s3-bucket-security-and-best-practices</guid>
         
         <category>Security</category>
         
@@ -307,8 +307,8 @@ ADD &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /code/&lt;/code&gt;&lt;/pre&
 &lt;p&gt;My host is using ‘&lt;em&gt;db&lt;/em&gt;’. That’s all for today, hopefully that’s helped get the gears spinning. There’s a lot more you can do with docker-compose and docker, so be sure to explore!&lt;/p&gt;
 </description>
         <pubDate>Sun, 03 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://www.mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind</guid>
+        <link>http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-09/docker-and-docker-compose-for-the-developing-mind</guid>
         
         <category>Docker</category>
         
@@ -364,8 +364,8 @@ ADD &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /code/&lt;/code&gt;&lt;/pre&
 &lt;p&gt;I hope this has been educational for everyone!&lt;/p&gt;
 </description>
         <pubDate>Thu, 20 Jul 2017 00:00:00 +0200</pubDate>
-        <link>https://www.mattouille.com/articles/2017-07/docker-commands-every-dev-should-know</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-07/docker-commands-every-dev-should-know</guid>
+        <link>http://localhost:4000/articles/2017-07/docker-commands-every-dev-should-know</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-07/docker-commands-every-dev-should-know</guid>
         
         <category>Docker</category>
         
@@ -486,8 +486,8 @@ ADD &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /code/&lt;/code&gt;&lt;/pre&
 &lt;p&gt;Hopefully my explanation on pointers in Go has helped you, if you have any suggestions please leave them in the comments below!&lt;/p&gt;
 </description>
         <pubDate>Sun, 25 Jun 2017 00:00:00 +0200</pubDate>
-        <link>https://www.mattouille.com/articles/2017-06/pointers-in-go</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-06/pointers-in-go</guid>
+        <link>http://localhost:4000/articles/2017-06/pointers-in-go</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-06/pointers-in-go</guid>
         
         <category>Go-lang</category>
         
@@ -535,8 +535,8 @@ ADD &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; /code/&lt;/code&gt;&lt;/pre&
 &lt;p&gt;The day development becomes a chore, innovation and creativity die.&lt;/p&gt;
 </description>
         <pubDate>Tue, 30 May 2017 00:00:00 +0200</pubDate>
-        <link>https://www.mattouille.com/articles/2017-05/the-most-forgotten-pattern</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-05/the-most-forgotten-pattern</guid>
+        <link>http://localhost:4000/articles/2017-05/the-most-forgotten-pattern</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-05/the-most-forgotten-pattern</guid>
         
         <category>Iterative Development</category>
         
@@ -581,8 +581,8 @@ provider frees me up to do some AWS and GCP tutorials. Who knows, maybe I’ll g
 froggy and do some Azure too.&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 May 2017 00:00:00 +0200</pubDate>
-        <link>https://www.mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates</guid>
+        <link>http://localhost:4000/articles/2017-05/the-switch-to-jekyll-and-updates</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-05/the-switch-to-jekyll-and-updates</guid>
         
         <category>Updates</category>
         
@@ -794,8 +794,8 @@ Test Summary: 12 successful, 0 failures, 0 skipped
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 Mar 2017 00:00:00 +0100</pubDate>
-        <link>https://www.mattouille.com/articles/2017-03/test-driven-infrastructure-basics</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-03/test-driven-infrastructure-basics</guid>
+        <link>http://localhost:4000/articles/2017-03/test-driven-infrastructure-basics</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-03/test-driven-infrastructure-basics</guid>
         
         <category>Inspec</category>
         
@@ -838,8 +838,8 @@ Source: https://aws.amazon.com/message/41926/&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Source&lt;/strong&gt;: https://aws.amazon.com/message/41926/&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Mar 2017 00:00:00 +0100</pubDate>
-        <link>https://www.mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout</guid>
+        <link>http://localhost:4000/articles/2017-03/user-error-caused-a-massive-s3-blackout</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-03/user-error-caused-a-massive-s3-blackout</guid>
         
         <category>AWS</category>
         
@@ -866,7 +866,7 @@ Source: https://aws.amazon.com/message/41926/&lt;/p&gt;
 &lt;p&gt;SendGrid really only provides an out of the box solution for working with Cloudflare and like many other enterprises we use Dyn / Route 53 for DNS and CloudFront for CDN services. We obviously like our fine grained control. We had some motivation to change things because one of our customers apparently cannot follow any links that are plain text (HTTP). Our original setup with SendGrid was using their legacy whitelabeling system which involved a CNAME to refer to SendGrid.net.&lt;/p&gt;
 
 &lt;h3 id=&quot;our-original-sendgrid-diagram&quot;&gt;Our Original SendGrid Diagram&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://www.mattouille.com/img/posts/old_way.png&quot; alt=&quot;&quot; width=&quot;621&quot; height=&quot;81&quot; class=&quot;aligncenter size-full wp-image-49&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/posts/old_way.png&quot; alt=&quot;&quot; width=&quot;621&quot; height=&quot;81&quot; class=&quot;aligncenter size-full wp-image-49&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Simple right? Simple isn’t always best but it does get the job done fast. SendGrid does not have the ability to handle our SSL Certificate, therefore, we had to establish our own intermediary.&lt;/p&gt;
 
@@ -878,7 +878,7 @@ Source: https://aws.amazon.com/message/41926/&lt;/p&gt;
 
 &lt;p&gt;SendGrid provided us with the destination address and the destination for the CNAME records. Seemingly, they didn’t care about what happens in the middle so long as the request is finally received via HTTPS with a trusted certificate. We built out the following plan:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://www.mattouille.com/img/posts/new.png&quot; alt=&quot;&quot; width=&quot;707&quot; height=&quot;171&quot; class=&quot;aligncenter size-full wp-image-60&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/img/posts/new.png&quot; alt=&quot;&quot; width=&quot;707&quot; height=&quot;171&quot; class=&quot;aligncenter size-full wp-image-60&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We take on a bit of cost via CloudFront, but we gain end to end encryption and we’re retaining any old plain text traffic at the same time. The other challenge is that these URL’s are production and SendGrid has a window of time that they implement your SSL links in. This can make for a theoretical downtime of sorts. A lot of this hinges on the fact that we use DynDNS whose changes propagate all around the world in minutes.&lt;/p&gt;
 
@@ -934,8 +934,8 @@ Source: https://aws.amazon.com/message/41926/&lt;/p&gt;
 &lt;p&gt;I hope this helps anyone that’s been looking for a viable solution to implement SendGrid whitelisting with AWS!&lt;/p&gt;
 </description>
         <pubDate>Sun, 05 Mar 2017 00:00:00 +0100</pubDate>
-        <link>https://www.mattouille.com/articles/2017-03/SendGrid-DNS-White-Labeling-and-CloudFront-for-Secure-Click-Tracking-Links</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-03/SendGrid-DNS-White-Labeling-and-CloudFront-for-Secure-Click-Tracking-Links</guid>
+        <link>http://localhost:4000/articles/2017-03/SendGrid-DNS-White-Labeling-and-CloudFront-for-Secure-Click-Tracking-Links</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-03/SendGrid-DNS-White-Labeling-and-CloudFront-for-Secure-Click-Tracking-Links</guid>
         
         <category>SendGrid</category>
         
@@ -999,8 +999,8 @@ Source: https://aws.amazon.com/message/41926/&lt;/p&gt;
 &lt;p&gt;DevOps is a beautiful career path with lots of daily challenges and problem solving. DevOps Engineers usually rest in a space between Developers and Systems Administrators with a special adeptness for details. It’s a fun and exciting career field and I look forward to everyone making their way there.&lt;/p&gt;
 </description>
         <pubDate>Fri, 24 Feb 2017 00:00:00 +0100</pubDate>
-        <link>https://www.mattouille.com/articles/2017-02/starting-a-career-in-devops</link>
-        <guid isPermaLink="true">https://www.mattouille.com/articles/2017-02/starting-a-career-in-devops</guid>
+        <link>http://localhost:4000/articles/2017-02/starting-a-career-in-devops</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2017-02/starting-a-career-in-devops</guid>
         
         <category>DevOps</category>
         
