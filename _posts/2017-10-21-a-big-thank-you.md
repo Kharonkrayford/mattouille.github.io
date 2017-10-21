@@ -3,9 +3,10 @@ title: "A Big Thank You"
 layout: post
 category: [Blog]
 comments: false
+modified: 2017-10-21 13:09
 ---
 
-I owe everyone a tremendous debt of gratitude. I've been posting on this blog for quite some time. I've made some transitions from [Ghost](https://ghost.org/), to [Wordpress](https://wordpress.org/), and now to [Jekyll](https://jekyllrb.com/). In that time I also tried out some SaaS platforms like [Medium](https://medium.com/) and [Blogger](https://blogger.com) but I'd rather not remember those time. Thus, you see the articles that are on my current blog - I've lost a lot but I've gained a lot. Just like myself my blog had to evolve for how I was writing. One thing has remained fairly consistent though: why I write.
+I owe everyone a tremendous debt of gratitude. I've been posting on this blog for quite some time. I've made some transitions from [Ghost](https://ghost.org/), to [Wordpress](https://wordpress.org/), and now to [Jekyll](https://jekyllrb.com/). In that time I also tried out some SaaS platforms like [Medium](https://medium.com/) and [Blogger](https://blogger.com) but I'd rather not remember those times. Thus, you see the articles that are on my current blog - I've lost a lot but I've gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: _why I write_.
 
 <!--more-->
 
@@ -13,7 +14,7 @@ I owe everyone a tremendous debt of gratitude. I've been posting on this blog fo
 
 I gave a bit of a brief synopsis of this on LinkedIn on Friday before I headed off to work. I started writing as sort of a documentation of what I was learning in hopes that my own discovery would speed up someone elses. I always liked the sharing of information and skills. I remember when I discovered my first closed source application all those years ago and was like, "Why can't I see how they got here?"
 
-On Friday I was fairly astounded to find out that I received 40-100 active users on any given day. This may not seem like a lot but I remember the days of paying for a [Linode](https://linode.com) server that literally never got hit unless someone was trying to backdoor my Wordpress installation. In the words of [Martin Fowler](https://martinfowler.com), "[I know many people who are every bit as good, indeed better, than I am at design](https://martinfowler.com/bliki/PedestalPhobia.html)." My writing has not really been a reflection of myself but more a reflection of the things I've learned and experienced from _others_ over the years. I make a habit of surrounding myself with incredibly gifted and intelligent people so my writing reflects that in a way.
+On Friday I was fairly astounded to find out that I receive between 40-100 active users on any given day. This may not seem like a lot but I remember the days of paying for a [Linode](https://linode.com) server that literally never got hit unless someone was trying to backdoor my Wordpress installation. In the words of [Martin Fowler](https://martinfowler.com), "[I know many people who are every bit as good, indeed better, than I am at design](https://martinfowler.com/bliki/PedestalPhobia.html)." My writing has not really been a reflection of myself but more a reflection of the things I've learned and experienced from _others_ over the years. I make a habit of surrounding myself with incredibly gifted and intelligent people so my writing reflects that in a way.
 
 If you aren't on this list please don't take offense. I've met a lot of really great people here that are likely missing.
 
@@ -78,18 +79,18 @@ Here’s to another hundred viewers.
 Version: Keybase OpenPGP v2.0.76
 Comment: https://keybase.io/crypto
 
-wsFcBAABCgAGBQJZ64tNAAoJEDbfZkwHpnoIsJwP/3THn1rhmajCAOCC3jTXl8cs
-4zbdTbq6Et50zrXwVqCbn4AixMYas4BG0KxL/Wa/I/isbjF/Exo6QhCWrVD4rCIE
-6CREd7UOBpgUpwcBcgGXcchT71ZgQkS0U1a15zUkOZibAExtuWQ2rBGJ4UzTbyNb
-0iFGjvXEqZB9Ar4u482IiLhWXc9p3NtGZsFWfyX4RN2sJ08sfcXvvy0JOiD5KlKL
-i7/gSQEqgcJwnWO2ZgNlnckKSBEtBcJHcCqXHfh1xyHKK3ONehXHZ8+5BtY5T5fY
-QF4Q0O0pVRJGshDUZj8jG7NdpFHxSM9+J58beMQwxdY1KMmxdes9CcQooYBZJAz0
-kZqmpIxlcqDQI3LG6eh9CvtMKbRXBLIGlMqJ2994kX1slgu+PjI845VzeoRgGGP6
-TDCpAb9w8SwYTscd7BMZLAAzAV57xgyq7vWKUxHAKtLx64iKwXh81tRaA1dD5Bqh
-VGlJPxfw0YeSvCbI3oyyPUNMbxYp1sC94MmyOUmrNrg1YT46YdmtB4X+0Ttr4S3s
-M/mJhF7ERFvTjV0PBH5Xr2t06PUARAJsu7zbYm7PzW3Zq0IcRXi8KuIQrNsp8bdh
-eP+EEStY6mymZCZ97UYJWonDRVLutfkMQKCSUcnXfBEZJIu4EgfTsUvt7gmbbiMF
-Jz9ilV+5cpOAUlImnbup
-=zJP4
+wsFcBAABCgAGBQJZ6488AAoJEDbfZkwHpnoIlFMP/1x9NnhTQycuYpYFrA2SFlvG
+nDX+/HrYsfdHaPFrsAyo+khad67wuQkeNRf0Et6dQalvyEAttDWDARSIkSb+uBr1
+pY22Ijqj1DkJawF4nUEvmu1jY7kvNipAYDlW54DYnZMF1jU5j67V6hi1BHRyMOOF
+aiD8Qp0LkHdkWPjKoblsKrnWZFO9MbIamw2s4O5dwFceCgXMk01+WuXkkc8hOG9M
+q/VBlhPMEI8Ug8AjTa2icmjIcrbEGqLVuRWFQjoxaP6M3ZAnZpbYZM2TICFoM2Et
+HhVBLnTmcq/78j5xYWYy6mKB/N24CmdRhP3KBA1N4KdDRzVbO6DKyzaP4go4XVn/
+tA9T9ROjnNq0QXqn+DdNWPFY0vyr9GQT4ByRRh30jbLj0fetvRBHJeYGnIb7mZpH
+fpLlt9wN+f3RawARoH2BDiuhpJnky2kt4jyb0lRjayaZ9Az7iI+FP0FgBo0rmWUy
+yfOzUKeRY00OmLMCLPVXdLi674zb1T+tJaLeQUL7/HXpWe5ILG8ys8cMyKzyrWtd
+KeNyD41bERsTdd4F/tsy5WGdqoLyg7iGfPJY665H+2zMjFbYmKHWpEG7XHApGu0C
+3qKtNwvATAtEBt5ES19ExXQrSkXbNbJ+OS1/aA+YqQ0rKxY6k7dYsGqymWV5aESI
+NQI9LJ01kC3J+rXleKhd
+=iNYr
 -----END PGP SIGNATURE-----
 ```
