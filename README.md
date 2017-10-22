@@ -1,8 +1,8 @@
-This Jekyll theme is based on the work of @renyuanz called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog.
+This Jekyll theme is based on the work of [@renyuanz](https://github.com/renyuanz) called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog.
 
 This project is under MIT license, so feel free to make it your own.
 
-## Features
+### Features
 
 * Responsive templates working on mobile, tablet, and desktop
 * Simple and clear permalink structure
@@ -10,17 +10,13 @@ This project is under MIT license, so feel free to make it your own.
 * Support for single or multiple authors
 * First class support for GitHub pages (no added plugins)
 * OpenGraph & Twitter use site defaults for the main page or post details (include header) for pages and posts
-
+* Resume page
+* Google Analytics support
+* Support for 23 Social Media accounts
 
 See a [demo](https://www.mattouille.com) hosted on GitHub.
 
-## Quick setup
-
-* Clone this respository
-* Start Jekyll as normal: `jekyll server`
-
-## Resume Page by @Skn0tt
-Leonids features a simple resume page. It is divided up into five sections:
+### Resume Page Files
 
 * Bio (Edit \_data/index/careers.yml)
 * Education (Edit \_data/index/education.yml)
@@ -28,4 +24,11 @@ Leonids features a simple resume page. It is divided up into five sections:
 * Projects (Edit \_data/index/projects.yml)
 * About (Edit \_includes/sections/about.html)
 
-You can put all your info into these files, and they will be featured on the resume page.
+### Quick setup
+
+* Clone this respository
+* Start Jekyll as normal: `jekyll server`
+
+### Credit
+
+Resume Page by [@Skn0tt](https://github.com/Skn0tt)
