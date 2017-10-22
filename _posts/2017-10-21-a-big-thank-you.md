@@ -39,8 +39,9 @@ I've been starting to do speaking engagements and have been a regular attendee o
 In the end thank you all for taking me here whether you've liked or shared my posts, provided me a feedback loop, or have just been a casual observer.
 
 **Here's to another hundred viewers.**
-
-```
+<details>
+<summary>PGP Signature</summary>
+<pre class="Highlight">
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
@@ -93,4 +94,5 @@ KeNyD41bERsTdd4F/tsy5WGdqoLyg7iGfPJY665H+2zMjFbYmKHWpEG7XHApGu0C
 NQI9LJ01kC3J+rXleKhd
 =iNYr
 -----END PGP SIGNATURE-----
-```
+</pre>
+</details>
