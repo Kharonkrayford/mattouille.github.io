@@ -10,6 +10,12 @@
   {% capture description %}{{ site.description }}{% endcapture %}
 {% endif %}
 
+{% if page.image %}
+  {% capture image %}{{ site.url }}/img/{{ page.image.feature }}{% endcapture %}
+{% else %}
+  {% capture image %}{{ site.url }}/img/mattouille-com-logo.png{% endcapture %}
+{% endif %}
+
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +29,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
-  <meta name="twitter:image" content="{{ site.url }}/img/mattouille-com-logo.png">
+  <meta name="twitter:image" content="{{ image }}">
 
   <!-- Open Graph Tags -->
   <meta property="fb:app_id" content="121846515176363">
@@ -31,7 +37,7 @@
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
-  <meta property="og:image" content="{{ site.url }}/img/mattouille-com-logo.png">
+  <meta property="og:image" content="{{ image }}">
   <title>{{ title }}</title>
 
   <!-- CSS files -->
