@@ -1,4 +1,4 @@
-This Jekyll theme is based on the work of [renyuanz](https://github.com/renyuanz) called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog.
+This Jekyll theme is based on the work of @renyuanz called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog.
 
 This project is under MIT license, so feel free to make it your own.
 
@@ -19,7 +19,7 @@ See a [demo](https://www.mattouille.com) hosted on GitHub.
 * Clone this respository
 * Start Jekyll as normal: `jekyll server`
 
-## Resume Page by [@Skn0tt](https://github.com/Skn0tt)
+## Resume Page by @Skn0tt
 Leonids features a simple resume page. It is divided up into five sections:
 
 * Bio (Edit \_data/index/careers.yml)
