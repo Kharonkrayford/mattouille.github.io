@@ -6,7 +6,7 @@
 title: MattOuille.com
 email: matthew.ouille@gmail.com
 description: Tutorials, OpEds, and Musings by Matt Ouille
-url: https://www.mattouille.com # the base hostname & protocol for your site
+url: https://mattouille.com # the base hostname & protocol for your site
 keywords: ["Python", "Linux", "DevOps", "SRE", "Site Reliability Engineering", "Automation"]
 future: false
 
