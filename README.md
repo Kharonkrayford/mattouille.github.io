@@ -1,6 +1,8 @@
-This Jekyll theme is based on the work of [@renyuanz](https://github.com/renyuanz) called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog.
+[![Build Status](https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=development)](https://travis-ci.org/mattouille/mattouille.github.io)
 
-This project is under MIT license, so feel free to make it your own.
+This Jekyll theme is based on the work of [@renyuanz](https://github.com/renyuanz) called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog and made several improvements.
+
+This project code (not the content) is under MIT license, so feel free to make it your own.
 
 ### Features
 
@@ -9,7 +11,7 @@ This project is under MIT license, so feel free to make it your own.
 * Toggleable Disqus comments
 * Support for single or multiple authors
 * First class support for GitHub pages (no added plugins)
-* OpenGraph & Twitter use site defaults for the main page or post details (include header) for pages and posts
+* OpenGraph & Twitter use site defaults for the main page or post details (include header image) for pages and posts
 * Resume page
 * Google Analytics support
 * Support for 23 Social Media accounts
@@ -24,6 +26,8 @@ See a [demo](https://www.mattouille.com) hosted on GitHub.
 * Projects (Edit \_data/index/projects.yml)
 * About (Edit \_includes/sections/about.html)
 
+(I don't use this but it's rather nifty)
+
 ### Quick setup
 
 * Clone this respository
@@ -31,4 +35,5 @@ See a [demo](https://www.mattouille.com) hosted on GitHub.
 
 ### Credit
 
-Resume Page by [@Skn0tt](https://github.com/Skn0tt)
+* Resume Page by [@Skn0tt](https://github.com/Skn0tt)
+* Design and original implementation by [@renyuanz](https://github.com/renyuanz)
