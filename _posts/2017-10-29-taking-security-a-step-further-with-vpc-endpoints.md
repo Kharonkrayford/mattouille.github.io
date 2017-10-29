@@ -12,6 +12,8 @@ Ever since I wrote [S3 Bucket Security and Best Practices]({% post_url 2017-10-1
 
 Policies and KMS are great but to me assurance comes in threes. That said I don't see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that's served over a public API!
 
+<!--more-->
+
 Consider the following diagram, where the blue line is how traffic normally reaches S3 and red is how traffic flows when using a VPC Endpoint:
 
 ![VPC Endpoint Diagram][VPC Endpoint Diagram]
