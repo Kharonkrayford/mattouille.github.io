@@ -8,7 +8,7 @@ tags:
 category: [DevOps]
 ---
 
-Ever since I wrote [S3 Bucket Security and Best Practices]({% post_url 2017-10-16-s3-bucket-security-and-best-practices %}) I've been playing with how to extend security within a given AWS account.
+Ever since I wrote [S3 Bucket Security and Best Practices]({{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}) I've been playing with how to extend security within a given AWS account.
 
 Policies and KMS are great but to me assurance comes in threes. That said I don't see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that's served over a public API!
 
