@@ -16,17 +16,17 @@ layout: default
   alt="{{ page.title }} feature image">
 
   {% if page.image.credit %}
-  <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  <span itemprop="image" class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
   {% endif %}
 </div><!-- /.image-wrap -->
 {% endif %}
 
 
-<div id="post">
+<div itemscope itemtype="http://schema.org/Article" id="post">
   <header class="post-header">
-    <h1 title="{{ page.title }}">{{ page.title }}</h1>
+    <h1 itemprop="name" title="{{ page.title }}">{{ page.title }}</h1>
     <span class="post-meta">
-      <span class="post-date">
+      <span itemprop="datePublished" content="2017-10-29" class="post-date">
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
       •
@@ -35,7 +35,7 @@ layout: default
 
   </header>
 
-  <article class="post-content">
+  <article itemprop="articleBody" class="post-content">
     {{ content }}
   </article>
 </div>
