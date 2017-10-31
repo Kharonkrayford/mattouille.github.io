@@ -41,7 +41,11 @@ layout: default
  "publisher": {
    "@type": "Organization",
    "name": "{{ site.title }}",
-   "logo": "{{ site.url }}/mstile-150x150.png"
+   "logo": {
+     "url": "{{ site.url }}/mstile-150x150.png",
+     "height": 150,
+     "width": 150
+   }
  },
  "articleBody": "{{ content | escape }}",
  "author": {
