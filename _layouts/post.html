@@ -20,6 +20,8 @@ layout: default
  "image": "{{ page.image.feature }}",
  {% elsif page.image.feature %}
  "image": "{{ site.url }}/img/{{ page.image.feature }}",
+ {% else %}
+ "image": "{{ site.url }}/img/mattouille-com-logo.png",
  {% endif %}
  "editor": "{{ author.name }}",
  {% if categories > 1 %}
@@ -35,9 +37,14 @@ layout: default
  {% if page.modified %}
  "dateModified": "{{ date_modified }}",
  {% endif %}
- "description": "{{ page.excerpt | smartify }}",
- "articleBody": "{{ content | smartify }}",
-   "author": {
+ "description": "{{ page.excerpt | escape }}",
+ "publisher": {
+   "@type": "Organization",
+   "name": "{{ site.title }}",
+   "logo": "{{ site.url }}/mstile-150x150.png"
+ },
+ "articleBody": "{{ content | escape }}",
+ "author": {
     "@type": "Person",
     "name": "{{ author.name }}"
   }
