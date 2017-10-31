@@ -13,12 +13,19 @@
         <a href="{{ site.url }}/">home</a>
         <span>/</span>
       </li>
+      {% assign total_pages = site.pages | size %}
+      {% assign number_of_blank_titles = 0 %}
+      {% for page in site.pages %}{% unless page.title %} {% assign number_of_blank_titles = number_of_blank_titles | plus: 1 %} {% endunless %}{% endfor %}
+      {% assign number_of_pages = total_pages | minus: number_of_blank_titles %}
+      {% assign page_no = 0 %}
+
       {% for page in site.pages %} {% if page.title %}
+      {% assign page_no = page_no | plus: 1 %}
       <li class="nav-item">
         <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
-        {% unless forloop.last %}
+        {% if page_no < number_of_pages %}
           <span>/</span>
-        {% endunless %}
+        {% endif %}
       </li>
       {% endif %} {% endfor %}
     </ul>
