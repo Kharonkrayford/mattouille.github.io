@@ -1,6 +1,48 @@
 ---
 layout: default
 ---
+{% if post.author %}
+  {% assign author = site.data.authors[post.author] %}
+{% else %}
+  {% assign author = site.owner %}
+{% endif %}
+
+{% assign words = content | number_of_words %}
+{% assign date_published = page.date | date: "%Y-%m-%d" %}
+{% assign date_modified = page.modified | date: "%Y-%m-%d" %}
+{% assign categories = page.categories | size %}
+
+<script type="application/ld+json">
+{ "@context": "http://schema.org",
+ "@type": "BlogPosting",
+ "headline": "{{ page.title }}",
+ {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
+ "image": "{{ page.image.feature }}",
+ {% elsif page.image.feature %}
+ "image": "{{ site.url }}/img/{{ page.image.feature }}",
+ {% endif %}
+ "editor": "{{ author.name }}",
+ {% if categories > 1 %}
+ "genre": "{% for cat in page.categories %}{{ cat }}, {% endfor %}",
+ {% else %}
+ "genre": "{% for cat in page.categories %}{{ cat }}{% endfor %}",
+ {% endif %}
+ "keywords": "{% for tag in page.tags %}{{ tag }} {% endfor %}",
+ "wordcount": "{{words}}",
+ "url": "{{ site.url }}{{ page.url }}",
+ "datePublished": "{{ date_published }}",
+ "dateCreated": "{{ date_published }}",
+ {% if page.modified %}
+ "dateModified": "{{ date_modified }}",
+ {% endif %}
+ "description": "{{ page.excerpt }}",
+ "articleBody": "{{ content }}",
+   "author": {
+    "@type": "Person",
+    "name": "{{ author.name }}"
+  }
+ }
+</script>
 
 <a class="btn" href= "{{ site.url }}/" >
   Home
@@ -16,17 +58,17 @@ layout: default
   alt="{{ page.title }} feature image">
 
   {% if page.image.credit %}
-  <span itemprop="image" class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
   {% endif %}
 </div><!-- /.image-wrap -->
 {% endif %}
 
 
-<div itemscope itemtype="http://schema.org/Article" id="post">
+<div id="post">
   <header class="post-header">
-    <span itemprop="headline"><h1 itemprop="name" title="{{ page.title }}">{{ page.title }}</h1></span>
+    <h1 title="{{ page.title }}">{{ page.title }}</h1>
     <span class="post-meta">
-      <span itemprop="datePublished" content="2017-10-29" class="post-date">
+      <span content="2017-10-29" class="post-date">
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
       •
@@ -35,7 +77,7 @@ layout: default
 
   </header>
 
-  <article itemprop="articleBody" class="post-content">
+  <article class="post-content">
     {{ content }}
   </article>
 </div>

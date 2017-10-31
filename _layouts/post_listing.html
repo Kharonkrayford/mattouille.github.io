@@ -3,10 +3,10 @@ layout: default
 ---
 
 {% for post in site.posts %}
-<section itemscope itemtype="http://schema.org/Article" class="post">
+<section class="post">
   <header class="post-header">
     <p class="post-meta">
-      <span itemprop="datePublished" class="post-date">
+      <span class="post-date">
         {{ post.date | date: "%-d %b %Y" | upcase }}
       </span>
       {% if post.categories.size > 0 %}
@@ -20,7 +20,7 @@ layout: default
       {% endif %}
     </p>
     <h4>
-      <span itemprop="headline"><a href="{{ site.url }}{{ post.url }}" itemprop="name" class="post-title" title="{{ post.title }}">{{ post.title }}</a></span>
+      <a href="{{ site.url }}{{ post.url }}" class="post-title" title="{{ post.title }}">{{ post.title }}</a>
       {% if post.link %}
       <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-external-link"></i></a>
       {% endif %}
@@ -35,7 +35,7 @@ layout: default
   </header>
 
   {% if post.excerpt %}
-  <div itemprop="articleSection" class="post-description">
+  <div class="post-description">
     {% if post.excerpt contains "<p>" %}
       {{ post.excerpt }}
     {% else %}
@@ -48,7 +48,7 @@ layout: default
 
   {% if post.image.feature %}
   <div class="post-image-feature">
-    <img itemprop="image" src=
+    <img src=
     {% if post.image.feature contains 'http' %}
     "{{ post.image.feature }}"
     {% else %}
