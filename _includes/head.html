@@ -1,20 +1,20 @@
-{% if page.title %}
-  {% capture title %}{{ page.title }} | {{ site.title }}{% endcapture %}
-{% else %}
-  {% capture title %}{{ site.title }}{% endcapture %}
-{% endif %}
+{%- if page.title -%}
+  {%- capture title -%}{{ page.title }} | {{ site.title }}{%- endcapture -%}
+{%- else -%}
+  {%- capture title -%}{{ site.title }}{%- endcapture -%}
+{%- endif -%}
 
-{% if page.excerpt %}
-  {% capture description %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% endcapture %}
-{% else %}
-  {% capture description %}{{ site.description }}{% endcapture %}
-{% endif %}
+{%- if page.excerpt -%}
+  {%- capture description -%}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{%- endcapture -%}
+{%- else -%}
+  {%- capture description -%}{{ site.description }}{%- endcapture -%}
+{%- endif -%}
 
-{% if page.image %}
-  {% capture image %}{{ site.url }}/img/{{ page.image.feature }}{% endcapture %}
-{% else %}
-  {% capture image %}{{ site.url }}/img/mattouille-com-logo.png{% endcapture %}
-{% endif %}
+{%- if page.image -%}
+  {%- capture image -%}{{ site.url }}/img/{{ page.image.feature }}{%- endcapture -%}
+{%- else -%}
+  {%- capture image -%}{{ site.url }}/img/mattouille-com-logo.png{%- endcapture -%}
+{%- endif -%}
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
   <meta charset="UTF-8">
@@ -53,14 +53,4 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon-16x16.png">
   <link rel="manifest" href="{{ site.url }}/manifest.json">
   <link rel="mask-icon" href="{{ site.url }}/safari-pinned-tab.svg" color="#5bbad5">
-
-  <!-- Google Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    "url": "{{ site.url }}",
-    "logo": "{{ site.url }}/img/mattouille-com-google-logo.png"
-  }
-  </script>
 </head>

@@ -1,42 +1,42 @@
 ---
 layout: default
 ---
-{% if post.author %}
-  {% assign author = site.data.authors[post.author] %}
-{% else %}
-  {% assign author = site.owner %}
-{% endif %}
+{%- if page.author -%}
+  {%- assign author = site.data.authors[page.author] -%}
+{%- else -%}
+  {%- assign author = site.owner -%}
+{%- endif -%}
 
-{% assign words = content | number_of_words %}
-{% assign date_published = page.date | date: "%Y-%m-%d" %}
-{% assign date_modified = page.modified | date: "%Y-%m-%d" %}
-{% assign categories = page.categories | size %}
+{%- assign words = content | number_of_words -%}
+{%- assign date_published = page.date | date: "%Y-%m-%d" -%}
+{%- assign date_modified = page.modified | date: "%Y-%m-%d" -%}
+{%- assign categories = page.categories | size -%}
 
 <script type="application/ld+json">
 { "@context": "http://schema.org",
  "@type": "BlogPosting",
  "headline": "{{ page.title }}",
- {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
+ {%- if page.image.feature contains 'https' or page.image.feature contains 'http' -%}
  "image": "{{ page.image.feature }}",
- {% elsif page.image.feature %}
+ {%- elsif page.image.feature -%}
  "image": "{{ site.url }}/img/{{ page.image.feature }}",
- {% else %}
+ {%- else -%}
  "image": "{{ site.url }}/img/mattouille-com-logo.png",
- {% endif %}
+ {%- endif -%}
  "editor": "{{ author.name }}",
- {% if categories > 1 %}
- "genre": "{% for cat in page.categories %}{{ cat }}, {% endfor %}",
- {% else %}
- "genre": "{% for cat in page.categories %}{{ cat }}{% endfor %}",
- {% endif %}
- "keywords": "{% for tag in page.tags %}{{ tag }} {% endfor %}",
+ {%- if categories > 1 -%}
+ "genre": "{%- for cat in page.categories -%}{{ cat }}, {%- endfor -%}",
+ {%- else -%}
+ "genre": "{%- for cat in page.categories -%}{{ cat }}{%- endfor -%}",
+ {%- endif -%}
+ "keywords": "{%- for tag in page.tags -%}{{ tag }} {%- endfor -%}",
  "wordcount": "{{words}}",
  "url": "{{ site.url }}{{ page.url }}",
  "datePublished": "{{ date_published }}",
  "dateCreated": "{{ date_published }}",
- {% if page.modified %}
+ {%- if page.modified -%}
  "dateModified": "{{ date_modified }}",
- {% endif %}
+ {%- endif -%}
  "description": "{{ page.excerpt | escape }}",
  "publisher": {
    "@type": "Organization",
@@ -59,21 +59,21 @@ layout: default
 <a class="btn" href= "{{ site.url }}/" >
   Home
 </a>
-{% if page.image.feature %}
+{%- if page.image.feature -%}
 <div class="post-image-feature">
   <img class="feature-image" src=
-  {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
+  {%- if page.image.feature contains 'https' or page.image.feature contains 'http' -%}
   "{{ page.image.feature }}"
-  {% else %}
+  {%- else -%}
   "{{ site.url }}/img/{{ page.image.feature }}"
-  {% endif %}
+  {%- endif -%}
   alt="{{ page.title }} feature image">
 
-  {% if page.image.credit %}
+  {%- if page.image.credit -%}
   <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
+  {%- endif -%}
 </div><!-- /.image-wrap -->
-{% endif %}
+{%- endif -%}
 
 
 <div id="post">
@@ -84,7 +84,7 @@ layout: default
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
       •
-      {% include read_time.html %}
+      {%- include read_time.html -%}
     </span>
 
   </header>
@@ -115,7 +115,7 @@ layout: default
   </ul>
 </div><!-- end share-buttons -->
 
-{% if site.owner.disqus-shortname and page.comments == true %}
+{%- if site.owner.disqus-shortname and page.comments == true -%}
 <div id="disqus_thread"></div>
-{% include disqus.html %}
-{% endif %}
+{%- include disqus.html -%}
+{%- endif -%}
