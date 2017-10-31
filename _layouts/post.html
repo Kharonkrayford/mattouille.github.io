@@ -35,8 +35,8 @@ layout: default
  {% if page.modified %}
  "dateModified": "{{ date_modified }}",
  {% endif %}
- "description": "{{ page.excerpt }}",
- "articleBody": "{{ content | cgi_escape }}",
+ "description": "{{ page.excerpt | smartify }}",
+ "articleBody": "{{ content | smartify }}",
    "author": {
     "@type": "Person",
     "name": "{{ author.name }}"
