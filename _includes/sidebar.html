@@ -1,9 +1,9 @@
-{% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
+{%- if page.author -%} {%- assign author = site.data.authors[page.author] -%}{%- else -%}{%- assign author = site.owner -%} {%- endif -%}
 
 <div class="cover-card table-cell table-middle">
-  {% if author.avatar %}
+  {%- if author.avatar -%}
   <img src="{{ site.url }}/img/{{ author.avatar }}" alt="Yeah, that's me" class="avatar">
-  {% endif %}
+  {%- endif -%}
   <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
   <span class="author_job">{{ author.job }}</span>
   <span class="author_bio mbm">{{ author.bio }}</span>
@@ -13,22 +13,22 @@
         <a href="{{ site.url }}/">home</a>
         <span>/</span>
       </li>
-      {% assign total_pages = site.pages | size %}
-      {% assign number_of_blank_titles = 0 %}
-      {% for page in site.pages %}{% unless page.title %} {% assign number_of_blank_titles = number_of_blank_titles | plus: 1 %} {% endunless %}{% endfor %}
-      {% assign number_of_pages = total_pages | minus: number_of_blank_titles %}
-      {% assign page_no = 0 %}
+      {%- assign total_pages = site.pages | size -%}
+      {%- assign number_of_blank_titles = 0 -%}
+      {%- for page in site.pages -%}{%- unless page.title -%} {%- assign number_of_blank_titles = number_of_blank_titles | plus: 1 -%} {%- endunless -%}{%- endfor -%}
+      {%- assign number_of_pages = total_pages | minus: number_of_blank_titles -%}
+      {%- assign page_no = 0 -%}
 
-      {% for page in site.pages %} {% if page.title %}
-      {% assign page_no = page_no | plus: 1 %}
+      {%- for page in site.pages -%} {%- if page.title -%}
+      {%- assign page_no = page_no | plus: 1 -%}
       <li class="nav-item">
         <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
-        {% if page_no < number_of_pages %}
+        {%- if page_no < number_of_pages -%}
           <span>/</span>
-        {% endif %}
+        {%- endif -%}
       </li>
-      {% endif %} {% endfor %}
+      {%- endif -%} {%- endfor -%}
     </ul>
   </nav>
-  {% include social-links.html %}
+  {%- include social-links.html -%}
 </div>
