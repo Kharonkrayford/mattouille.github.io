@@ -9,7 +9,7 @@ nav: true
 # About Me
 I'm a writer, software engineer, and systems engineer who has primarily worked
 at software first up-start companies. I've been writing code casually since I
-was about nine or ten and my first Linux server went up around then too. </p>
+was about nine or ten and my first Linux server went up around then too.
 
 > This is the part of myself I generally don't get to talk about
 in interviews, which is usually when people ask about my story, so forgive me if
@@ -51,7 +51,7 @@ Since then I've worked in DevOps as an infrastructure automator and software
 engineer as well as a Site Reliability Engineer.
 
 > It's come to my attention a lot
-of folks don't know that a Site Reliability Engineer <strong>is</strong> a
+of folks don't know that a Site Reliability Engineer **is** a
 software engineer, just one that focuses on applying SWE to what used to be
 operational tasks and concerns.
 
