@@ -3,6 +3,7 @@ layout: about
 title:  About Me
 permalink: /about-me/
 comments: false
+nav: true
 ---
 
 # About Me
