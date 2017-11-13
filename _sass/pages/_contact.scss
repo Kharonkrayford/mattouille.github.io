@@ -1,0 +1,35 @@
+.contact {
+  form {
+     max-width: 600px;
+
+    input, textarea {
+       border:0; outline:0;
+       padding: 1em;
+       border-radius: 8px;
+       display: block;
+       width: 100%;
+       margin-top: 1em;
+       @include box-shadow(0 1px 1px rgba(black, 0.1));
+       resize: none;
+
+      &:focus {
+         @include box-shadow(0 0px 2px rgba($red, 1)!important);
+      }
+    }
+
+    #input-submit {
+       color: white;
+       background: $red;
+       cursor: pointer;
+       border-radius: 8px;
+
+      &:hover {
+         @include box-shadow(0 1px 1px 1px rgba(#aaa, 0.6));
+      }
+    }
+
+    textarea {
+        height: 250px;
+    }
+  }
+}
