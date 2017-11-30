@@ -15,6 +15,12 @@
       display: table;
       clear: both;
     }
+    .cat-link {
+      color: $secondary;
+    }
+    .tag-link {
+      color: $title;
+    }
   }
 
   .archive-title {
@@ -36,6 +42,7 @@
       }
     }
   }
+
 
 
   ul {
