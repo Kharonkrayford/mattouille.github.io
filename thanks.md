@@ -3,6 +3,7 @@ layout: page
 permalink: /thanks
 title: Thanks!
 comments: false
+nav: false
 ---
 
 Thanks for contacting me! I don't always send follow up emails but I do read them all.
