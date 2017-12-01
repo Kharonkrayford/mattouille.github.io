@@ -85,7 +85,7 @@ layout: default
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
       {%- if page.categories.size > 0 -%}
-      • <i class="fa fa-fw fa-folder"></i>&nbsp;&nbsp;
+      • <i class="fa fa-fw fa-folder"></i>&nbsp;
       {%- for cat in page.categories -%}
         <a class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
         {%- unless forloop.last -%}
