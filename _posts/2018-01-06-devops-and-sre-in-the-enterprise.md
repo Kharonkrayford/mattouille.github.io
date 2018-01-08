@@ -80,3 +80,5 @@ If you're considering a cultural change to your organization consider the follow
 * Again, _educate, educate, educate_. Send your engineers to training and conferences.
 
 That's all I've got for today. If you have any questions feel free to use my contact form and I'll definitely post follow on articles!
+
+Note: It should be noted that while I didn't provide specific examples, this structure is largely based on Lehman's Laws of Software Evolution. If you haven't taken a look at them, be sure to!
