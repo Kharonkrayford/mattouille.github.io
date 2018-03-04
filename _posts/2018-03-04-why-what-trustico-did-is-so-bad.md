@@ -4,6 +4,7 @@ layout: post
 tags:
 - Security
 category: [Security]
+comments: true
 ---
 
 If you haven't heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That's really the gist of what they did, what these articles don't really cover is the underlying reasons why this is directly bad and why what it means is even worse.
