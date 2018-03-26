@@ -20,46 +20,7 @@ You'll notice that playlists are now populated but not the music library :(
 
 ## Code
 
-{% highlight python linenos %}
-from gmusicapi.clients import Mobileclient
-
-# init
-gmusic = Mobileclient()
-
-track_ids_to_import = []
-
-def extract_track(playlists):
-    """Extract the store ID so we can add it to the library"""
-    for playlist in playlists:
-        for track in playlist['tracks']:
-            track_id = track['trackId']
-            store_id = track['track']['storeId']
-            # some sanity checking because I don't know the API
-            if track_id != store_id:
-                print (f'Track Id ({track_id}) does not match Store Id ({store_id})')
-            if track_id not in track_ids_to_import:
-                print(f'Importing {track_id} (StoreId: {store_id})')
-                track_ids_to_import.append(track_id)
-
-
-# login
-gmusic.login('<email>', '<app_password>', gmusic.FROM_MAC_ADDRESS, 'en_US')
-# let me know we're authenticated
-print(f'Authenticated: {gmusic.is_authenticated()}')
-# extract the tracks
-extract_track(gmusic.get_all_user_playlist_contents())
-# produce an import report
-print(f'Imported {len(track_ids_to_import)} tracks')
-# add songs to the library
-library_tracks_imported = gmusic.add_store_tracks(track_ids_to_import)
-
-if len(library_tracks_imported) == len(track_ids_to_import):
-    print('Successfully imported all tracks.')
-else:
-    print('Failures occurred while importing...')
-    print(f'Number of tracks: {len(track_ids_to_import)}')
-    print(f'Number of tracks imported: {len(library_tracks_imported)}')
-{% endhighlight %}
+<script src="https://gist.github.com/mattouille/cb9325507476695b225cd55e202772bb.js"></script>
 
 First, update the email and app password you generated for line 23. There is no storage of your credentials here, it uses the [*gmusicapi*](https://pypi.python.org/pypi/gmusicapi) library which you can find on PyPi. You're now safe to run the script. If you have PyCharm you can actually browse the playlists and be a bit more choosey about what gets imported.
 
