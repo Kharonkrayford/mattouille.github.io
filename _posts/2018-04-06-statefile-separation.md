@@ -138,4 +138,4 @@ While this doesn't really count as state file *separation* per se it is separati
 
 #### Conclusion
 
-Hopefully you're learned a bit on state files, separation through directories, workspaces, and why they're important to be used together. As always if you have questions or want to tell me I suck, I'm freely available on Twitter at @codencombovers or on LinkedIn!
+Hopefully you've learned a bit on state files, separation through directories, workspaces, and why they're important to be used together. As always if you have questions or want to tell me I suck, I'm freely available on Twitter at @codencombovers or on LinkedIn!
