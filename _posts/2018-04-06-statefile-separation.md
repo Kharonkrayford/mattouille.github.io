@@ -124,7 +124,7 @@ data "aws_vpc" "shared_vpc" {
 }
 ```
 
-Now my `data.aws_vpc.shared_vpc` gives me all the arguments from [here(https://www.terraform.io/docs/providers/aws/d/vpc.html).
+Now my `data.aws_vpc.shared_vpc` gives me all the arguments from [here](https://www.terraform.io/docs/providers/aws/d/vpc.html).
 
 While it does slightly increase complexity it relieves some major pain in the long run.
 
