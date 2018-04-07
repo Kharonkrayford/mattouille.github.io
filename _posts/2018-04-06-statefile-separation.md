@@ -1,8 +1,9 @@
 ---
 title: "Splitting up Terraform & state file separation"
 layout: post
-tags:
-category: []
+tags: [Infrastructure, DevOps, Terraform]
+category: [Infrastructure, DevOps]
+comments: true
 ---
 
 Terraform is fundamentally operated off of these things called "state files". State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They're formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.
