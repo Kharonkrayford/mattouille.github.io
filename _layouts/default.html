@@ -1,42 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  {% include head.html %}
+  <body>
 
-{%- include head.html -%}
+    {% include header.html %}
 
-<body>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '121846515176363',
-        xfbml      : true,
-        version    : 'v2.10'
-      });
+    {{ content }}
 
-      FB.AppEvents.logPageView();
+    {% include footer.html %}
 
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <div class="row">
-    <div class="col s12 m3">
-      <div class="table cover">
-        {%- include sidebar.html -%}
-      </div>
-    </div>
-    <div class="col s12 m9">
-      <div class="post-listing">
-        {{ content }}
-        {%- include footer.html -%}
-      </div>
-    </div>
-  </div>
-  {%- include js.html -%}
-</body>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+  </body>
 </html>

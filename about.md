@@ -1,13 +1,11 @@
 ---
-layout: about
+layout: page
 title:  About Me
-permalink: /about-me/
 comments: false
 nav: true
 ---
 
-# About Me
-I'm a writer, software engineer, and systems engineer who has primarily worked
+<img class="rounded float-left" style="margin-right: 10px; margin-top: 5px;" width="250px" src="https://avatars2.githubusercontent.com/u/8207468?s=460&v=4"> I'm a writer, software engineer, and systems engineer who has primarily worked
 at software first up-start companies. I've been writing code casually since I
 was about nine or ten and my first Linux server went up around then too.
 

@@ -4,16 +4,22 @@ title:  Categories
 permalink: /categories/
 nav: false
 ---
-<div class="tag-list">
+<div class="card-columns">
 {% for cat in site.categories %}
-  <div class="tag-group">
     {% capture cat_name %}{{ cat | first }}{% endcapture %}
-    <h5 class="tag-group-title" id="{{ cat_name | slugize }}">{{ cat_name }}</h5>
-    {% for post in site.categories[cat_name] %}
-    <article class="tag-item">
-      <a class="tag-item-title" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
-    </article>
-    {% endfor %}
-  </div>
+    <div class="card my-4" id="{{ cat_name }}">
+        <div class="card-header">
+                {{ cat_name }}
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+        {% for post in site.categories[cat_name] %}
+            <li class="list-group-item">
+                <article class="tag-item">
+                    <a class="tag-item-title" href="{{ site.url }}{{ post.url }}">{{post.title}}</a>
+                </article>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
 {% endfor %}
 </div>

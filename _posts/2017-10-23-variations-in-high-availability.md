@@ -10,6 +10,7 @@ excerpt: "High availability is a term thrown around quite a bit these days. Many
 image:
   feature: posts/2017-10-23-variations-in-high-availability/high-availability-poll.png
   credit: PerconaDB
+  alt: High Availability
   creditlink: https://www.percona.com/blog/2016/05/23/take-perconas-one-click-high-availability-poll/
 ---
 

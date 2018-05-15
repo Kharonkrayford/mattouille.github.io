@@ -1,7 +1,6 @@
 ---
 layout: page
 title:  Archive
-permalink: /archive/
 nav: true
 ---
 
@@ -31,15 +30,15 @@ nav: true
         <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
         {% capture difference %} {{ post.category | size | minus: 1 }}{% endcapture %}
         {% unless difference contains '-' %}
-        [{% for category in post.category %}
+        <!-- [{% for category in post.category %}
           <a class="cat-link" href="{{ site.url }}/categories/#{{ category }}">{{ category }}</a>{% unless category == post.category.last %}, {% endunless %}
-        {% endfor %}]
+        {% endfor %}] -->
         {% endunless %}
         {% capture difference %} {{ post.tags | size | minus: 1 }}{% endcapture %}
         {% unless difference contains '-' %}
-        ({% for tag in post.tags %}
-          <a class="tag-link" href="{{ site.url }}/tags/#{{ tag }}">{{ tag }}</a>{% unless tag == post.tags.last %}, {% endunless %}
-        {% endfor %})
+        {% for tag in post.tags %}
+        <span class="badge badge-dark"><a class="small text-light" href="{{ site.url }}/tags/#{{ tag }}">{{ tag }}</a></span>
+        {% endfor %}
         {% endunless %}
 
     </li>

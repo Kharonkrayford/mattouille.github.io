@@ -1,40 +1,30 @@
-{%- if page.author -%} {%- assign author = site.data.authors[page.author] -%}{%- else -%}{%- assign author = site.owner -%} {%- endif -%}
 
-<div class="cover-card table-cell table-middle">
-  {%- if author.avatar -%}
-  <img src="{{ site.url }}/img/{{ author.avatar }}" alt="Yeah, that's me" class="avatar">
-  {%- endif -%}
-  <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
-  <span class="author_job">{{ author.job }}</span>
-  <span class="author_bio mbm">{{ author.bio }}</span>
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="{{ site.url }}/">home</a>
-        <span>/&nbsp;</span>
-      </li>
-      {%- assign number_of_pages = site.pages | size -%}
-      {%- assign excluded_pages = 0 -%}
-      {%- for page in site.pages -%}
-      {%- unless page.title and page.nav -%}
-        {%- assign excluded_pages = excluded_pages | plus: 1 -%}
-      {%- endunless -%}
-      {%- endfor -%}
-      {%- assign page_counter = 0 -%}
-      {%- assign total_pages = number_of_pages | minus: excluded_pages -%}
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4">
 
-      {%- for page in site.pages -%}
-      {%- if page.title and page.nav -%}
-      {%- assign page_counter = page_counter | plus: 1 -%}
-      <li class="nav-item">
-        <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
-          {%- unless page_counter == total_pages -%}
-          <span>&nbsp;/&nbsp;</span>
-          {%- endunless -%}
-      </li>
-      {%- endif -%}
-      {%- endfor -%}
-    </ul>
-  </nav>
-  {%- include social-links.html -%}
+    <!-- Categories Widget -->
+    <div class="card my-4">
+        <h5 class="card-header">Categories</h5>
+        <div class="card-body">
+        <div class="row">
+            <div class="col-lg-12">
+            <ul class="list-unstyled mb-0">
+                {%- assign categories_list = site.categories -%}
+                {%- if categories_list.first[0] == null -%}
+                {%- for category in categories_list -%}
+                    <li><a href="/categories/#{{ category.name }}">{{ category | capitalize }} ({{ site.tags[category].size }})</a></li>
+                    {%- assign cat_count = cat_count | plus: 1 -%}
+                {%- endfor -%}
+                {%- else -%}
+                {%- for category in categories_list -%}
+                    <li><a href="/categories/#{{ category[0] | slugize }}">{{ category[0] | capitalize }} ({{ category[1].size }})</a></li>
+                    {%- assign cat_count = cat_count | plus: 1 -%}
+                {%- endfor -%}
+                {%- endif -%}
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+
 </div>
