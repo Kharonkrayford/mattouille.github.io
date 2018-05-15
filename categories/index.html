@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: full_page
 title:  Categories
 permalink: /categories/
 nav: false
@@ -11,7 +11,7 @@ nav: false
         <div class="card-header">
                 {{ cat_name }}
         </div>
-        <ul class="list-group list-group-flush"></ul>
+        <ul class="list-group list-group-flush">
         {% for post in site.categories[cat_name] %}
             <li class="list-group-item">
                 <article class="tag-item">
