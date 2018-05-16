@@ -84,6 +84,12 @@ layout: default
 
         {{ content }}
 
+        <i class="fa fa-folder-open"></i> {{ page.categories }} 
+        <i class="fa fa-tags"></i> 
+        {%- for tag in page.tags -%}
+        &nbsp;<span class="badge badge-primary">{{ tag }}</span> 
+        {%- endfor -%}
+
         <hr>
 
         <h4>Share This Post</h4>
