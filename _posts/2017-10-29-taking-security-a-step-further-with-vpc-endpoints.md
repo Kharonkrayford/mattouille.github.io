@@ -5,7 +5,8 @@ tags:
 - S3
 - AWS
 - Security
-category: [DevOps]
+category: [Tutorials]
+comments: true
 ---
 
 Ever since I wrote [S3 Bucket Security and Best Practices]({{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}) I've been playing with how to extend security within a given AWS account.

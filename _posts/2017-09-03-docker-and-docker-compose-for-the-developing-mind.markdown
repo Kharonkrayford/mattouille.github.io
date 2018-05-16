@@ -4,7 +4,8 @@ layout: post
 tag:
 - Docker
 - Docker-Compose
-category: [Docker, Systems]
+category: [Tutorials]
+comments: true
 excerpt: Introducing docker and docker-compose to developers for developing powerful local development environments and easy to deploy production environments.
 ---
 

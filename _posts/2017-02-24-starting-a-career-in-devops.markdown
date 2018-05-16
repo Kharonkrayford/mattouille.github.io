@@ -3,7 +3,8 @@ title: "Starting a Career in DevOps"
 layout: post
 tags:
 - DevOps
-category: [DevOps, OpEd]
+category: [Opinions]
+comments: true
 excerpt: "A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing."
 ---
 

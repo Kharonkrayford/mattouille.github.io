@@ -6,7 +6,8 @@ tags:
 - Enterprise
 - Site Reliability Engineering
 - Scrum
-category: [DevOps, OpEd, Site Reliability Engineering]
+category: [Opinions]
+comments: true
 excerpt: "At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place. The question remains what does a properly scaled Enterprise grade version of DevOps looks like?"
 ---
 

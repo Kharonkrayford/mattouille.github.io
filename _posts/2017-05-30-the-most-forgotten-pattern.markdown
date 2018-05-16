@@ -4,7 +4,8 @@ layout: post
 tag:
 - Iterative Development
 star: true
-category: [OpEd]
+category: [Opinions]
+comments: true
 ---
 
 Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly. Every time we sit down to solve problems with software we apply design patterns to overcome situations that would be contentious if we hadn’t already solved them years ago. There’s no point in reinventing the wheel, right? So why are we sitting here planning development of software for months on end still?

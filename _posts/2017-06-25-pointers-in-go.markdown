@@ -5,7 +5,8 @@ tag:
 - Go-lang
 - Pointers
 - Programming
-category: [Programming]
+category: [Tutorials]
+comments: true
 excerpt: "I've been learning Go recently and I've been having some issues solidifying my understanding of pointers, so I thought I'd write a quick blog post explaining what I've learned and how to easily understand it. Click the title to read on!"
 ---
 

@@ -6,7 +6,8 @@ tags:
 - AWS
 - CloudFront
 star: true
-category: [Infrastructure]
+category: [Tutorials]
+comments: true
 excerpt: "At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that."
 ---
 

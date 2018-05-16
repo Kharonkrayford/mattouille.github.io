@@ -5,7 +5,8 @@ tag:
 - AWS
 - S3
 - Post Mortem
-category: [Opinion]
+category: [Opinions]
+comments: true
 ---
 
 > At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.

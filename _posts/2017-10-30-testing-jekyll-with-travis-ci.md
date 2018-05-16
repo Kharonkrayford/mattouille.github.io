@@ -5,7 +5,8 @@ tags:
 - CI/CD
 - DevOps
 - Travis CI
-category: [DevOps]
+category: [Workshops]
+comments: true
 excerpt: "I've finally settled with the fact that Jekyll is going to be my mainstay for a while. It's got a lot of features I like some of which are subsequent to being a static site generator, others being thoughtful implementations."
 ---
 

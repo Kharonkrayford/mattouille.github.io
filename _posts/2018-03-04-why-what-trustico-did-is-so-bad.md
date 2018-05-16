@@ -3,7 +3,7 @@ title: "Why what Trustico did is so bad"
 layout: post
 tags:
 - Security
-category: [Security]
+category: [Opinions]
 comments: true
 ---
 

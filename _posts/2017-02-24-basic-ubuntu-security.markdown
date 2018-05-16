@@ -3,8 +3,10 @@ title: "Basic Ubuntu Security"
 layout: post
 tags:
 - Ubuntu
+- Linux
 - Security
-category: [Linux, Security]
+category: [Tutorials]
+comments: true
 ---
 
 Especially in 2017 everyone should be concerned about security. You don't need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you'll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. <!--more-->Let's begin!

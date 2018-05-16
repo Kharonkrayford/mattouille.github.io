@@ -3,7 +3,9 @@ title: "Test Driven Infrastructure Basics"
 layout: post
 tag:
 - Inspec
-category: [Infrastructure, Programming]
+- Chef
+category: [Tutorials]
+comments: true
 ---
 
 Today I'm going to go over the basics of Test Driven Infrastructure, what it means, how to do it, when it applies, and why. In this tutorial I'm going to use Chef, but you can use whatever you want.

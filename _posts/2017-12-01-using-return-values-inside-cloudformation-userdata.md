@@ -4,7 +4,8 @@ layout: post
 tags:
 - AWS
 - CloudFormation
-category: [DevOps, AWS]
+category: [Tutorials]
+comments: true
 excerpt: "I've been working on a project that uses CloudFormation exclusively, so I don't get to do variable interpolation that's as simple as Terraform makes it. Thus, I've had to do some improvising when generating files based off my infrastructure orchestration."
 ---
 

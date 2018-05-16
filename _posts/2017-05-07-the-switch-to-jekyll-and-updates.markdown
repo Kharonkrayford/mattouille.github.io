@@ -5,6 +5,7 @@ tag:
 - Updates
 - Jekyll
 category: [Blog]
+comments: true
 ---
 
 2017 has been really good to me and I've had the opportunity to grow a lot both

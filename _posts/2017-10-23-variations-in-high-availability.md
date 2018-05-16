@@ -5,7 +5,8 @@ tags:
 - Programming
 - Infrastructure
 - Site Reliability Engineering
-category: [Programming, Infrastructure, Site Reliability Engineering]
+category: [Workshops]
+comments: true
 excerpt: "High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I'll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that."
 image:
   feature: posts/2017-10-23-variations-in-high-availability/high-availability-poll.png

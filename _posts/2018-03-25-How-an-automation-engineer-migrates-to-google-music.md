@@ -4,7 +4,8 @@ layout: post
 tags:
 - Automation
 - Python 3
-category: [Automation, Python]
+category: [Blog]
+comments: true
 excerpt: "I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn't inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.
 
 Migrating from Spotify to Google Play Music is already kind of a difficult task. I've had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I've built over the years over to Google Music. I found a service called [Soundiiz](soundiiz.com) that performs some needed functions. First, it matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands."

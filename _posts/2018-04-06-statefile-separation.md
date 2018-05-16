@@ -2,7 +2,7 @@
 title: "Splitting up Terraform & state file separation"
 layout: post
 tags: [Infrastructure, DevOps, Terraform]
-category: [Infrastructure, DevOps]
+category: [Workshops]
 comments: true
 ---
 

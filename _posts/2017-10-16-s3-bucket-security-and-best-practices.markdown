@@ -5,7 +5,8 @@ tag:
 - Security
 - AWS
 - S3
-category: [Cloud, Infrastructure]
+category: [Tutorials]
+comments: true
 excerpt: "In this write up I explore some of the intricacies of Amazon S3's permission matrix. I go over best practices, ACL's, Policies, KMS, and Server Side Encryption. Read on for more!"
 ---
 
