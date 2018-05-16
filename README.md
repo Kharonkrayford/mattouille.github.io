@@ -1,32 +1,21 @@
 [![Build Status](https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=development)](https://travis-ci.org/mattouille/mattouille.github.io)
 
-This Jekyll theme is based on the work of [@renyuanz](https://github.com/renyuanz) called [Leonids](https://github.com/renyuanz/leonids). Unfortunately development of it has fallen to the wayside and it appears PR's are no longer accepted. I have continued that development on my blog and made several improvements.
-
-This project code (not the content) is under MIT license, so feel free to make it your own.
+BlackrockDigital made the theme, it has been adjusted in this project to use a stable release of Bootstrap 4 (non-alpha). This project used to support multiple authors, however, it has since been changed to only support one. It would be fairly easy to retrofit the project for multiple authors though.
 
 ### Features
 
 * Responsive templates working on mobile, tablet, and desktop
+* Bootstrap 4 Stable
 * Simple and clear permalink structure
 * Toggleable Disqus comments
-* Support for single or multiple authors
 * First class support for GitHub pages (no added plugins)
 * OpenGraph & Twitter use site defaults for the main page or post details (include header image) for pages and posts
-* Resume page
 * Google Analytics support
 * Support for 23 Social Media accounts
+* Atom feed generation
+* Themeable syntax highlighting via SCSS
 
 See a [demo](https://www.mattouille.com) hosted on GitHub.
-
-### Resume Page Files
-
-* Bio (Edit \_data/index/careers.yml)
-* Education (Edit \_data/index/education.yml)
-* Skills (Edit \_data/index/skills.yml)
-* Projects (Edit \_data/index/projects.yml)
-* About (Edit \_includes/sections/about.html)
-
-(I don't use this but it's rather nifty)
 
 ### Quick setup
 
@@ -35,5 +24,5 @@ See a [demo](https://www.mattouille.com) hosted on GitHub.
 
 ### Credit
 
-* Resume Page by [@Skn0tt](https://github.com/Skn0tt)
-* Design and original implementation by [@renyuanz](https://github.com/renyuanz)
+* https://github.com/BlackrockDigital/startbootstrap-blog-home (Modified)
+* https://github.com/BlackrockDigital/startbootstrap-blog-post (Modified)
