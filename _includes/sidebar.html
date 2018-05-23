@@ -54,4 +54,12 @@
             
     </div>
 
+    {%- if site.owner.twitter -%}
+    <a class="twitter-timeline"
+    href="https://twitter.com/{{ site.owner.twitter }}"
+    data-tweet-limit="5">
+    Tweets by @{{ site.owner.twitter }}
+    </a>
+    {%- endif -%}
+
 </div>
