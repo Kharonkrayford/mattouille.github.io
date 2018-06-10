@@ -5,12 +5,18 @@ comments: false
 nav: true
 ---
 
-<img class="rounded float-left" style="margin-right: 10px; margin-top: 5px;" width="250px" src="https://avatars2.githubusercontent.com/u/8207468?s=460&v=4"> I'm a software developer with a strong systems engineering background. My career is mainly about making distributed systems and people work together and constantly enhancing developer workflow. My favorite language is Python 3, however, Go is quickly climbing the ranks. You can catch me around Dallas/Fort Worth at meet ups, conferences, and the like.
+<img class="rounded float-left" style="margin-right: 10px; margin-top: 5px;" width="250px" src="https://avatars2.githubusercontent.com/u/8207468?s=460&v=4" /> I'm a software developer with a strong background in systems engineering. Much of my late career has been around working in reliability, automation, and operations. I currently work at a start-up called [Capstone Metering](http://capstonemetering.com) where I lead our Software Engineering department.
 
-I remain rather unopinionated on my selection of tools, ie: Jenkins vs Concourse, Kubernetes vs Nomad/Docker Swarm/Mesos. I'm a strong believer that tools do not make the application, rather application of the tools make the application and there's always a right tool for the job - if there isn't; make it!
+In my work life I subscribe to many [extreme programming](https://en.wikipedia.org/wiki/Extreme_programming) philosophies and aim to empower teams of both software and systems engineers. I like to use code to make my life either more simple or enjoyable, sometimes nailing both at the same time. I pride myself in being very unselective about tools and rather more of the opinion that there's the right tool or language for the task at hand.
 
-In my off time I'm either coding, building workshops, playing with Linux, working on home automation, or DIY projects to make my home better. I have a dog named Peach who loves the outdoors, you can catch her trying to assault you with love (She's big and doesn't know her own strength.)
+Outside of my professional life I do enjoy coding in my off-time, however, usually this revolves around some sort of home automation. I enjoy traveling to conferences, sharing my perspective, and listening to others.
 
-I'm currently employed as the Director of Software Engineering at [Capstone Metering](http://capstonemetering.com). We build smart IOT devices to help solve problems in the municipal space. This blog contains a lot of our forays into distributed systems, microservices, and lately growing engineering culture. If you'd like me to give a talk, be part of a panel, or run a workshop on anything Site Reliability Engineering, developer workflows, and/or distributed systems then I'm always interested.
+<img class="rounded float-right" style="margin-right: 10px; margin-top: 5px;" width="250px" src="https://pbs.twimg.com/media/DfSoQPHU8AAgZc3.jpg" /> I'm lucky enough to have a little companion to travel along with me on my adventures. Her name is Peach. I like seeing new places, in or out of the country, and experiencing different ways of life.
 
-I always appreciate feedback on my posts or comments. You can catch me on Slack, IRC, or any of the social media platforms to the right. As always, thanks for reading!
+If you're interested in having me speak or put on a workshop at your conference or meet up then I'd most likely be happy to. Below are some of the topics I'm currently interested in:
+
+* Kubernetes
+* Enhancing feedback loops
+* IOT Management and analytics with distributed systems
+* Monitoring and logging aggregation
+* Managing operations teams
