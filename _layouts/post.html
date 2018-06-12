@@ -22,9 +22,9 @@ layout: default
  {%- if page.image.feature contains 'https' or page.image.feature contains 'http' -%}
  "image": "{{ page.image.feature }}",
  {%- elsif page.image.feature -%}
- "image": "{{ site.url }}/img/{{ page.image.feature }}",
+ "image": "{{ site.url }}/assets/{{ page.image.feature }}",
  {%- else -%}
- "image": "{{ site.url }}/img/mattouille-com-logo.png",
+ "image": "{{ site.url }}/assets/mattouille-com-logo.png",
  {%- endif -%}
  "editor": "{{ author.name }}",
  {%- if categories > 1 -%}
@@ -46,7 +46,7 @@ layout: default
    "name": "{{ site.title }}",
    "logo": {
      "@type": "ImageObject",
-     "url": "{{ site.url }}/img/mattouille-com-google-logo.png",
+     "url": "{{ site.url }}/assets/mattouille-com-google-logo.png",
      "width": 90,
      "height": 60
    }
