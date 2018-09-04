@@ -6,17 +6,17 @@
     <description>Recent content in Automation on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How an automation engineer migrates to Google Music</title>
-      <link>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</link>
-      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</guid>
+      <guid>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</guid>
       <description>&lt;p&gt;I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn&amp;rsquo;t inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.&lt;/p&gt;
 
 &lt;p&gt;Migrating from Spotify to Google Play Music is already kind of a difficult task. I&amp;rsquo;ve had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I&amp;rsquo;ve built over the years over to Google Music. I found a service called &lt;a href=&#34;https://soundiiz.com&#34;&gt;Soundiiz&lt;/a&gt; that performs a very nifty function at a price of $4.95. It matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands.&lt;/p&gt;

@@ -9,7 +9,7 @@
 <meta property="og:description" content="Tutorials, opinions, and musings by Matt Ouille" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://mattouille.com/categories/" />
-<meta property="og:updated_time" content="2017-10-21T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-09-04T01:10:28-05:00"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
 
@@ -29,7 +29,7 @@
     "@type": "Person",
     "name": "Matt Ouille"
   },
-  "dateModified": "2017-10-21T00:00:00&#43;00:00",
+  "dateModified": "2018-09-04T01:10:28-05:00",
   "keywords": "blog,opinions,tutorials,workshops,automation,aws,ci/cd,cloudformation,cloudfront,devops,distributed-systems,enterprise,infrastructure,kubernetes,linux,programming,python-3,s3,security,sendgrid,site-reliability-engineering,terraform,travis-ci,ubuntu,",
   "description": "Tutorials, opinions, and musings by Matt Ouille"
 }
@@ -41,7 +41,7 @@
     <title>mattouille.com</title>
 
     <!-- combined, minified CSS -->
-    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-DLadPcP/zcFxlmJ1Epgt1NvfBgcKLvlyyLIrRodnrqsQE0Hfxm6PUlTbpdcDwkqq" crossorigin="anonymous">
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kjLeO084pvUaXUZYzhPt4C3kpTWBw9VxUzN0mYQASTo/uD5GI4Fgd3GTl4Z9t53a" crossorigin="anonymous">
 
     
     <!-- RSS 2.0 feed -->
@@ -115,23 +115,16 @@ window.addEventListener("load", function(){
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                About </a>
+              <a class="nav-link" href="/about/">About </a>
             </li>
-          
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/tutorials/">
-                Tutorials </a>
+              <a class="nav-link" href="/categories/tutorials/">Tutorials </a>
             </li>
-          
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/opinions/">
-                Opinions </a>
-            </li>
-          
-        </ul>
+              <a class="nav-link" href="/categories/opinions/">Opinions </a>
+            </li></ul>
       </div>
     </div>
     </nav>
@@ -152,21 +145,54 @@ window.addEventListener("load", function(){
 
 <article class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-10/a-big-thank-you/">A Big Thank You</a></h2>
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/">SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</a></h2>
     <p class="card-text">
        
-<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/blog" rel="category tag">Blog</a>
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
 
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/sendgrid" rel="tag">SendGrid</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/cloudfront" rel="tag">CloudFront</a></span>
 
 
     </p>
-    <p class="card-text"><p>I owe everyone a tremendous debt of gratitude. I&rsquo;ve been posting on this blog for quite some time. I&rsquo;ve made some transitions from <a href="https://ghost.org/">Ghost</a>, to <a href="https://wordpress.org/">Wordpress</a>, and now to <a href="https://jekyllrb.com/">Jekyll</a>. In that time I also tried out some SaaS platforms like <a href="https://medium.com/">Medium</a> and <a href="https://blogger.com">Blogger</a> but I&rsquo;d rather not remember those times. Thus, you see the articles that are on my current blog - I&rsquo;ve lost a lot but I&rsquo;ve gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: <em>why I write</em>.</p>
+    <p class="card-text">At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
+This solution does not solely apply to SendGrid as it&rsquo;s a generic way to proxy HTTP URL&rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</p>
+    <a href="https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
+  </div>
+</article> 
+
+    
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/">Splitting up Terraform &amp; state file separation</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/workshops" rel="category tag">Workshops</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/infrastructure" rel="tag">Infrastructure</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/devops" rel="tag">DevOps</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/terraform" rel="tag">Terraform</a></span>
+
+
+    </p>
+    <p class="card-text"><p>Terraform is fundamentally operated off of these things called &ldquo;state files&rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.</p>
+
+<p>All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is <a href="https://github.com/hashicorp/terraform/issues/10474">complicated and sluggish</a> at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.</p>
+
+<p>What Terraform really enables is an organization of infrastructure that can be reused, version controlled, and browsed by anyone in the organization. Nobody goes to the S3 bucket and views the Terraform state file, rather, they view the code that generated that state file hence it&rsquo;s important not to make manual modifications to infrastructure once an orchestrator has run.</p>
 
 <p></p></p>
-    <a href="https://mattouille.com/articles/2017-10/a-big-thank-you/" class="btn btn-primary">Read more →</a>
+    <a href="https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/" class="btn btn-primary">Read more →</a>
   </div>
   <div class="card-footer text-muted">
-    Posted on <time datetime="2017-10-21T00:00:00Z">Sat Oct 21, 2017</time>
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
   </div>
 </article> 
 
@@ -178,71 +204,23 @@ window.addEventListener("load", function(){
 
 <article class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/">S3 Bucket Security and Best Practices</a></h2>
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/starting-a-career-in-devops/">Starting a Career in DevOps</a></h2>
     <p class="card-text">
        
-<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/opinions" rel="category tag">Opinions</a>
 
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/devops" rel="tag">DevOps</a></span>
 
 
     </p>
-    <p class="card-text">There&rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
-So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&rsquo;ve identified is it&rsquo;s permissions system known as ACL&rsquo;s and Policies. I&rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&rsquo;s it.</p>
-    <a href="https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/" class="btn btn-primary">Read more →</a>
-  </div>
-  <div class="card-footer text-muted">
-    Posted on <time datetime="2017-10-16T00:00:00Z">Mon Oct 16, 2017</time>
-  </div>
-</article> 
-
-    
-  
-    
-      
-
-
-<article class="card mb-4">
-  <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/">Docker and Docker-Compose for the developing mind</a></h2>
-    <p class="card-text">
-       
-<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
-
-
-
-    </p>
-    <p class="card-text">What&rsquo;s docker? I think a lot of folks that read my blog will already know what Docker is, however, I&rsquo;ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API&rsquo;s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.
-Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your CI/CD Pipeline.</p>
-    <a href="https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/" class="btn btn-primary">Read more →</a>
-  </div>
-  <div class="card-footer text-muted">
-    Posted on <time datetime="2017-09-03T00:00:00Z">Sun Sep 3, 2017</time>
-  </div>
-</article> 
-
-    
-  
-    
-      
-
-
-<article class="card mb-4">
-  <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/">Docker commands every dev should know</a></h2>
-    <p class="card-text">
-       
-<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
-
-
-
-    </p>
-    <p class="card-text"><p>Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you&rsquo;re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.</p>
+    <p class="card-text"><p>A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.</p>
 
 <p></p></p>
-    <a href="https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/" class="btn btn-primary">Read more →</a>
+    <a href="https://mattouille.com/articles/2018-09/starting-a-career-in-devops/" class="btn btn-primary">Read more →</a>
   </div>
   <div class="card-footer text-muted">
-    Posted on <time datetime="2017-07-20T00:00:00Z">Thu Jul 20, 2017</time>
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
   </div>
 </article> 
 
@@ -254,7 +232,37 @@ Docker is a powerful tool because the same image I generate locally on my machin
 
 <article class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-06/pointers-in-go/">Pointers in Go</a></h2>
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/">Taking Security a Step Further with VPC Endpoints</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/s3" rel="tag">S3</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/security" rel="tag">Security</a></span>
+
+
+    </p>
+    <p class="card-text"><p>Ever since I wrote <a href="{{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}">S3 Bucket Security and Best Practices</a> I&rsquo;ve been playing with how to extend security within a given AWS account.</p>
+
+<p>Policies and KMS are great but to me assurance comes in threes. That said I don&rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&rsquo;s served over a public API!</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
+  </div>
+</article> 
+
+    
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/">Test Driven Infrastructure Basics</a></h2>
     <p class="card-text">
        
 <i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
@@ -262,12 +270,13 @@ Docker is a powerful tool because the same image I generate locally on my machin
 
 
     </p>
-    <p class="card-text">I&rsquo;ve been learning Go recently and I&rsquo;ve been having some issues solidifying my understanding of pointers, so I thought I&rsquo;d write a quick blog post explaining what I&rsquo;ve learned and how to easily understand it.
-What are pointers and why are they useful? Simply put, pointers are variables that store a memory address to another variable. They&rsquo;re useful because they allow us to essentially dynamically allocate memory. Here&rsquo;s a nice anecdote to get you thinking:</p>
-    <a href="https://mattouille.com/articles/2017-06/pointers-in-go/" class="btn btn-primary">Read more →</a>
+    <p class="card-text"><p>Today I&rsquo;m going to go over the basics of Test Driven Infrastructure, what it means, how to do it, when it applies, and why. In this tutorial I&rsquo;m going to use Chef, but you can use whatever you want.</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/" class="btn btn-primary">Read more →</a>
   </div>
   <div class="card-footer text-muted">
-    Posted on <time datetime="2017-06-25T00:00:00Z">Sun Jun 25, 2017</time>
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
   </div>
 </article> 
 
@@ -332,7 +341,10 @@ What are pointers and why are they useful? Simply put, pointers are variables th
         
     </footer>
     
-
+    <script src="https://mattouille.com//js/jquery.slim.min.js"  integrity="sha384-q8i/X&#43;965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH&#43;8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/tether.min.js"  integrity="sha384-q&#43;GWUsEcdmTqxt5hVwuaH9DSY1U2fyLVVj2ATl4fSaz//yDhCaCPgJbHbYsYBReD" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/popper.min.js"  integrity="sha384-zPwDDZkj9/CM2d74L&#43;dd2WTHeYF/A9Ofy7JjxlVASlm7rwhH1lL5dfWqHwYALj/7" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/bootstrap.bundle.min.js"  integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc&#43;VRZkx5xU3daN&#43;lYb49&#43;Ax&#43;Tl" crossorigin="anonymous"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 

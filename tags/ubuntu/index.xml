@@ -6,17 +6,17 @@
     <description>Recent content in Ubuntu on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic Ubuntu Security</title>
-      <link>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</guid>
+      <guid>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</guid>
       <description>&lt;p&gt;Especially in 2017 everyone should be concerned about security. You don&amp;rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&amp;rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&amp;rsquo;s begin!&lt;/p&gt;</description>
     </item>
     

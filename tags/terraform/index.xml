@@ -6,17 +6,17 @@
     <description>Recent content in Terraform on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Splitting up Terraform &amp; state file separation</title>
-      <link>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</link>
-      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</guid>
+      <guid>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</guid>
       <description>&lt;p&gt;Terraform is fundamentally operated off of these things called &amp;ldquo;state files&amp;rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&amp;rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.&lt;/p&gt;
 
 &lt;p&gt;All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is &lt;a href=&#34;https://github.com/hashicorp/terraform/issues/10474&#34;&gt;complicated and sluggish&lt;/a&gt; at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.&lt;/p&gt;

@@ -9,7 +9,7 @@
 <meta property="og:description" content="Tutorials, opinions, and musings by Matt Ouille" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://mattouille.com/tags/aws/" />
-<meta property="og:updated_time" content="2017-12-01T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-09-04T01:10:28-05:00"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
 
@@ -27,7 +27,7 @@
     <title>mattouille.com</title>
 
     <!-- combined, minified CSS -->
-    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-DLadPcP/zcFxlmJ1Epgt1NvfBgcKLvlyyLIrRodnrqsQE0Hfxm6PUlTbpdcDwkqq" crossorigin="anonymous">
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kjLeO084pvUaXUZYzhPt4C3kpTWBw9VxUzN0mYQASTo/uD5GI4Fgd3GTl4Z9t53a" crossorigin="anonymous">
 
     
     <!-- RSS 2.0 feed -->
@@ -101,23 +101,16 @@ window.addEventListener("load", function(){
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                About </a>
+              <a class="nav-link" href="/about/">About </a>
             </li>
-          
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/tutorials/">
-                Tutorials </a>
+              <a class="nav-link" href="/categories/tutorials/">Tutorials </a>
             </li>
-          
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/opinions/">
-                Opinions </a>
-            </li>
-          
-        </ul>
+              <a class="nav-link" href="/categories/opinions/">Opinions </a>
+            </li></ul>
       </div>
     </div>
     </nav>
@@ -140,22 +133,22 @@ window.addEventListener("load", function(){
 
 <article class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/">Using return values inside CloudFormation UserData</a></h2>
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/">SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</a></h2>
     <p class="card-text">
        
 <i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
 
 
-<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/cloudformation" rel="tag">CloudFormation</a></span>
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/sendgrid" rel="tag">SendGrid</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/cloudfront" rel="tag">CloudFront</a></span>
 
 
     </p>
-    <p class="card-text">I&rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&rsquo;t get to do variable interpolation with return values that&rsquo;s as simple as Terraform makes it. Thus, I&rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
-Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&rsquo;s based on my infrastructure orchestration.</p>
-    <a href="https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/" class="btn btn-primary">Read more →</a>
+    <p class="card-text">At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
+This solution does not solely apply to SendGrid as it&rsquo;s a generic way to proxy HTTP URL&rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</p>
+    <a href="https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/" class="btn btn-primary">Read more →</a>
   </div>
   <div class="card-footer text-muted">
-    Posted on <time datetime="2017-12-01T00:00:00Z">Fri Dec 1, 2017</time>
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
   </div>
 </article> 
 
@@ -167,7 +160,7 @@ Unfortunately CloudFormation is not as versatile as AWS would like you to believ
 
 <article class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/">Taking Security a Step Further with VPC Endpoints</a></h2>
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/">Taking Security a Step Further with VPC Endpoints</a></h2>
     <p class="card-text">
        
 <i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
@@ -182,10 +175,10 @@ Unfortunately CloudFormation is not as versatile as AWS would like you to believ
 <p>Policies and KMS are great but to me assurance comes in threes. That said I don&rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&rsquo;s served over a public API!</p>
 
 <p></p></p>
-    <a href="https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/" class="btn btn-primary">Read more →</a>
+    <a href="https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/" class="btn btn-primary">Read more →</a>
   </div>
   <div class="card-footer text-muted">
-    Posted on <time datetime="2017-10-29T00:00:00Z">Sun Oct 29, 2017</time>
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
   </div>
 </article> 
 
@@ -197,22 +190,22 @@ Unfortunately CloudFormation is not as versatile as AWS would like you to believ
 
 <article class="card mb-4">
   <div class="card-body">
-    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/">SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</a></h2>
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/">Using return values inside CloudFormation UserData</a></h2>
     <p class="card-text">
        
 <i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
 
 
-<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/sendgrid" rel="tag">SendGrid</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/cloudfront" rel="tag">CloudFront</a></span>
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/cloudformation" rel="tag">CloudFormation</a></span>
 
 
     </p>
-    <p class="card-text">At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
-This solution does not solely apply to SendGrid as it&rsquo;s a generic way to proxy HTTP URL&rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</p>
-    <a href="https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/" class="btn btn-primary">Read more →</a>
+    <p class="card-text">I&rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&rsquo;t get to do variable interpolation with return values that&rsquo;s as simple as Terraform makes it. Thus, I&rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
+Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&rsquo;s based on my infrastructure orchestration.</p>
+    <a href="https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/" class="btn btn-primary">Read more →</a>
   </div>
   <div class="card-footer text-muted">
-    Posted on <time datetime="2017-03-05T00:00:00Z">Sun Mar 5, 2017</time>
+    Posted on <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time>
   </div>
 </article> 
 
@@ -268,7 +261,10 @@ This solution does not solely apply to SendGrid as it&rsquo;s a generic way to p
         
     </footer>
     
-
+    <script src="https://mattouille.com//js/jquery.slim.min.js"  integrity="sha384-q8i/X&#43;965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH&#43;8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/tether.min.js"  integrity="sha384-q&#43;GWUsEcdmTqxt5hVwuaH9DSY1U2fyLVVj2ATl4fSaz//yDhCaCPgJbHbYsYBReD" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/popper.min.js"  integrity="sha384-zPwDDZkj9/CM2d74L&#43;dd2WTHeYF/A9Ofy7JjxlVASlm7rwhH1lL5dfWqHwYALj/7" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/bootstrap.bundle.min.js"  integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc&#43;VRZkx5xU3daN&#43;lYb49&#43;Ax&#43;Tl" crossorigin="anonymous"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 

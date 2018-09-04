@@ -6,27 +6,36 @@
     <description>Recent content in Devops on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Let&#39;s talk DevOps job titles</title>
-      <link>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</link>
-      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      <title>DevOps and SRE in the Enterprise</title>
+      <link>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</guid>
+      <guid>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</guid>
+      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s talk DevOps job titles</title>
+      <link>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</guid>
       <description>I&amp;rsquo;ve watched the community struggle on and off with job titles for those working in the DevOps market. DevOps is and always will be simply a set of philosophies, beyond that are three major systems-type fields I see companies using DevOps in: Operations, Platform Engineering, and Release Management.
 Site Reliability Engineering To avoid some initial confusion I&amp;rsquo;m going to address the topic of Site Reliability Engineering. For those that&amp;rsquo;ve read the book and heard the hype you&amp;rsquo;ll realize that SRE is Google&amp;rsquo;s implementation of Operations.</description>
     </item>
     
     <item>
       <title>Splitting up Terraform &amp; state file separation</title>
-      <link>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</link>
-      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</guid>
+      <guid>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</guid>
       <description>&lt;p&gt;Terraform is fundamentally operated off of these things called &amp;ldquo;state files&amp;rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&amp;rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.&lt;/p&gt;
 
 &lt;p&gt;All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is &lt;a href=&#34;https://github.com/hashicorp/terraform/issues/10474&#34;&gt;complicated and sluggish&lt;/a&gt; at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.&lt;/p&gt;
@@ -37,33 +46,24 @@ Site Reliability Engineering To avoid some initial confusion I&amp;rsquo;m going
     </item>
     
     <item>
-      <title>DevOps and SRE in the Enterprise</title>
-      <link>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      <title>Starting a Career in DevOps</title>
+      <link>https://mattouille.com/articles/2018-09/starting-a-career-in-devops/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</guid>
-      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
+      <guid>https://mattouille.com/articles/2018-09/starting-a-career-in-devops/</guid>
+      <description>&lt;p&gt;A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Testing Jekyll with Travis CI</title>
-      <link>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</link>
-      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</guid>
+      <guid>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</guid>
       <description>I&amp;rsquo;ve finally settled with the fact that Jekyll is going to be my mainstay for a while. It&amp;rsquo;s got a lot of features I like some of which are subsequent to being a static site generator, others being thoughtful implementations. Here&amp;rsquo;s a few highlights:
  Kramdown. If you haven&amp;rsquo;t heard of Kramdown, it&amp;rsquo;s like normal markup language on steroids. It gave me a lot of bootstrap-esque features I liked, like notifications.</description>
-    </item>
-    
-    <item>
-      <title>Starting a Career in DevOps</title>
-      <link>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</link>
-      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</guid>
-      <description>&lt;p&gt;A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

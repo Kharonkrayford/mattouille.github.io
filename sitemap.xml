@@ -4,288 +4,290 @@
   
   <url>
     <loc>https://mattouille.com/about/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</loc>
-    <lastmod>2018-08-11T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/a-big-thank-you/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</loc>
-    <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/docker-and-docker-compose-for-the-developing-mind/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/</loc>
-    <lastmod>2018-03-04T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/docker-commands-every-dev-should-know/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</loc>
-    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</loc>
-    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</loc>
-    <lastmod>2017-10-30T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</loc>
-    <lastmod>2017-10-29T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/pointers-in-go/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-10/variations-in-high-availability/</loc>
-    <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/s3-bucket-security-and-best-practices/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-10/a-big-thank-you/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/</loc>
-    <lastmod>2017-10-16T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/</loc>
-    <lastmod>2017-09-03T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/starting-a-career-in-devops/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/</loc>
-    <lastmod>2017-07-20T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-06/pointers-in-go/</loc>
-    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-05/the-most-forgotten-pattern/</loc>
-    <lastmod>2017-05-30T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates/</loc>
-    <lastmod>2017-05-07T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/the-switch-to-jekyll-and-updates/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-03/test-driven-infrastructure-basics/</loc>
-    <lastmod>2017-03-23T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/user-error-caused-a-massive-s3-blackout/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</loc>
-    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout/</loc>
-    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/variations-in-high-availability/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</loc>
-    <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/why-what-trustico-did-is-so-bad/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</loc>
-    <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+    <loc>https://mattouille.com/articles/2018-09/the-most-forgotten-pattern/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/automation/</loc>
-    <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/aws/</loc>
-    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/categories/blog/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/categories/</loc>
-    <lastmod>2017-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/ci-cd/</loc>
-    <lastmod>2017-10-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/cloudformation/</loc>
-    <lastmod>2017-12-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/cloudfront/</loc>
-    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/devops/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/distributed-systems/</loc>
-    <lastmod>2018-08-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/enterprise/</loc>
-    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/infrastructure/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/kubernetes/</loc>
-    <lastmod>2018-08-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/linux/</loc>
-    <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/categories/opinions/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/page/</loc>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/post/</loc>
-    <lastmod>2018-08-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/programming/</loc>
-    <lastmod>2017-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/python-3/</loc>
-    <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/s3/</loc>
-    <lastmod>2017-10-29T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/security/</loc>
-    <lastmod>2018-03-04T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/sendgrid/</loc>
-    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/site-reliability-engineering/</loc>
-    <lastmod>2018-06-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/</loc>
-    <lastmod>2018-03-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/terraform/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/travis-ci/</loc>
-    <lastmod>2017-10-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/categories/tutorials/</loc>
-    <lastmod>2018-08-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/tags/ubuntu/</loc>
-    <lastmod>2017-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/categories/workshops/</loc>
-    <lastmod>2018-04-06T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mattouille.com/</loc>
-    <lastmod>2018-08-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-04T01:10:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Why what Trustico did is so bad" />
+<meta property="og:description" content="If you haven&rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&rsquo;s really the gist of what they did, what these articles don&rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2018-09/why-what-trustico-did-is-so-bad/" /><meta property="article:published_time" content="2018-03-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-09-04T01:10:28-05:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="Why what Trustico did is so bad"/>
+<meta name="twitter:description" content="If you haven&rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&rsquo;s really the gist of what they did, what these articles don&rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.
+
+"/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why what Trustico did is so bad",
+  "url": "https://mattouille.com/articles/2018-09/why-what-trustico-did-is-so-bad/",
+  "wordCount": "656",
+  "datePublished": "2018-03-04T00:00:00&#43;00:00",
+  "dateModified": "2018-09-04T01:10:28-05:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Opinions, Security"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2018-09/why-what-trustico-did-is-so-bad/">
+
+    <title>Why what Trustico did is so bad | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kjLeO084pvUaXUZYzhPt4C3kpTWBw9VxUzN0mYQASTo/uD5GI4Fgd3GTl4Z9t53a" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">About </a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">Tutorials </a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">Opinions </a>
+            </li></ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">Why what Trustico did is so bad</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/opinions" rel="category tag">Opinions</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/security" rel="tag">Security</a></span>
+
+</p>
+  </header>
+  <hr />
+  <p>If you haven&rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&rsquo;s really the gist of what they did, what these articles don&rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.</p>
+
+<p></p>
+
+<p>There&rsquo;s this really sweet document called the (&ldquo;Baseline Requirements for the Issuance/Management of Publicly-Trusted Certificates&rdquo;)[<a href="https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.5.4.pdf">https://cabforum.org/wp-content/uploads/CA-Browser-Forum-BR-1.5.4.pdf</a>]. In that document there&rsquo;s section 6.1.2 which states:</p>
+
+<blockquote>
+<p>Parties   other   than    the Subscriber  SHALL   NOT archive the Subscriber  Private Key without authorization   by  the
+Subscriber.
+If    the CA  or  any of  its designated  RAs generated   the Private Key on  behalf  of  the Subscriber, then    the CA
+SHALL   encrypt the Private Key for transport   to  the Subscriber.
+If    the CA  or  any of  its designated  RAs become  aware   that    a   Subscriber’s    Private Key has been    communicated
+to  an  unauthorized    person  or  an  organization    not affiliated  with    the Subscriber, then    the CA  SHALL   revoke  all
+certificates    that    include the Public  Key corresponding   to  the communicated    Private Key.</p>
+</blockquote>
+
+<p>This helps spell out and dispel some things. CA&rsquo;s are allowed to generate keys on behalf of the customer, however, they are not allowed to archive said keys for any reason. If the CA generates the key on behalf of the customer, they must encrypt said key for transmission to the customer.</p>
+
+<h2 id="what-i-generally-regard-as-safe">What I generally regard as safe</h2>
+
+<p>I don&rsquo;t let a CA generate private keys for me. Private keys are used for encryption, but what they really are is a method of identity. There&rsquo;s three important pieces to secure TLS communication: the private key, the public key, and a CSR (Certificate Signing Request). These three things form a trust relationship between a well known Certificate Authority and something on the internet. In laymens terms the CA is trusted to have a root private key and to use that to sign off on relationships with endpoints on the internet given some burden of proof.</p>
+
+<p>The public, private keys, and CSR should be generated on whatever network you intend to assume trust for. The real point here is that the private key never leaves.</p>
+
+<p>Next the CSR is transmitted to the CA. The CSR contains some metadata and the public key encoded in ASN.1. The CA verifies any information they feel they need to verify to establish trust, sign the certificate, and transmit it back to you. The CA should never actually know your private key, they <strong>only</strong> <em>establish trust</em>.</p>
+
+<h2 id="failures">Failures</h2>
+
+<p>TLS issuance, and largely cryptography in general, was made from the ground up to be automated. There&rsquo;s a couple major failures:</p>
+
+<ol>
+<li><p>A CEO thought it was a good idea to transmit private keys and CSR&rsquo;s (which you now know contain public keys, am I right?) across email. Whether it was encrypted or not, this action violates the trust of every customer they&rsquo;ve had. CA&rsquo;s jobs are to establish trust, and the reason they&rsquo;re given the <em>trust to do that</em> is because people trust their processes.</p></li>
+
+<li><p>Private keys were stored in the first place. We know from our Baseline Requirements documents that this isn&rsquo;t acceptable under any terms.</p></li>
+</ol>
+
+<h2 id="action-items">Action Items</h2>
+
+<ol>
+<li><p>Transmitting private keys is dangerous. The Baseline Requirements should, in my opinion, be updated to get rid of CA generated private keys.</p></li>
+
+<li><p>The CEO of Trustico does not understand the underlying technology or premises of the company he runs. He should be terminated immediately.</p></li>
+
+<li><p>Each major CA should be evaluated by a third party to assess the CA&rsquo;s adherence to the Baseline Requirements and CA&rsquo;s outside of the Baseline Requirements should be forced to notify current and future customers of this without explanation. I say without explanation, because Trustico said they needed to maintain private keys in order to revoke them. I&rsquo;m not sure what world they live in given this statement.</p></li>
+</ol>
+
+<p>That&rsquo;s all my ramblings for now, hopefully it&rsquo;s helped some people, thanks for reading!</p>
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fwhy-what-trustico-did-is-so-bad%2f&amp;text=Why%20what%20Trustico%20did%20is%20so%20bad&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fwhy-what-trustico-did-is-so-bad%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fwhy-what-trustico-did-is-so-bad%2f&amp;title=Why%20what%20Trustico%20did%20is%20so%20bad" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fwhy-what-trustico-did-is-so-bad%2f&amp;title=Why%20what%20Trustico%20did%20is%20so%20bad" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fwhy-what-trustico-did-is-so-bad%2f&amp;title=Why%20what%20Trustico%20did%20is%20so%20bad" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fwhy-what-trustico-did-is-so-bad%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+    <script src="https://mattouille.com//js/jquery.slim.min.js"  integrity="sha384-q8i/X&#43;965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH&#43;8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/tether.min.js"  integrity="sha384-q&#43;GWUsEcdmTqxt5hVwuaH9DSY1U2fyLVVj2ATl4fSaz//yDhCaCPgJbHbYsYBReD" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/popper.min.js"  integrity="sha384-zPwDDZkj9/CM2d74L&#43;dd2WTHeYF/A9Ofy7JjxlVASlm7rwhH1lL5dfWqHwYALj/7" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/bootstrap.bundle.min.js"  integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc&#43;VRZkx5xU3daN&#43;lYb49&#43;Ax&#43;Tl" crossorigin="anonymous"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

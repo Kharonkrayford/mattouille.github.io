@@ -6,17 +6,17 @@
     <description>Recent content in Blog on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Big Thank You</title>
-      <link>https://mattouille.com/articles/2017-10/a-big-thank-you/</link>
-      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/a-big-thank-you/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2017-10/a-big-thank-you/</guid>
+      <guid>https://mattouille.com/articles/2018-09/a-big-thank-you/</guid>
       <description>&lt;p&gt;I owe everyone a tremendous debt of gratitude. I&amp;rsquo;ve been posting on this blog for quite some time. I&amp;rsquo;ve made some transitions from &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;, to &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;, and now to &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;. In that time I also tried out some SaaS platforms like &lt;a href=&#34;https://medium.com/&#34;&gt;Medium&lt;/a&gt; and &lt;a href=&#34;https://blogger.com&#34;&gt;Blogger&lt;/a&gt; but I&amp;rsquo;d rather not remember those times. Thus, you see the articles that are on my current blog - I&amp;rsquo;ve lost a lot but I&amp;rsquo;ve gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: &lt;em&gt;why I write&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>The switch to Jekyll and updates</title>
-      <link>https://mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates/</link>
-      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      <link>https://mattouille.com/articles/2018-09/the-switch-to-jekyll-and-updates/</link>
+      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
       
-      <guid>https://mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates/</guid>
+      <guid>https://mattouille.com/articles/2018-09/the-switch-to-jekyll-and-updates/</guid>
       <description>2017 has been really good to me and I&amp;rsquo;ve had the opportunity to grow a lot both as as person and in my career. I&amp;rsquo;m currently writing this post sitting on my back porch watching my dogs play.
 That said, earlier versions of my website were always based on Wordpress. While Wordpress is a great functional FOSS blogging platform, it was really a bit bloated for my needs. As a developer, and someone who is trying to make more efficient use of their time, I was looking for something that got down to the nuts and bolts of what I wanted without sacrificing too much functionality.</description>
     </item>

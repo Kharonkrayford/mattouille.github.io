@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="User error caused a massive S3 blackout" />
+<meta property="og:description" content="
+At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
+source: https://aws.amazon.com/message/41926/
+
+
+Is this where we echo one of the great pillars of Linux? With great power comes great responsibility.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2018-09/user-error-caused-a-massive-s3-blackout/" /><meta property="article:published_time" content="2017-03-05T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-09-04T01:10:28-05:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="User error caused a massive S3 blackout"/>
+<meta name="twitter:description" content="
+At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
+source: https://aws.amazon.com/message/41926/
+
+
+Is this where we echo one of the great pillars of Linux? With great power comes great responsibility.
+
+"/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "User error caused a massive S3 blackout",
+  "url": "https://mattouille.com/articles/2018-09/user-error-caused-a-massive-s3-blackout/",
+  "wordCount": "387",
+  "datePublished": "2017-03-05T00:00:00&#43;00:00",
+  "dateModified": "2018-09-04T01:10:28-05:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Opinions"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2018-09/user-error-caused-a-massive-s3-blackout/">
+
+    <title>User error caused a massive S3 blackout | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kjLeO084pvUaXUZYzhPt4C3kpTWBw9VxUzN0mYQASTo/uD5GI4Fgd3GTl4Z9t53a" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">About </a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">Tutorials </a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">Opinions </a>
+            </li></ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">User error caused a massive S3 blackout</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2018-09-04T01:10:28-05:00">Tue Sep 4, 2018</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/opinions" rel="category tag">Opinions</a>
+
+
+</p>
+  </header>
+  <hr />
+  <blockquote>
+<p>At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
+source: <a href="https://aws.amazon.com/message/41926/">https://aws.amazon.com/message/41926/</a></p>
+</blockquote>
+
+<p>Is this where we echo one of the great pillars of Linux? <strong>With great power comes great responsibility.</strong></p>
+
+<p></p>
+
+<p>Amazon actually has DevOps Engineering departments that build and manage their internal tooling. It&rsquo;s very interesting that, even with a DevOps department, one of the foremost constructs of DevOps was not followed:</p>
+
+<blockquote>
+<p>The emphasis is on the performance of the entire system, as opposed to the performance of a specific or single department or individual. Focus is also on all business value streams that are enabled by IT. <strong>A key aspect of this approach is ensuring that known defects are never passed along, e.g., from QA to operations.</strong>
+Source: <a href="http://itrevolution.com/the-three-ways-principles-underpinning-devops/">http://itrevolution.com/the-three-ways-principles-underpinning-devops/</a></p>
+</blockquote>
+
+<hr />
+
+<p>What I&rsquo;m pointing at is that there was nothing built into the tooling to indicate to the user that this action they had performed was going to yield the desired result. It was known that this was a dangerous and presumptive tool but it took nearly 24 hours of downtime to realize the tool needed to be changed.</p>
+
+<blockquote>
+<p>We are making several changes as a result of this operational event. While removal of capacity is a key operational practice, in this instance, the tool used allowed too much capacity to be removed too quickly. We have modified this tool to remove capacity more slowly and added safeguards to prevent capacity from being removed when it will take any subsystem below its minimum required capacity level. This will prevent an incorrect input from triggering a similar event in the future. We are also auditing our other operational tools to ensure we have similar safety checks. We will also make changes to improve the recovery time of key S3 subsystems
+Source: <a href="https://aws.amazon.com/message/41926/">https://aws.amazon.com/message/41926/</a></p>
+</blockquote>
+
+<p>I think we can all learn a valuable lesson in building internal tooling. Though the tools are built for internal use only, you should never assume the user is any less capable of error.</p>
+
+<p><strong>Source</strong>: <a href="https://aws.amazon.com/message/41926/">https://aws.amazon.com/message/41926/</a></p>
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fuser-error-caused-a-massive-s3-blackout%2f&amp;text=User%20error%20caused%20a%20massive%20S3%20blackout&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fuser-error-caused-a-massive-s3-blackout%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fuser-error-caused-a-massive-s3-blackout%2f&amp;title=User%20error%20caused%20a%20massive%20S3%20blackout" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fuser-error-caused-a-massive-s3-blackout%2f&amp;title=User%20error%20caused%20a%20massive%20S3%20blackout" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fuser-error-caused-a-massive-s3-blackout%2f&amp;title=User%20error%20caused%20a%20massive%20S3%20blackout" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2018-09%2fuser-error-caused-a-massive-s3-blackout%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+    <script src="https://mattouille.com//js/jquery.slim.min.js"  integrity="sha384-q8i/X&#43;965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH&#43;8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/tether.min.js"  integrity="sha384-q&#43;GWUsEcdmTqxt5hVwuaH9DSY1U2fyLVVj2ATl4fSaz//yDhCaCPgJbHbYsYBReD" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/popper.min.js"  integrity="sha384-zPwDDZkj9/CM2d74L&#43;dd2WTHeYF/A9Ofy7JjxlVASlm7rwhH1lL5dfWqHwYALj/7" crossorigin="anonymous"></script>
+    <script src="https://mattouille.com//js/bootstrap.bundle.min.js"  integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc&#43;VRZkx5xU3daN&#43;lYb49&#43;Ax&#43;Tl" crossorigin="anonymous"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>
