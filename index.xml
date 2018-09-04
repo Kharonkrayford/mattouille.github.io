@@ -6,7 +6,7 @@
     <description>Recent content on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 11 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>About</title>
       <link>https://mattouille.com/about/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/about/</guid>
       <description>I&amp;rsquo;m a software developer with a strong background in systems engineering. Much of my late career has been around working in reliability, automation, and operations. I currently work at a start-up called Capstone Metering where I lead our Software Engineering department.
@@ -22,123 +22,30 @@ In my work life I subscribe to many extreme programming philosophies and aim to 
     </item>
     
     <item>
-      <title>A Big Thank You</title>
-      <link>https://mattouille.com/articles/2018-09/a-big-thank-you/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/a-big-thank-you/</guid>
-      <description>&lt;p&gt;I owe everyone a tremendous debt of gratitude. I&amp;rsquo;ve been posting on this blog for quite some time. I&amp;rsquo;ve made some transitions from &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;, to &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;, and now to &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;. In that time I also tried out some SaaS platforms like &lt;a href=&#34;https://medium.com/&#34;&gt;Medium&lt;/a&gt; and &lt;a href=&#34;https://blogger.com&#34;&gt;Blogger&lt;/a&gt; but I&amp;rsquo;d rather not remember those times. Thus, you see the articles that are on my current blog - I&amp;rsquo;ve lost a lot but I&amp;rsquo;ve gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: &lt;em&gt;why I write&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Basic Ubuntu Security</title>
-      <link>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</guid>
-      <description>&lt;p&gt;Especially in 2017 everyone should be concerned about security. You don&amp;rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&amp;rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&amp;rsquo;s begin!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DevOps and SRE in the Enterprise</title>
-      <link>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</guid>
-      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
-    </item>
-    
-    <item>
-      <title>Docker and Docker-Compose for the developing mind</title>
-      <link>https://mattouille.com/articles/2018-09/docker-and-docker-compose-for-the-developing-mind/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/docker-and-docker-compose-for-the-developing-mind/</guid>
-      <description>What&amp;rsquo;s docker? I think a lot of folks that read my blog will already know what Docker is, however, I&amp;rsquo;ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API&amp;rsquo;s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.
-Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your CI/CD Pipeline.</description>
-    </item>
-    
-    <item>
-      <title>Docker commands every dev should know</title>
-      <link>https://mattouille.com/articles/2018-09/docker-commands-every-dev-should-know/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/docker-commands-every-dev-should-know/</guid>
-      <description>&lt;p&gt;Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you&amp;rsquo;re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>How an automation engineer migrates to Google Music</title>
-      <link>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</guid>
-      <description>&lt;p&gt;I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn&amp;rsquo;t inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.&lt;/p&gt;
-
-&lt;p&gt;Migrating from Spotify to Google Play Music is already kind of a difficult task. I&amp;rsquo;ve had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I&amp;rsquo;ve built over the years over to Google Music. I found a service called &lt;a href=&#34;https://soundiiz.com&#34;&gt;Soundiiz&lt;/a&gt; that performs a very nifty function at a price of $4.95. It matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Kubernetes through iteration with a startup</title>
-      <link>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</link>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</guid>
+      <guid>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</guid>
       <description>At Capstone Metering we&amp;rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&amp;rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&amp;rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&amp;rsquo;s to learn and ascertain direction for our engineering organization.</description>
     </item>
     
     <item>
       <title>Let&#39;s talk DevOps job titles</title>
-      <link>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</guid>
+      <guid>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</guid>
       <description>I&amp;rsquo;ve watched the community struggle on and off with job titles for those working in the DevOps market. DevOps is and always will be simply a set of philosophies, beyond that are three major systems-type fields I see companies using DevOps in: Operations, Platform Engineering, and Release Management.
 Site Reliability Engineering To avoid some initial confusion I&amp;rsquo;m going to address the topic of Site Reliability Engineering. For those that&amp;rsquo;ve read the book and heard the hype you&amp;rsquo;ll realize that SRE is Google&amp;rsquo;s implementation of Operations.</description>
     </item>
     
     <item>
-      <title>Pointers in Go</title>
-      <link>https://mattouille.com/articles/2018-09/pointers-in-go/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/pointers-in-go/</guid>
-      <description>I&amp;rsquo;ve been learning Go recently and I&amp;rsquo;ve been having some issues solidifying my understanding of pointers, so I thought I&amp;rsquo;d write a quick blog post explaining what I&amp;rsquo;ve learned and how to easily understand it.
-What are pointers and why are they useful? Simply put, pointers are variables that store a memory address to another variable. They&amp;rsquo;re useful because they allow us to essentially dynamically allocate memory. Here&amp;rsquo;s a nice anecdote to get you thinking:</description>
-    </item>
-    
-    <item>
-      <title>S3 Bucket Security and Best Practices</title>
-      <link>https://mattouille.com/articles/2018-09/s3-bucket-security-and-best-practices/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/s3-bucket-security-and-best-practices/</guid>
-      <description>There&amp;rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
-So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&amp;rsquo;ve identified is it&amp;rsquo;s permissions system known as ACL&amp;rsquo;s and Policies. I&amp;rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&amp;rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&amp;rsquo;s it.</description>
-    </item>
-    
-    <item>
-      <title>SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</title>
-      <link>https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</guid>
-      <description>At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
-This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way to proxy HTTP URL&amp;rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</description>
-    </item>
-    
-    <item>
       <title>Splitting up Terraform &amp; state file separation</title>
-      <link>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</guid>
+      <guid>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</guid>
       <description>&lt;p&gt;Terraform is fundamentally operated off of these things called &amp;ldquo;state files&amp;rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&amp;rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.&lt;/p&gt;
 
 &lt;p&gt;All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is &lt;a href=&#34;https://github.com/hashicorp/terraform/issues/10474&#34;&gt;complicated and sluggish&lt;/a&gt; at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.&lt;/p&gt;
@@ -149,22 +56,64 @@ This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way 
     </item>
     
     <item>
-      <title>Starting a Career in DevOps</title>
-      <link>https://mattouille.com/articles/2018-09/starting-a-career-in-devops/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>How an automation engineer migrates to Google Music</title>
+      <link>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/starting-a-career-in-devops/</guid>
-      <description>&lt;p&gt;A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.&lt;/p&gt;
+      <guid>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</guid>
+      <description>&lt;p&gt;I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn&amp;rsquo;t inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.&lt;/p&gt;
+
+&lt;p&gt;Migrating from Spotify to Google Play Music is already kind of a difficult task. I&amp;rsquo;ve had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I&amp;rsquo;ve built over the years over to Google Music. I found a service called &lt;a href=&#34;https://soundiiz.com&#34;&gt;Soundiiz&lt;/a&gt; that performs a very nifty function at a price of $4.95. It matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Taking Security a Step Further with VPC Endpoints</title>
-      <link>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>Why what Trustico did is so bad</title>
+      <link>https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/</link>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</guid>
+      <guid>https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/</guid>
+      <description>&lt;p&gt;If you haven&amp;rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&amp;rsquo;s really the gist of what they did, what these articles don&amp;rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DevOps and SRE in the Enterprise</title>
+      <link>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</guid>
+      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
+    </item>
+    
+    <item>
+      <title>Using return values inside CloudFormation UserData</title>
+      <link>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</guid>
+      <description>I&amp;rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&amp;rsquo;t get to do variable interpolation with return values that&amp;rsquo;s as simple as Terraform makes it. Thus, I&amp;rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
+Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&amp;rsquo;s based on my infrastructure orchestration.</description>
+    </item>
+    
+    <item>
+      <title>Testing Jekyll with Travis CI</title>
+      <link>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</guid>
+      <description>I&amp;rsquo;ve finally settled with the fact that Jekyll is going to be my mainstay for a while. It&amp;rsquo;s got a lot of features I like some of which are subsequent to being a static site generator, others being thoughtful implementations. Here&amp;rsquo;s a few highlights:
+ Kramdown. If you haven&amp;rsquo;t heard of Kramdown, it&amp;rsquo;s like normal markup language on steroids. It gave me a lot of bootstrap-esque features I liked, like notifications.</description>
+    </item>
+    
+    <item>
+      <title>Taking Security a Step Further with VPC Endpoints</title>
+      <link>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</link>
+      <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</guid>
       <description>&lt;p&gt;Ever since I wrote &lt;a href=&#34;{{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}&#34;&gt;S3 Bucket Security and Best Practices&lt;/a&gt; I&amp;rsquo;ve been playing with how to extend security within a given AWS account.&lt;/p&gt;
 
 &lt;p&gt;Policies and KMS are great but to me assurance comes in threes. That said I don&amp;rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&amp;rsquo;s served over a public API!&lt;/p&gt;
@@ -173,42 +122,114 @@ This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way 
     </item>
     
     <item>
-      <title>Test Driven Infrastructure Basics</title>
-      <link>https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>Variations in High Availability</title>
+      <link>https://mattouille.com/articles/2017-10/variations-in-high-availability/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/</guid>
+      <guid>https://mattouille.com/articles/2017-10/variations-in-high-availability/</guid>
+      <description>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&amp;rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</description>
+    </item>
+    
+    <item>
+      <title>A Big Thank You</title>
+      <link>https://mattouille.com/articles/2017-10/a-big-thank-you/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/a-big-thank-you/</guid>
+      <description>&lt;p&gt;I owe everyone a tremendous debt of gratitude. I&amp;rsquo;ve been posting on this blog for quite some time. I&amp;rsquo;ve made some transitions from &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;, to &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;, and now to &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;. In that time I also tried out some SaaS platforms like &lt;a href=&#34;https://medium.com/&#34;&gt;Medium&lt;/a&gt; and &lt;a href=&#34;https://blogger.com&#34;&gt;Blogger&lt;/a&gt; but I&amp;rsquo;d rather not remember those times. Thus, you see the articles that are on my current blog - I&amp;rsquo;ve lost a lot but I&amp;rsquo;ve gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: &lt;em&gt;why I write&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>S3 Bucket Security and Best Practices</title>
+      <link>https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/</guid>
+      <description>There&amp;rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
+So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&amp;rsquo;ve identified is it&amp;rsquo;s permissions system known as ACL&amp;rsquo;s and Policies. I&amp;rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&amp;rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&amp;rsquo;s it.</description>
+    </item>
+    
+    <item>
+      <title>Docker and Docker-Compose for the developing mind</title>
+      <link>https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/</guid>
+      <description>What&amp;rsquo;s docker? I think a lot of folks that read my blog will already know what Docker is, however, I&amp;rsquo;ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API&amp;rsquo;s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.
+Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your CI/CD Pipeline.</description>
+    </item>
+    
+    <item>
+      <title>Docker commands every dev should know</title>
+      <link>https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/</guid>
+      <description>&lt;p&gt;Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you&amp;rsquo;re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pointers in Go</title>
+      <link>https://mattouille.com/articles/2017-06/pointers-in-go/</link>
+      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-06/pointers-in-go/</guid>
+      <description>I&amp;rsquo;ve been learning Go recently and I&amp;rsquo;ve been having some issues solidifying my understanding of pointers, so I thought I&amp;rsquo;d write a quick blog post explaining what I&amp;rsquo;ve learned and how to easily understand it.
+What are pointers and why are they useful? Simply put, pointers are variables that store a memory address to another variable. They&amp;rsquo;re useful because they allow us to essentially dynamically allocate memory. Here&amp;rsquo;s a nice anecdote to get you thinking:</description>
+    </item>
+    
+    <item>
+      <title>“The Most Forgotten Pattern”</title>
+      <link>https://mattouille.com/articles/2017-05/the-most-forgotten-pattern/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-05/the-most-forgotten-pattern/</guid>
+      <description>&lt;p&gt;Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly. Every time we sit down to solve problems with software we apply design patterns to overcome situations that would be contentious if we hadn’t already solved them years ago. There’s no point in reinventing the wheel, right? So why are we sitting here planning development of software for months on end still?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The switch to Jekyll and updates</title>
+      <link>https://mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates/</link>
+      <pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-05/the-switch-to-jekyll-and-updates/</guid>
+      <description>2017 has been really good to me and I&amp;rsquo;ve had the opportunity to grow a lot both as as person and in my career. I&amp;rsquo;m currently writing this post sitting on my back porch watching my dogs play.
+That said, earlier versions of my website were always based on Wordpress. While Wordpress is a great functional FOSS blogging platform, it was really a bit bloated for my needs. As a developer, and someone who is trying to make more efficient use of their time, I was looking for something that got down to the nuts and bolts of what I wanted without sacrificing too much functionality.</description>
+    </item>
+    
+    <item>
+      <title>Test Driven Infrastructure Basics</title>
+      <link>https://mattouille.com/articles/2017-03/test-driven-infrastructure-basics/</link>
+      <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-03/test-driven-infrastructure-basics/</guid>
       <description>&lt;p&gt;Today I&amp;rsquo;m going to go over the basics of Test Driven Infrastructure, what it means, how to do it, when it applies, and why. In this tutorial I&amp;rsquo;m going to use Chef, but you can use whatever you want.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Testing Jekyll with Travis CI</title>
-      <link>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</title>
+      <link>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</guid>
-      <description>I&amp;rsquo;ve finally settled with the fact that Jekyll is going to be my mainstay for a while. It&amp;rsquo;s got a lot of features I like some of which are subsequent to being a static site generator, others being thoughtful implementations. Here&amp;rsquo;s a few highlights:
- Kramdown. If you haven&amp;rsquo;t heard of Kramdown, it&amp;rsquo;s like normal markup language on steroids. It gave me a lot of bootstrap-esque features I liked, like notifications.</description>
-    </item>
-    
-    <item>
-      <title>The switch to Jekyll and updates</title>
-      <link>https://mattouille.com/articles/2018-09/the-switch-to-jekyll-and-updates/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/the-switch-to-jekyll-and-updates/</guid>
-      <description>2017 has been really good to me and I&amp;rsquo;ve had the opportunity to grow a lot both as as person and in my career. I&amp;rsquo;m currently writing this post sitting on my back porch watching my dogs play.
-That said, earlier versions of my website were always based on Wordpress. While Wordpress is a great functional FOSS blogging platform, it was really a bit bloated for my needs. As a developer, and someone who is trying to make more efficient use of their time, I was looking for something that got down to the nuts and bolts of what I wanted without sacrificing too much functionality.</description>
+      <guid>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</guid>
+      <description>At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
+This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way to proxy HTTP URL&amp;rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</description>
     </item>
     
     <item>
       <title>User error caused a massive S3 blackout</title>
-      <link>https://mattouille.com/articles/2018-09/user-error-caused-a-massive-s3-blackout/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/user-error-caused-a-massive-s3-blackout/</guid>
+      <guid>https://mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
 source: &lt;a href=&#34;https://aws.amazon.com/message/41926/&#34;&gt;https://aws.amazon.com/message/41926/&lt;/a&gt;&lt;/p&gt;
@@ -220,42 +241,21 @@ source: &lt;a href=&#34;https://aws.amazon.com/message/41926/&#34;&gt;https://aw
     </item>
     
     <item>
-      <title>Using return values inside CloudFormation UserData</title>
-      <link>https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>Basic Ubuntu Security</title>
+      <link>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/</guid>
-      <description>I&amp;rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&amp;rsquo;t get to do variable interpolation with return values that&amp;rsquo;s as simple as Terraform makes it. Thus, I&amp;rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
-Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&amp;rsquo;s based on my infrastructure orchestration.</description>
+      <guid>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</guid>
+      <description>&lt;p&gt;Especially in 2017 everyone should be concerned about security. You don&amp;rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&amp;rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&amp;rsquo;s begin!&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Variations in High Availability</title>
-      <link>https://mattouille.com/articles/2018-09/variations-in-high-availability/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>Starting a Career in DevOps</title>
+      <link>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/variations-in-high-availability/</guid>
-      <description>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&amp;rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</description>
-    </item>
-    
-    <item>
-      <title>Why what Trustico did is so bad</title>
-      <link>https://mattouille.com/articles/2018-09/why-what-trustico-did-is-so-bad/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/why-what-trustico-did-is-so-bad/</guid>
-      <description>&lt;p&gt;If you haven&amp;rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&amp;rsquo;s really the gist of what they did, what these articles don&amp;rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>“The Most Forgotten Pattern”</title>
-      <link>https://mattouille.com/articles/2018-09/the-most-forgotten-pattern/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/the-most-forgotten-pattern/</guid>
-      <description>&lt;p&gt;Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly. Every time we sit down to solve problems with software we apply design patterns to overcome situations that would be contentious if we hadn’t already solved them years ago. There’s no point in reinventing the wheel, right? So why are we sitting here planning development of software for months on end still?&lt;/p&gt;
+      <guid>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</guid>
+      <description>&lt;p&gt;A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

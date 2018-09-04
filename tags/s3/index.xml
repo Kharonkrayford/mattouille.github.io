@@ -6,17 +6,17 @@
     <description>Recent content in S3 on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 29 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Taking Security a Step Further with VPC Endpoints</title>
-      <link>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</link>
+      <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</guid>
+      <guid>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</guid>
       <description>&lt;p&gt;Ever since I wrote &lt;a href=&#34;{{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}&#34;&gt;S3 Bucket Security and Best Practices&lt;/a&gt; I&amp;rsquo;ve been playing with how to extend security within a given AWS account.&lt;/p&gt;
 
 &lt;p&gt;Policies and KMS are great but to me assurance comes in threes. That said I don&amp;rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&amp;rsquo;s served over a public API!&lt;/p&gt;

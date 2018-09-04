@@ -6,86 +6,36 @@
     <description>Recent content in Tutorials on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 11 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Basic Ubuntu Security</title>
-      <link>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/basic-ubuntu-security/</guid>
-      <description>&lt;p&gt;Especially in 2017 everyone should be concerned about security. You don&amp;rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&amp;rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&amp;rsquo;s begin!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Docker and Docker-Compose for the developing mind</title>
-      <link>https://mattouille.com/articles/2018-09/docker-and-docker-compose-for-the-developing-mind/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/docker-and-docker-compose-for-the-developing-mind/</guid>
-      <description>What&amp;rsquo;s docker? I think a lot of folks that read my blog will already know what Docker is, however, I&amp;rsquo;ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API&amp;rsquo;s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.
-Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your CI/CD Pipeline.</description>
-    </item>
-    
-    <item>
-      <title>Docker commands every dev should know</title>
-      <link>https://mattouille.com/articles/2018-09/docker-commands-every-dev-should-know/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/docker-commands-every-dev-should-know/</guid>
-      <description>&lt;p&gt;Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you&amp;rsquo;re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Kubernetes through iteration with a startup</title>
-      <link>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</link>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</guid>
+      <guid>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</guid>
       <description>At Capstone Metering we&amp;rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&amp;rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&amp;rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&amp;rsquo;s to learn and ascertain direction for our engineering organization.</description>
     </item>
     
     <item>
-      <title>Pointers in Go</title>
-      <link>https://mattouille.com/articles/2018-09/pointers-in-go/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>Using return values inside CloudFormation UserData</title>
+      <link>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/pointers-in-go/</guid>
-      <description>I&amp;rsquo;ve been learning Go recently and I&amp;rsquo;ve been having some issues solidifying my understanding of pointers, so I thought I&amp;rsquo;d write a quick blog post explaining what I&amp;rsquo;ve learned and how to easily understand it.
-What are pointers and why are they useful? Simply put, pointers are variables that store a memory address to another variable. They&amp;rsquo;re useful because they allow us to essentially dynamically allocate memory. Here&amp;rsquo;s a nice anecdote to get you thinking:</description>
-    </item>
-    
-    <item>
-      <title>S3 Bucket Security and Best Practices</title>
-      <link>https://mattouille.com/articles/2018-09/s3-bucket-security-and-best-practices/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/s3-bucket-security-and-best-practices/</guid>
-      <description>There&amp;rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
-So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&amp;rsquo;ve identified is it&amp;rsquo;s permissions system known as ACL&amp;rsquo;s and Policies. I&amp;rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&amp;rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&amp;rsquo;s it.</description>
-    </item>
-    
-    <item>
-      <title>SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</title>
-      <link>https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</guid>
-      <description>At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
-This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way to proxy HTTP URL&amp;rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</description>
+      <guid>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</guid>
+      <description>I&amp;rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&amp;rsquo;t get to do variable interpolation with return values that&amp;rsquo;s as simple as Terraform makes it. Thus, I&amp;rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
+Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&amp;rsquo;s based on my infrastructure orchestration.</description>
     </item>
     
     <item>
       <title>Taking Security a Step Further with VPC Endpoints</title>
-      <link>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</link>
+      <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/taking-security-a-step-further-with-vpc-endpoints/</guid>
+      <guid>https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/</guid>
       <description>&lt;p&gt;Ever since I wrote &lt;a href=&#34;{{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}&#34;&gt;S3 Bucket Security and Best Practices&lt;/a&gt; I&amp;rsquo;ve been playing with how to extend security within a given AWS account.&lt;/p&gt;
 
 &lt;p&gt;Policies and KMS are great but to me assurance comes in threes. That said I don&amp;rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&amp;rsquo;s served over a public API!&lt;/p&gt;
@@ -94,24 +44,74 @@ This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way 
     </item>
     
     <item>
-      <title>Test Driven Infrastructure Basics</title>
-      <link>https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>S3 Bucket Security and Best Practices</title>
+      <link>https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/</link>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/test-driven-infrastructure-basics/</guid>
+      <guid>https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/</guid>
+      <description>There&amp;rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
+So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&amp;rsquo;ve identified is it&amp;rsquo;s permissions system known as ACL&amp;rsquo;s and Policies. I&amp;rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&amp;rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&amp;rsquo;s it.</description>
+    </item>
+    
+    <item>
+      <title>Docker and Docker-Compose for the developing mind</title>
+      <link>https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/</link>
+      <pubDate>Sun, 03 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/</guid>
+      <description>What&amp;rsquo;s docker? I think a lot of folks that read my blog will already know what Docker is, however, I&amp;rsquo;ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API&amp;rsquo;s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.
+Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your CI/CD Pipeline.</description>
+    </item>
+    
+    <item>
+      <title>Docker commands every dev should know</title>
+      <link>https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/</guid>
+      <description>&lt;p&gt;Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you&amp;rsquo;re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pointers in Go</title>
+      <link>https://mattouille.com/articles/2017-06/pointers-in-go/</link>
+      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-06/pointers-in-go/</guid>
+      <description>I&amp;rsquo;ve been learning Go recently and I&amp;rsquo;ve been having some issues solidifying my understanding of pointers, so I thought I&amp;rsquo;d write a quick blog post explaining what I&amp;rsquo;ve learned and how to easily understand it.
+What are pointers and why are they useful? Simply put, pointers are variables that store a memory address to another variable. They&amp;rsquo;re useful because they allow us to essentially dynamically allocate memory. Here&amp;rsquo;s a nice anecdote to get you thinking:</description>
+    </item>
+    
+    <item>
+      <title>Test Driven Infrastructure Basics</title>
+      <link>https://mattouille.com/articles/2017-03/test-driven-infrastructure-basics/</link>
+      <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-03/test-driven-infrastructure-basics/</guid>
       <description>&lt;p&gt;Today I&amp;rsquo;m going to go over the basics of Test Driven Infrastructure, what it means, how to do it, when it applies, and why. In this tutorial I&amp;rsquo;m going to use Chef, but you can use whatever you want.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Using return values inside CloudFormation UserData</title>
-      <link>https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</title>
+      <link>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/using-return-values-inside-cloudformation-userdata/</guid>
-      <description>I&amp;rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&amp;rsquo;t get to do variable interpolation with return values that&amp;rsquo;s as simple as Terraform makes it. Thus, I&amp;rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
-Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&amp;rsquo;s based on my infrastructure orchestration.</description>
+      <guid>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</guid>
+      <description>At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
+This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way to proxy HTTP URL&amp;rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</description>
+    </item>
+    
+    <item>
+      <title>Basic Ubuntu Security</title>
+      <link>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-02/basic-ubuntu-security/</guid>
+      <description>&lt;p&gt;Especially in 2017 everyone should be concerned about security. You don&amp;rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&amp;rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&amp;rsquo;s begin!&lt;/p&gt;</description>
     </item>
     
   </channel>

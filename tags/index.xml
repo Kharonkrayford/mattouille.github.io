@@ -6,7 +6,7 @@
     <description>Recent content in Tags on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 25 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Automation</title>
       <link>https://mattouille.com/tags/automation/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/automation/</guid>
       <description></description>
@@ -23,7 +23,7 @@
     <item>
       <title>Aws</title>
       <link>https://mattouille.com/tags/aws/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/aws/</guid>
       <description></description>
@@ -32,7 +32,7 @@
     <item>
       <title>Ci/Cd</title>
       <link>https://mattouille.com/tags/ci-cd/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/ci-cd/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>Cloudformation</title>
       <link>https://mattouille.com/tags/cloudformation/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/cloudformation/</guid>
       <description></description>
@@ -50,7 +50,7 @@
     <item>
       <title>Cloudfront</title>
       <link>https://mattouille.com/tags/cloudfront/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/cloudfront/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>Devops</title>
       <link>https://mattouille.com/tags/devops/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/devops/</guid>
       <description></description>
@@ -68,7 +68,7 @@
     <item>
       <title>Distributed Systems</title>
       <link>https://mattouille.com/tags/distributed-systems/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/distributed-systems/</guid>
       <description></description>
@@ -77,7 +77,7 @@
     <item>
       <title>Enterprise</title>
       <link>https://mattouille.com/tags/enterprise/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/enterprise/</guid>
       <description></description>
@@ -86,7 +86,7 @@
     <item>
       <title>Infrastructure</title>
       <link>https://mattouille.com/tags/infrastructure/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/infrastructure/</guid>
       <description></description>
@@ -95,7 +95,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://mattouille.com/tags/kubernetes/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/kubernetes/</guid>
       <description></description>
@@ -104,7 +104,7 @@
     <item>
       <title>Linux</title>
       <link>https://mattouille.com/tags/linux/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/linux/</guid>
       <description></description>
@@ -113,7 +113,7 @@
     <item>
       <title>Programming</title>
       <link>https://mattouille.com/tags/programming/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/programming/</guid>
       <description></description>
@@ -122,7 +122,7 @@
     <item>
       <title>Python 3</title>
       <link>https://mattouille.com/tags/python-3/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/python-3/</guid>
       <description></description>
@@ -131,7 +131,7 @@
     <item>
       <title>S3</title>
       <link>https://mattouille.com/tags/s3/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 29 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/s3/</guid>
       <description></description>
@@ -140,7 +140,7 @@
     <item>
       <title>Security</title>
       <link>https://mattouille.com/tags/security/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/security/</guid>
       <description></description>
@@ -149,7 +149,7 @@
     <item>
       <title>Sendgrid</title>
       <link>https://mattouille.com/tags/sendgrid/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/sendgrid/</guid>
       <description></description>
@@ -158,7 +158,7 @@
     <item>
       <title>Site Reliability Engineering</title>
       <link>https://mattouille.com/tags/site-reliability-engineering/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/site-reliability-engineering/</guid>
       <description></description>
@@ -167,7 +167,7 @@
     <item>
       <title>Terraform</title>
       <link>https://mattouille.com/tags/terraform/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/terraform/</guid>
       <description></description>
@@ -176,7 +176,7 @@
     <item>
       <title>Travis Ci</title>
       <link>https://mattouille.com/tags/travis-ci/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/travis-ci/</guid>
       <description></description>
@@ -185,7 +185,7 @@
     <item>
       <title>Ubuntu</title>
       <link>https://mattouille.com/tags/ubuntu/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://mattouille.com/tags/ubuntu/</guid>
       <description></description>

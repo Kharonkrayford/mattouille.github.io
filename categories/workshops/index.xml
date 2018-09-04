@@ -6,30 +6,17 @@
     <description>Recent content in Workshops on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/categories/workshops/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How an automation engineer migrates to Google Music</title>
-      <link>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/how-an-automation-engineer-migrates-to-google-music/</guid>
-      <description>&lt;p&gt;I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn&amp;rsquo;t inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.&lt;/p&gt;
-
-&lt;p&gt;Migrating from Spotify to Google Play Music is already kind of a difficult task. I&amp;rsquo;ve had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I&amp;rsquo;ve built over the years over to Google Music. I found a service called &lt;a href=&#34;https://soundiiz.com&#34;&gt;Soundiiz&lt;/a&gt; that performs a very nifty function at a price of $4.95. It matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Splitting up Terraform &amp; state file separation</title>
-      <link>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/splitting-up-terraform--state-file-separation/</guid>
+      <guid>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</guid>
       <description>&lt;p&gt;Terraform is fundamentally operated off of these things called &amp;ldquo;state files&amp;rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&amp;rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.&lt;/p&gt;
 
 &lt;p&gt;All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is &lt;a href=&#34;https://github.com/hashicorp/terraform/issues/10474&#34;&gt;complicated and sluggish&lt;/a&gt; at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.&lt;/p&gt;
@@ -40,21 +27,34 @@
     </item>
     
     <item>
-      <title>Testing Jekyll with Travis CI</title>
-      <link>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>How an automation engineer migrates to Google Music</title>
+      <link>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</link>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/testing-jekyll-with-travis-ci/</guid>
+      <guid>https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/</guid>
+      <description>&lt;p&gt;I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn&amp;rsquo;t inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.&lt;/p&gt;
+
+&lt;p&gt;Migrating from Spotify to Google Play Music is already kind of a difficult task. I&amp;rsquo;ve had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I&amp;rsquo;ve built over the years over to Google Music. I found a service called &lt;a href=&#34;https://soundiiz.com&#34;&gt;Soundiiz&lt;/a&gt; that performs a very nifty function at a price of $4.95. It matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Testing Jekyll with Travis CI</title>
+      <link>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/</guid>
       <description>I&amp;rsquo;ve finally settled with the fact that Jekyll is going to be my mainstay for a while. It&amp;rsquo;s got a lot of features I like some of which are subsequent to being a static site generator, others being thoughtful implementations. Here&amp;rsquo;s a few highlights:
  Kramdown. If you haven&amp;rsquo;t heard of Kramdown, it&amp;rsquo;s like normal markup language on steroids. It gave me a lot of bootstrap-esque features I liked, like notifications.</description>
     </item>
     
     <item>
       <title>Variations in High Availability</title>
-      <link>https://mattouille.com/articles/2018-09/variations-in-high-availability/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2017-10/variations-in-high-availability/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/variations-in-high-availability/</guid>
+      <guid>https://mattouille.com/articles/2017-10/variations-in-high-availability/</guid>
       <description>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&amp;rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</description>
     </item>
     

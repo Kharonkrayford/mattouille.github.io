@@ -6,36 +6,36 @@
     <description>Recent content in Site Reliability Engineering on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 10 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/site-reliability-engineering/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>DevOps and SRE in the Enterprise</title>
-      <link>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
-      
-      <guid>https://mattouille.com/articles/2018-09/devops-and-sre-in-the-enterprise/</guid>
-      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
-    </item>
-    
-    <item>
       <title>Let&#39;s talk DevOps job titles</title>
-      <link>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/lets-talk-devops-job-titles/</guid>
+      <guid>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</guid>
       <description>I&amp;rsquo;ve watched the community struggle on and off with job titles for those working in the DevOps market. DevOps is and always will be simply a set of philosophies, beyond that are three major systems-type fields I see companies using DevOps in: Operations, Platform Engineering, and Release Management.
 Site Reliability Engineering To avoid some initial confusion I&amp;rsquo;m going to address the topic of Site Reliability Engineering. For those that&amp;rsquo;ve read the book and heard the hype you&amp;rsquo;ll realize that SRE is Google&amp;rsquo;s implementation of Operations.</description>
     </item>
     
     <item>
-      <title>Variations in High Availability</title>
-      <link>https://mattouille.com/articles/2018-09/variations-in-high-availability/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <title>DevOps and SRE in the Enterprise</title>
+      <link>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/variations-in-high-availability/</guid>
+      <guid>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</guid>
+      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
+    </item>
+    
+    <item>
+      <title>Variations in High Availability</title>
+      <link>https://mattouille.com/articles/2017-10/variations-in-high-availability/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/variations-in-high-availability/</guid>
       <description>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&amp;rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</description>
     </item>
     

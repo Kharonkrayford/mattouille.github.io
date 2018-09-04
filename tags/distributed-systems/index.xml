@@ -6,17 +6,17 @@
     <description>Recent content in Distributed Systems on mattouille.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Sep 2018 01:10:28 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 11 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mattouille.com/tags/distributed-systems/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kubernetes through iteration with a startup</title>
-      <link>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</link>
-      <pubDate>Tue, 04 Sep 2018 01:10:28 -0500</pubDate>
+      <link>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</link>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mattouille.com/articles/2018-09/kubernetes-through-iteration-with-a-startup/</guid>
+      <guid>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</guid>
       <description>At Capstone Metering we&amp;rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&amp;rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&amp;rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&amp;rsquo;s to learn and ascertain direction for our engineering organization.</description>
     </item>
     
