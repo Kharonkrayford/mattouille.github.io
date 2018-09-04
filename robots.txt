@@ -1,0 +1,3 @@
+Sitemap: https://mattouille.com/sitemap.xml
+
+User-agent: *

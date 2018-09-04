@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Basic Ubuntu Security" />
+<meta property="og:description" content="Especially in 2017 everyone should be concerned about security. You don&rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&rsquo;s begin!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2017-02/basic-ubuntu-security/" /><meta property="article:published_time" content="2017-02-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-02-24T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="Basic Ubuntu Security"/>
+<meta name="twitter:description" content="Especially in 2017 everyone should be concerned about security. You don&rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&rsquo;s begin!"/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Basic Ubuntu Security",
+  "url": "https://mattouille.com/articles/2017-02/basic-ubuntu-security/",
+  "wordCount": "361",
+  "datePublished": "2017-02-24T00:00:00&#43;00:00",
+  "dateModified": "2017-02-24T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Tutorials, Ubuntu, Linux, Security"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2017-02/basic-ubuntu-security/">
+
+    <title>Basic Ubuntu Security | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">Basic Ubuntu Security</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2017-02-24T00:00:00Z">Fri Feb 24, 2017</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/ubuntu" rel="tag">Ubuntu</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/linux" rel="tag">Linux</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/security" rel="tag">Security</a></span>
+
+</p>
+  </header>
+  <hr />
+  <p>Especially in 2017 everyone should be concerned about security. You don&rsquo;t need to be a genius or completely paranoid in order to avoid most potentially compromising situations. Follow these instructions and you&rsquo;ll have a basic understanding of what it is to secure your brand new, vanilla Ubuntu server. That said, if you use the web or have a publicly accessible service then there is always a chance you will be compromised. You cannot predict application patches with vulnerabilities or the colorful attempts a hacker that is specifically targeting you may employ. You may simply prep with your best effort. Let&rsquo;s begin!</p>
+
+<!--more-->
+
+<h2 id="add-your-first-user">Add your first user</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo -s
+adduser &lt;new_user&gt;
+usermod -aG sudo &lt;new_user&gt;</code></pre></div>
+
+<h2 id="modify-the-sshd-config">Modify the SSHD config</h2>
+
+<p><code>vim /etc/ssh/sshd_config</code></p>
+
+<p>Modify the following line:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">PermitRootLogin <span style="color:#f92672">=</span> yes
+PermitRootLogin <span style="color:#f92672">=</span> no</code></pre></div>
+
+<p>Some blogs may advise you to change the port to a non-standard number (ie: 8022, 2222). I don&rsquo;t believe this is a good idea:
+<strong>A.</strong> There is no such thing as security through obscurity
+<strong>B.</strong> This opens the door for password interception, assuming you&rsquo;re using plaintext passwords instead of keys. A lot of amateur blogs will use the word non-standard port to reference anything above 1024, however, the proper terminology is a non-privileged port (meaning root does not have to be used to begin listening, any user can listen).</p>
+
+<p><strong>Ex.</strong> If you use port 2222 I can now create a script to mimic SSH and begin stealing your passwords like the troublesome child I am.</p>
+
+<h2 id="setup-uncomplicated-firewall-ufw">Setup Uncomplicated Firewall (UFW)</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt install ufw
+ufw allow <span style="color:#ae81ff">22</span>/tcp</code></pre></div>
+
+<p>We’ve installed UFW and opened TCP port 22 for ssh connections.</p>
+
+<h2 id="configure-automatic-security-updates">Configure Automatic Security Updates</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt install unattended-upgrades
+dpkg-reconfigure unattended-upgrades</code></pre></div>
+
+<p>You’ll want to select the description:</p>
+
+<p>This package can download and install security upgrades automatically and unattended, taking care to only install packages from the configured APT source, and checking for dpkg prompts about configuration file changes.</p>
+
+<h2 id="other-considerations">Other considerations</h2>
+
+<p>In future articles I’ll probably write some more on this subject. Here’s some more topics worth looking into in security:</h2></p>
+
+<ul>
+<li>AppArmor</li>
+<li>Keep in mind Linode does not support AppArmor, you will need to recompile the kernel</li>
+<li>Key based authentication</li>
+<li>Swap file security</li>
+<li>File ownership</li>
+<li>Principle of Least Privilege</li>
+</ul>
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-02%2fbasic-ubuntu-security%2f&amp;text=Basic%20Ubuntu%20Security&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2017-02%2fbasic-ubuntu-security%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-02%2fbasic-ubuntu-security%2f&amp;title=Basic%20Ubuntu%20Security" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-02%2fbasic-ubuntu-security%2f&amp;title=Basic%20Ubuntu%20Security" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-02%2fbasic-ubuntu-security%2f&amp;title=Basic%20Ubuntu%20Security" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2017-02%2fbasic-ubuntu-security%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

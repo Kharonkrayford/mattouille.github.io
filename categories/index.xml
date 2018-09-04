@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on mattouille.com</title>
+    <link>https://mattouille.com/categories/</link>
+    <description>Recent content in Categories on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>https://mattouille.com/categories/blog/</link>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opinions</title>
+      <link>https://mattouille.com/categories/opinions/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/categories/opinions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://mattouille.com/categories/tutorials/</link>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/categories/tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workshops</title>
+      <link>https://mattouille.com/categories/workshops/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/categories/workshops/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

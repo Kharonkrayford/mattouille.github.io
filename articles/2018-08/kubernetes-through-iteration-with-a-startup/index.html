@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Kubernetes through iteration with a startup" />
+<meta property="og:description" content="At Capstone Metering we&rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&rsquo;s to learn and ascertain direction for our engineering organization." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/" /><meta property="article:published_time" content="2018-08-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-11T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="Kubernetes through iteration with a startup"/>
+<meta name="twitter:description" content="At Capstone Metering we&rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&rsquo;s to learn and ascertain direction for our engineering organization."/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kubernetes through iteration with a startup",
+  "url": "https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/",
+  "wordCount": "4186",
+  "datePublished": "2018-08-11T00:00:00&#43;00:00",
+  "dateModified": "2018-08-11T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Tutorials, Kubernetes, Distributed Systems"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/">
+
+    <title>Kubernetes through iteration with a startup | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">Kubernetes through iteration with a startup</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2018-08-11T00:00:00Z">Sat Aug 11, 2018</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/kubernetes" rel="tag">Kubernetes</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/distributed-systems" rel="tag">Distributed Systems</a></span>
+
+</p>
+  </header>
+  <hr />
+  
+
+<p>At Capstone Metering we&rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&rsquo;s to learn and ascertain direction for our engineering organization.</p>
+
+<p>I felt that telling the story of our iteration through different forms of Kubernetes was important. There are probably things that we overlooked, however, I think we built our requirements as our knowledge grew and showing that iteration may help someone in the future. If you&rsquo;re just wanting to know our production workflow for Kubernetes, feel free to jump ahead to the next section, though I think you&rsquo;ll find that the article lacks value if that&rsquo;s all you want.</p>
+
+<h4 id="managed-or-unmanaged-that-is-the-question">Managed or Unmanaged? That is the question.</h4>
+
+<p><strong>Iteration 1</strong></p>
+
+<p>During our initial MVP we setup minikube and deployed some services to it. We had already written some MVP&rsquo;s for what microservices would look like but they were nowhere near finalized. They did contain a lot of the mechanics of a general microservice so I think it provided a fair benchmark to assess orchestrators on. I could go into why Kubernetes was the right choice for us, but it&rsquo;s rather arbitrary. Here&rsquo;s the things that I noted as &ldquo;cool&rdquo; (very engineer of me, right?)</p>
+
+<ul>
+<li>The Container Network Interface (CNI) and Container Runtime Interface (CRI) are easily pluggable</li>
+<li>CRD&rsquo;s allow you to extend the functionality of Kubernetes fairly simply (Check out KubeBuilder)</li>
+<li>Exposing resources is carefully controlled through services/ingresses and easy to visualize when needed (I heavily use CLI&rsquo;s, but a dashboard can be nice for groking)</li>
+<li>Concept of ingresses (This is an interesting abstraction around how we use proxies)</li>
+<li>RBAC is pretty simple, albeit at times vague</li>
+<li>Secrets management is supported out of the box and even extendable</li>
+<li>Namespace separation</li>
+</ul>
+
+<p>I did figure out pretty quickly that you can&rsquo;t just go load a lot of plugins up on Minikube. It <em>is</em> actually substantially different from a production Kubernetes deployment. This leaves out a local development option for Kubernetes but everyone has fast internet these days so I figured we could work around that with namespaces.</p>
+
+<p class="alert alert-info"><strong>Conclusion</strong>: It&rsquo;s worth further exploring.</p>
+
+<p><strong>Iteration 2</strong></p>
+
+<p>For our next trick, we attempted to setup Kubernetes in our server farm. To give some context to that, and to highlight how much of a <del>joke</del> learning opportunity it was, our server farm consists of four Dell R700&rsquo;s. For this we used Rancher and we also attempted to run just a vanilla stack. I will note that both of these attempts succeeded and I want to give a shoutout to Rancher Labs for building an awesome product (I&rsquo;m not affiliated with Rancher at all, but if you&rsquo;re stressed about being late to the container game Rancher has a great product for you.)</p>
+
+<p>There are some beta storage providers that solve the problem of Ceph or Gluster running on your kubelet, for this check out <a href="https://github.com/rook/rook">Rook</a> (Thanks to <a href="https://coderanger.net/">coderanger</a> for that). I had attempted to run Gluster in our environment and I was quickly reminded of how operationally expensive it is to run Gluster. We&rsquo;re a startup so this obviously didn&rsquo;t fit the mold.</p>
+
+<p>We never really intended to run production workloads on this setup, it was more so we could easily test and play with Kubernetes, however, we quickly ran into the problem with not owning a proper SAN to feed PV&rsquo;s with.</p>
+
+<p class="alert alert-info"><strong>Conclusion</strong>: Running Kubernetes on baremetal has some significant cost implications.</p>
+
+<p><strong>Iteration 3</strong></p>
+
+<p>Our next shot was to run Kubernetes on our existing infrastructure at AWS setup via <code>kubeadm</code>. If you haven&rsquo;t checked out <a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/"><code>kubeadm</code></a> then definitely give it a shot. My personal notes on it were that while it seemed very convenient I also felt like this was not the way you deploy or manage production infrastructure.</p>
+
+<p class="alert alert-info">I already can tell statements like this about <code>kubeadm</code> or <code>kops</code> will likely incur the wrath of mentions on my Twitter. I personally wanted to be able to create some bash to setup Kubernetes as a <code>systemd</code> service with whatever supporting things I needed.</p>
+
+<p class="alert alert-danger"><strong>Spoiler alert</strong>: That&rsquo;s how GKE does it.</p>
+
+<p>This iteration quickly became about just deploying a cluster that would work for more than a day. I tried Chef, <code>kubeadm</code>, and Rancher. <code>kubeadm</code> lacked support at the time for multi-master setups, in Chef I was inundated with being a newb at running <code>etcd</code>, and with Rancher I felt far too far away from my infrastructure.</p>
+
+<p>As a result, I started to dig deeper into Kelsey Hightower&rsquo;s famed <a href="https://github.com/kelseyhightower/kubernetes-the-hard-way">Kubernetes the Hard Way</a>. KTHW doesn&rsquo;t get you into the nitty-gritty running and maintenance of a Kubernetes cluster and all of it&rsquo;s components, instead I think it provides a nice clean view of the basic tools that need to be running for Kubernetes to minimally function.</p>
+
+<p class="alert alert-info"><strong>Conclusion</strong>: Kubernetes didn&rsquo;t just have cost when associated with on-prem deployments. Kubernetes had an operational overhead that was quite enormous. If I had a team of experienced systems-engineers who could code I think that this might&rsquo;ve been where research-iteration stopped and development-iteration began.</p>
+
+<p><strong>Iteration 4</strong></p>
+
+<p>This is where our Kubernetes deployment checks in with real-time. My boss and I had a back forth discussion about moving to Google Cloud which was somewhat contentious.</p>
+
+<p>His argument: <em>Google Cloud is cheaper and has managed Kubernetes</em></p>
+
+<p>My argument: <em>I will never migrate a cloud provider and build a new app at the same time ever again.</em></p>
+
+<p class="alert alert-danger"><strong>Spoiler alert</strong>: I migrated to a new cloud provider and am building a new app at the same time.</p>
+
+<p>This all came about because AWS had a series of outages that affected us really hard. The outages that eventually made me change my mind were global and regional resource outages. While I think my concerns are still valid, to my bosses credit we do have a pretty small footprint and we weren&rsquo;t doing a lift and shift. Instead, we were building an entirely new app and this time it would be on top of Kubernetes, not an actual cloud providers API&rsquo;s.</p>
+
+<p>After wiring up Terraform to our account and doing some scaffolding I spun up GKE. When I originally wrote this piece I listed some limitations of GKE. After much further iteration I&rsquo;ve actually found that rather there&rsquo;s just some things GKE doesn&rsquo;t seek to do that are actually part of incubator project to further integrate cloud providers with Kubernetes in a sustainable fashion. For this I point to <a href="https://github.com/jetstack/cert-manager"><code>cert-manager</code></a> and <a href="https://github.com/kubernetes-incubator/external-dns"><code>external-dns</code></a>.</p>
+
+<p class="alert alert-info"><strong>Conclusion</strong>: GKE satisfied our needs, as well as we got monitoring, logging, and tracing for free.</p>
+
+<h4 id="fourth-time-s-the-charm">Fourth time&rsquo;s the charm!</h4>
+
+<p>You might say we chose Kubernetes the Easy Way™. Here&rsquo;s some highlights of GKE so far:</p>
+
+<ul>
+<li>IAM integration is provided out of the box</li>
+<li><code>gcloud</code> sdk makes it quite painless to obtain credentials</li>
+<li>Node autoscaling nodes is quite painless and even works in conjunction with upgrades and repairs</li>
+<li>Projects like <code>cert-manager</code> and <code>external-dns</code> allow for integrating with cloud providers and interacting with them via annotations. Both of them support service accounts, which is how I prefer to deliver access.</li>
+<li>Options for public and private clusters as well as integrated VPC networking</li>
+<li>Multi-zone master and <code>etcd</code></li>
+<li>Regional persistent disk support (two zone limit)</li>
+<li>Nodes are only semi-managed</li>
+<li>Logs, tracing, and monitoring were easily wired up with Stackdriver and Prometheus</li>
+<li>Auto-upgrades and auto-repair (Yes, there are problems with this)</li>
+</ul>
+
+<p>I had previously noted here that node-pool and master upgrades suck and resulted in downtime. This was prior to me discovering regional clusters, dual-zone persistent disks, and autoscaling. <strong>Pro-tip</strong>: If you run a regional cluster then make sure you set regional persistent disks (or what I call dual-zone, because that&rsquo;s what it is) to the default <code>StorageClass</code> otherwise pods will get superglued to one zone and you&rsquo;ll suffer from zonal outages anyway.</p>
+
+<p class="alert alert-warning">Regional Persistent Disks did not work under Kubernetes 1.9.Y. I had to upgrade to 1.10.6 in order to make things work. This is not (currently) annotated in the docs, but I have made Google aware of it.</p>
+
+<p>That said, all of those things for free out of the box make the challenging concept of running a production grade Kubernetes cluster multitudes more simple. However, Kubernetes is really only one piece.</p>
+
+<p>We set out on actually <em>building</em> a production grade Kubernetes cluster for our internal applications. This includes a chatops bot, some business intelligence and analytics apps, our CI/CD agents, etc&hellip; The internal cluster would be the model for how we&rsquo;d run our production app clusters in the future, which is great because our employees tolerate failure a lot more than our customers do :)</p>
+
+<h4 id="bootstrapping-the-environment">Bootstrapping the environment</h4>
+
+<p>The first thing I did was bootstrapping everything with Terraform. Terraform does not handle day to day infrastructure automation for us. It merely handles major changes and initial provisioning. There are even some explicit <code>lifecycle</code> <code>ignore_changes</code> I have set where we manage things with different tooling/services. These tools came about because Terraform lacks some ability to reason about infrastructure, which is fine - it&rsquo;s perfectly good doing what it&rsquo;s doing.</p>
+
+<p>One major lesson to be learned here was managing <code>node_pool</code>s separately from the cluster itself. Changing <code>node_pool</code>s that are described within a cluster causes resource recreation. This became immediately obvious during some of my load-testing game days.</p>
+
+<h4 id="a-persistent-mistake">A persistent mistake</h4>
+
+<p>One mistake I made early on was conflating my on-prem Kubernetes experience and GKE. In GKE I continued to use PV&rsquo;s and I was even spinning up block storage to associate with PV&rsquo;s.</p>
+
+<p><code>gce-pd</code> has dynamic support (what I was trying to achieve by setting up Gluster) for PVC&rsquo;s. There are some usecases where you may want to pre-populate a persistent disk with information and have that PV copy it. That&rsquo;s fine, but that wasn&rsquo;t what I was trying to do.</p>
+
+<p>Now my applications stay persistent using dynamic and regionally available disks. I will again note, if you&rsquo;re using a regional cluster please save yourself the headache and potential wonder by also using regional disks as the default.</p>
+
+<h4 id="a-story-of-two-mono-repos">A story of two mono-repos</h4>
+
+<p>I&rsquo;m a big fan of mono-repos. It&rsquo;s easy to find and connect things. Even moreso, we&rsquo;re a Go and Terraform shop so out of the gate many of our tools are biased to mono-repos. We have an infrastructure repo and an application repo.</p>
+
+<p>A great side effect of this was that our wikis became much more consolidated as the repository solidified. We now have documentation living in the code as well as higher level documentation living in a wiki tied to the code. While this isn&rsquo;t necessarily Kubernetes related you will find just how chaotic a large list of repositories can become with a distributed system. What helps reign that in is by using a very strong single source of truth.</p>
+
+<p>In the infrastructure repository our <em>actual</em> source of truth is the Terraform statefile. You&rsquo;ll see later how we interact directly with state to make sure the repository reflects the source of truth.</p>
+
+<h4 id="manifests-and-secrets-oh-my">Manifests and secrets, oh my</h4>
+
+<p>After a while of deploying containers on our cluster through manifests I began to look around at some ways of storing and managing these manifests. I didn&rsquo;t have anything like Terraform to execute my manifests, which was disappointing. Yes, I realize Helm is a thing, but I am staunchly against using Tiller. Helm 3 will supposedly fix a lot of my gripes.</p>
+
+<p>Aside from that I noticed I had two separate different categories of manifests:
+* Cluster support
+* Application</p>
+
+<p><strong>Cluster Support</strong></p>
+
+<p>These manifests were <code>cert-manager</code>, <code>SealedSecrets</code>, <code>external-dns</code>, <code>storage-classes</code>, <code>prometheus</code>, etc&hellip; All the things that boost the functionality of my cluster and often <em>have</em> to be provisioned first and <em>sometimes</em> have a dependent load order.</p>
+
+<p><strong>Applications</strong></p>
+
+<p>These are kind of obvious. It&rsquo;s our actual apps that we run on Kubernetes that our employees or customers might see.</p>
+
+<p>As a more important note, due to having my manifests organized like this I can rebuild a cluster by hand in less than five minutes.</p>
+
+<p>Being that I had just stood up Kubernetes I didn&rsquo;t have a ton of time to go sort out Hashicorp Vault&rsquo;s integration into my workflow (It&rsquo;s on the list, okay?) I opted for BitNami&rsquo;s <code>SealedSecrets</code> (thanks to <em>@whereismyjetpack</em>). This encrypts your secrets with a 2048bit RSA key generated and stored on the cluster (that you can back up.)</p>
+
+<p>The biggest pain of SealedSecrets is if you screw a secret manifest up it takes a while to redo but this kind of reinforces the idea that you should back up your secrets multiple times. Additionally, storing secrets in your repository potentially opens you up for side-channel attacks so long term this will likely be undone.</p>
+
+<p>In the end I have not completely solved templating or variable substitution (though I&rsquo;ve been building a cli/service to do just that) but <code>kubectl apply -f &lt;dir&gt;</code> works fine for now. Hopefully Helm v3 will be more focused to my usecase. While looking for a website I wanted to give credit to in this article I also found <a href="https://medium.com/devopstricks/ci-cd-with-gitlab-kubernetes-399f81ac91ae">this</a>, which is interesting.</p>
+
+<h4 id="managing-cloud-provider-infrastructure">Managing cloud-provider infrastructure</h4>
+
+<p>I mentioned earlier that I use Terraform. In the time that I started writing this article and now I have actually cut out half of my Terraform code just by using applications that integrate with a provider. This is, however, a good time to mention that even though I may have a sweet managed Kubernetes, statefile separation is still really important.</p>
+
+<pre><code>project
+|_ 00-project-global
+  |_ hostedzone.tf
+|_ prod
+  |_ internal-gke.tf
+|_ staging
+  |_ apps-gke.tf
+</code></pre>
+
+<p><code>00-project-global</code> carries very few things, but its main purpose to manage the project and project access. <code>prod</code> and <code>stage</code> are quite obvious. Each cluster gets its own file for clarity. Mainly the thing that gets stood up here is managed zones, service accounts, and project access. This isn&rsquo;t unique to GCP, this is a lesson I learned in AWS as well.</p>
+
+<p>The only thing that&rsquo;s not obvious here is that I spun up a project solely for managing the entire GCP account and that&rsquo;s where Terraform state is stored and executed from.</p>
+
+<h4 id="executing-on-provider-infrastructure">Executing on provider infrastructure</h4>
+
+<p>Something without a way to collaborate around it is essentially nothing. I introduce to you, <a href="https://runatlantis.io">Atlantis</a>. Atlantis&rsquo; purpose is to move the Terraform command line to PR&rsquo;s and create a layer of locking for statefiles. It&rsquo;s actually easier for me to give you an idea of what this looks like:</p>
+
+<p><img src="/img/posts/2018-08/Screenshot_20180812_180522.png" alt="Atlantis Screenshot" /></p>
+
+<p>Atlantis is basically a proxy for Terraform but ships with a nice UI for discarding locks.</p>
+
+<p>From the PR I can issue commands like <code>atlantis plan -d gcp/internal/production/kube</code> and provide some variations with <code>atlantis apply</code>. Atlantis also has a pretty nifty config that can live at the root of your repo whereby it can be instructed to do auto-planning (where it shows you everything you&rsquo;ve changed in each directory) and you can inject some commands into <code>plan</code> and <code>apply</code>.</p>
+
+<p>That happens to lead to my next commentary: I am super paranoid and although I don&rsquo;t store secrets in <code>.tfvars</code> it provides a lot of context for how my account is laid out. For this I used <a href="https://github.com/AGWA/git-crypt">git-crypt</a> and I was able to drop git-crypt pretty plainly into Atlantis. Git-crypt actually encrypts the entire file so it was a new challenge, but made our infrastructure repository all that much more truthful.</p>
+
+<p>Since everyone is building infrastructure from this repo in merge requests it keeps the code in the repository as close to near-state as possible while allowing further evolution.</p>
+
+<h4 id="challenges-with-ingress-gce">Challenges with <code>ingress-gce</code></h4>
+
+<p>When I setup Atlantis I setup <a href="https://github.com/kubernetes/ingress-gce"><code>ingress-gce</code></a>. I really didn&rsquo;t know a lot about it other than that it was Google&rsquo;s Layer 7 Load Balancer as an ingress. I&rsquo;ll list some pro&rsquo;s and con&rsquo;s:</p>
+
+<p><strong>Pros</strong></p>
+
+<ul>
+<li>Allows access to GCE resources via annotations</li>
+<li>Very reliable and easy to monitor via Stackdriver</li>
+<li>Mostly hands off</li>
+<li>Syntax is close to nginx-ingress</li>
+</ul>
+
+<p><strong>Cons</strong></p>
+
+<ul>
+<li>Liveness and readiness probes take a while to bubble up</li>
+<li>Missing HTTP-to-HTTPS redirection functionality</li>
+<li>Blackbox D:</li>
+</ul>
+
+<p>I have since moved away from <code>ingress-gce</code> and mostly just use services in combination with <code>cert-manager</code> and <code>external-dns</code> to do what <code>ingress-gce</code> was doing.</p>
+
+<p>Our internal applications cluster is run entirely on preemptible nodes, that means our nodes go down with fair frequency (once a day or more) and then come back up. The first time I ever noticed the backend healthcheck latency was during one of these times. The endpoint came back online fairly quickly but not in every region.</p>
+
+<p class="alert alert-info">It&rsquo;s also fair to note that <code>ingress-gce</code> is a work in progress and relies on some beta features of Kubernetes but supports great things like annotations.</p>
+
+<h4 id="cert-manager"><code>cert-manager</code></h4>
+
+<p><a href="https://github.com/jetstack/cert-manager"><code>cert-manger</code></a> is a real life saver. I have mine setup to do domain verification for our public services with LetsEncrypt. In the future I also intend to loop Vault in for some activities. Overall Cert-Manager is quite painless to setup. You create an Issuer and a Certificate and it makes the keypair available to you in a co-named secret.</p>
+
+<p class="alert alert-info">A word to the wise, <code>Issuer</code> and <code>Certificate</code> must be in the same <code>namespace</code>. There&rsquo;s no obvious reason for this from what I can tell, but it&rsquo;s easy to make that mistake.</p>
+
+<p>Cert-Manager is not billed as production ready, however, for what I&rsquo;ve been using it for it&rsquo;s been quite nice.</p>
+
+<h4 id="external-dns"><code>external-dns</code></h4>
+
+<p><a href="https://github.com/kubernetes-incubator/external-dns"><code>external-dns</code></a> allows you to correlate a LoadBalancer or Ingress IP to a DNS record and works as a job in Kubernetes. It definitely makes life quite a bit easier and plays well with other tools that do similar things.</p>
+
+<h4 id="gitlab-ci-and-dind">GitLab CI and dind</h4>
+
+<p>If you aren&rsquo;t familiar with the term <code>dind</code> then get ready. <code>dind</code> stands for &ldquo;Docker in Docker&rdquo; and is one of the primary ways to build docker images in the cloud much less inside a container orchestrator. What <code>dind</code> also tends to imply is some form of privileged containering.</p>
+
+<p>I&rsquo;m sure folks will swap stories about not only the security implications of privileged containers but also how things can go functionally awry. There is a methodology that works without privileged containers but I have not moved to it yet. Instead, I have namespace isolated the containers. That said, I will continue to play with escaping the container and determining whether there are implications worth further considering. The reason I am satisfied with this setup is that both of my Kubernetes executors are locked to that namespace and they don&rsquo;t talk to anything but GitLab. Additionally, you&rsquo;d have to break our GitLab quite deeply in order to access these containers. Nonetheless, they are fully isolated from our production application clusters.</p>
+
+<p>Running <code>dind</code> as a service with GitLab was actually a bit challenging at first and it&rsquo;s because it spins up an executor. One note I will make is that GitLab CI does not currently supply a working manifest for GKE. I will share mine here:</p>
+
+<p><strong>namespace.yml</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitlab
+  labels:
+    name: gitlab</code></pre></div>
+
+<p><strong>role-binding.yml</strong></p>
+
+<p class="alert alert-info">These aren&rsquo;t the actual resources I&rsquo;ve alotted, so replace that <code>*</code> with what you&rsquo;d like to give the role-binding access to. Also note this is not a CRB.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+  name: gitlab-role
+  namespace: gitlab
+rules:
+  - apiGroups: [<span style="color:#e6db74">&#34;&#34;</span>]
+    resources: [<span style="color:#e6db74">&#34;*&#34;</span>]
+    verbs: [<span style="color:#e6db74">&#34;*&#34;</span>]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: gitlab-role-binding
+  namespace: gitlab
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: gitlab-role
+subjects:
+  - name: default
+    namespace: gitlab
+    kind: ServiceAccount</code></pre></div>
+
+<p><strong>config-map.yml</strong></p>
+
+<blockquote>
+<p>Pay close attention to the mounting method here for the secret.</p>
+</blockquote>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-runner
+  namespace: gitlab
+data:
+  config.toml: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">    concurrent = 4
+</span><span style="color:#e6db74">    check_interval = 30</span>
+
+  run.sh: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">    #!/bin/bash
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    unregister() {
+</span><span style="color:#e6db74">      kill %1
+</span><span style="color:#e6db74">      echo &#34;Unregistering runner ${RUNNER_NAME}...&#34;
+</span><span style="color:#e6db74">      /usr/bin/gitlab-runner unregister \
+</span><span style="color:#e6db74">        -t &#34;$(/usr/bin/gitlab-runner list 2&gt;&amp;1 | tail -n1 | awk &#39;{print $4}&#39; | cut -d &#39;=&#39; -f2)&#34; \
+</span><span style="color:#e6db74">        -n ${RUNNER_NAME}
+</span><span style="color:#e6db74">      exit $?
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">    trap &#39;unregister&#39; EXIT HUP INT QUIT PIPE TERM
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    set -xe
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    cp /scripts/config.toml /etc/gitlab-runner/
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    # Register the runner
+</span><span style="color:#e6db74">    /usr/bin/gitlab-runner register --non-interactive \
+</span><span style="color:#e6db74">      --url $GITLAB_URL \
+</span><span style="color:#e6db74">      --executor kubernetes \
+</span><span style="color:#e6db74">      --kubernetes-namespace gitlab
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    echo &#34;    [[runners.kubernetes.volumes.secret]]&#34; &gt;&gt; /etc/gitlab-runner/config.toml
+</span><span style="color:#e6db74">    echo &#34;      name = \&#34;gitlab-executor\&#34;&#34; &gt;&gt; /etc/gitlab-runner/config.toml
+</span><span style="color:#e6db74">    echo &#34;      mount_path = \&#34;/secrets/\&#34;&#34; &gt;&gt; /etc/gitlab-runner/config.toml
+</span><span style="color:#e6db74">    echo &#34;      read_only = true&#34; &gt;&gt; /etc/gitlab-runner/config.toml
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    echo &#34;Starting runner ${RUNNER_NAME}...&#34;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    # Start the runner
+</span><span style="color:#e6db74">    /usr/bin/gitlab-runner run --user=gitlab-runner \
+</span><span style="color:#e6db74">      --working-directory=/home/gitlab-runner \
+</span><span style="color:#e6db74">      -n ${RUNNER_NAME} &amp;
+</span><span style="color:#e6db74">    wait</span></code></pre></div>
+
+<p><strong>secret.yml</strong></p>
+
+<p class="alert alert-info">The secret that belongs here is your registration token from the GitLab UI. The runner self registers and applies its own token.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: gitlab-runner-secret
+  namespace: gitlab
+data:
+  runner-registration-token: <span style="color:#75715e"># runner registration token</span>
+type: Opaque</code></pre></div>
+
+<p><strong>executor-secret.yml</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: gitlab-executor
+  namespace: gitlab
+data:
+  gitlab-service-account.json: <span style="color:#75715e"># base64 of docker config using a service account</span>
+type: Opaque</code></pre></div>
+
+<p><strong>deployment.yml</strong></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gitlab-runner
+  namespace: gitlab
+spec:
+  replicas: <span style="color:#ae81ff">1</span>
+  selector:
+    matchLabels:
+      name: gitlab-runner
+  template:
+    metadata:
+      labels:
+        name: gitlab-runner
+    spec:
+      containers:
+      - name: gitlab-runner
+        image: gitlab/gitlab-runner:latest
+        imagePullPolicy: Always
+        command:
+        - /bin/bash
+        - /scripts/run.sh
+        env:
+        - name: RUNNER_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: GITLAB_URL
+          value: <span style="color:#e6db74">&#34;https://gitlab.com/&#34;</span>
+        - name: REGISTRATION_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-runner-secret
+              key: runner-registration-token
+        - name: KUBERNETES_PRIVILEGED
+          value: <span style="color:#e6db74">&#34;true&#34;</span>
+        volumeMounts:
+        - mountPath: /scripts
+          name: config
+        - mountPath: /etc/gitlab-runner/certs
+          name: cacerts
+          readOnly: <span style="color:#66d9ef">true</span>
+      restartPolicy: Always
+      volumes:
+      - configMap:
+          name: gitlab-runner
+        name: config
+      - hostPath:
+          path: /var/mozilla
+        name: cacerts
+      - hostPath:
+          path: /var/run/docker.sock
+        name: var-run-docker-sock</code></pre></div>
+
+<p>In my GitLab CI yaml I then have a <code>before_script</code> that any time I want to push or pull from a private repo I used <code>docker login -u _json_key --password-stdin https://us.gcr.io &lt; /secrets/gitlab-service-account.json</code>.</p>
+
+<p>The reason you have to use this methodology is we don&rsquo;t have mounting ability on the service pod (<code>svc-0</code>) which is actually running Docker. When you replace the Docker config, that&rsquo;s telling the Docker <em>daemon</em> what to do and that mount occurs on the <code>builder</code> pod where the daemon isn&rsquo;t running.</p>
+
+<p>I can&rsquo;t claim total credit here. I took a lot of inspiration from <a href="https://tortuemat.gitlab.io/blog/2017/07/26/gitlab-runner-kubernetes/">this person</a> and <a href="https://edenmal.moe/post/2017/GitLab-Kubernetes-Running-CI-Runners-in-Kubernetes/">this person</a>. Both of those websites include some really great code and tutorials even beyond the ones I&rsquo;ve linked.</p>
+
+<h4 id="database-storage">Database storage</h4>
+
+<p>I am still in the infancy stages of supporting databases on Kubernetes. I will note if you&rsquo;re looking to start then Postgres, Redis, and InfluxDB all play well within Kubernetes on a <code>StatefulSet</code>. Don&rsquo;t try to support persistence on day one though, you will lose. You will need to develop strategies for backing these databases up, scaling them, and restoring them.</p>
+
+<h4 id="cost">Cost</h4>
+
+<p>Our internal cluster currently runs roughly 30 containers on four nodes across 2 zones. So far we&rsquo;ve noticed that the cluster costs us about $50 per month. If we had run each of these apps on virtual machines we would be easily looking at double that or more, though the added operational cost may even it out in the near term.</p>
+
+<p>If anyone is seriously interested in a cost analysis I can do a more thorough one rather than just evaluating our monthly bill.</p>
+
+<h4 id="conclusion">Conclusion</h4>
+
+<p>I have an obvious to-do list:</p>
+
+<ul>
+<li>Performing actions on many clusters at once (I have been writing a tool/service to do this)</li>
+<li>Manifest execution and variable substitution (Looking at you Helm 3)</li>
+<li>Disaster recovery with <a href="https://github.com/heptio/ark">Heptio Ark</a></li>
+<li>Container image scanning strategy with <a href="https://anchore.com/">Anchore</a></li>
+</ul>
+
+<p>This article was about our experience as a startup with limited resources, time, and money while developing our next generation solution to deliver greater reliability to our customers. Ultimately, I think it&rsquo;s flexing the power of iteration and our strategy of using MVP&rsquo;s as tools of iteration and continuous learning. Each iteration was about two weeks (or a sprint in many Agile worlds) and was done alongside maintaining our current production application.</p>
+
+<p><strong>Post Script</strong></p>
+
+<ul>
+<li>One thing I think that&rsquo;s really of value is just because Kubernetes exists doesn&rsquo;t mean that Nomad, Mesos, ECS, and the like are suddenly irrelevant. Use the right tool for the job. We chose Kubernetes because we had a multitenancy model that was easy to wrap around the Kubernetes ecosystem.</li>
+<li>This article is not meant to compare and contrast AWS and GCP. Personally, I believe both cloud providers have value and generally they are both good to get the job done. It is up to you which strengths and merits you value.</li>
+<li>Just because you run GKE or EKS doesn&rsquo;t mean that you now have the opportunity to forget how Kubernetes is built or managed behind the scenes. If anything, these things become even more important so that you don&rsquo;t waste time or pull double duty.</li>
+<li>If you find yourself coming to the end of an iteration and saying, &ldquo;This is nice&rdquo; then try and do a game day around your product. Introduce some failure modes and see how things go. All that to say, that&rsquo;s why we started out using preemptible nodes; it was a cheap substitution for something like <a href="https://www.gremlin.com/">Gremlin</a> in the near term.</li>
+<li>Although it may seem like we did a lot, we have a long way to go and this really only a part 1. Our plan for full adoption is about a year from now.</li>
+</ul>
+
+<p><strong>Special Thanks</strong></p>
+
+<ul>
+<li>To #kubernetes on HangOps for some peer review</li>
+<li>Capstone Metering for providing me a place to work that takes pride in my writing and open source</li>
+<li>To the people who send me feedback on LinkedIn, Twitter, Slack, and IRC</li>
+</ul>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-08%2fkubernetes-through-iteration-with-a-startup%2f&amp;text=Kubernetes%20through%20iteration%20with%20a%20startup&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2018-08%2fkubernetes-through-iteration-with-a-startup%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-08%2fkubernetes-through-iteration-with-a-startup%2f&amp;title=Kubernetes%20through%20iteration%20with%20a%20startup" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-08%2fkubernetes-through-iteration-with-a-startup%2f&amp;title=Kubernetes%20through%20iteration%20with%20a%20startup" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2018-08%2fkubernetes-through-iteration-with-a-startup%2f&amp;title=Kubernetes%20through%20iteration%20with%20a%20startup" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2018-08%2fkubernetes-through-iteration-with-a-startup%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

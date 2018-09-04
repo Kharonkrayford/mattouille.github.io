@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudformation on mattouille.com</title>
+    <link>https://mattouille.com/tags/cloudformation/</link>
+    <description>Recent content in Cloudformation on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/tags/cloudformation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using return values inside CloudFormation UserData</title>
+      <link>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-12/using-return-values-inside-cloudformation-userdata/</guid>
+      <description>I&amp;rsquo;ve been working on a project that uses CloudFormation exclusively, so I don&amp;rsquo;t get to do variable interpolation with return values that&amp;rsquo;s as simple as Terraform makes it. Thus, I&amp;rsquo;ve had to do some improvising when generating files based off my infrastructure orchestration.
+Unfortunately CloudFormation is not as versatile as AWS would like you to believe, though it does constantly improve. One of the things I really like having is the ability to drop some return values in my UserData that&amp;rsquo;s based on my infrastructure orchestration.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloudfront on mattouille.com</title>
+    <link>https://mattouille.com/tags/cloudfront/</link>
+    <description>Recent content in Cloudfront on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/tags/cloudfront/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SendGrid DNS White Labeling and CloudFront for Secure Click Tracking Links</title>
+      <link>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-03/sendgrid-dns-white-labeling-and-cloudfront-for-secure-click-tracking-links/</guid>
+      <description>At StarLeaf we had a need to secure our SendGrid click tracking links, unfortunately our provider, SendGrid, had no way of sending HTTPS traffic with their in place white labeling solution. This is how we solved that.
+This solution does not solely apply to SendGrid as it&amp;rsquo;s a generic way to proxy HTTP URL&amp;rsquo;s to HTTPS. You can apply the solution I build here to nearly anything that requires proxying.</description>
+    </item>
+    
+  </channel>
+</rss>

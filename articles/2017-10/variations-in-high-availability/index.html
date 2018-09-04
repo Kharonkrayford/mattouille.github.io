@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Variations in High Availability" />
+<meta property="og:description" content="High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2017-10/variations-in-high-availability/" />
+<meta property="og:image" content="https://mattouille.com/img/posts/2017-10/high-availability-poll.png" />
+<meta property="article:published_time" content="2017-10-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-23T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/posts/2017-10/high-availability-poll.png"/>
+
+<meta name="twitter:title" content="Variations in High Availability"/>
+<meta name="twitter:description" content="High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that."/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Variations in High Availability",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mattouille.com/img/posts/2017-10/high-availability-poll.png",
+    "height": "570",
+    "width": "922"
+  },
+  "url": "https://mattouille.com/articles/2017-10/variations-in-high-availability/",
+  "wordCount": "1550",
+  "datePublished": "2017-10-23T00:00:00&#43;00:00",
+  "dateModified": "2017-10-23T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Workshops, Programming, Infrastructure, Site Reliability Engineering"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2017-10/variations-in-high-availability/">
+
+    <title>Variations in High Availability | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">Variations in High Availability</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2017-10-23T00:00:00Z">Mon Oct 23, 2017</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/workshops" rel="category tag">Workshops</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/programming" rel="tag">Programming</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/infrastructure" rel="tag">Infrastructure</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/site-reliability-engineering" rel="tag">Site Reliability Engineering</a></span>
+
+</p>
+  </header>
+  <hr />
+  
+
+<p>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</p>
+
+<p class="alert alert-info"><strong>Note</strong>: <em>Please keep in mind definitions of high availability change service to service and use case to use case.</em></p>
+
+<h1 id="how-do-i-define-high-availability">How do I define high availability?</h1>
+
+<p>Generally speaking high availability means that a service has been built (whether developed in software or built with infrastructure) that implies the following:</p>
+
+<ol>
+<li>A high level of testing</li>
+<li>Redundancy features which reduce downtime</li>
+<li>Accommodations to increase stability</li>
+</ol>
+
+<p>High availability can be achieved through software, infrastructure, or a combination of the two.</p>
+
+<h1 id="measuring-availability">Measuring availability</h1>
+
+<p>In SRE we often spend a considerable amount of time defining and refining metrics on a particular service. Google separates these activities into <em>white box monitoring</em> and <em>black box monitoring</em>.</p>
+
+<p>White box monitoring collects metrics on an atomic level. You are often left directly querying the application for information or querying sources of information that the application directly utilizes. For example, if I was tasked with developing metrics for a web server such as Nginx I might query log output from Nginx to calculate <em>requests per second</em>, establish a stub service consisting of Nginx statistics, and I might also collect statistics directly related to Nginx&rsquo;s resource utilization (such as CPU jiffies consumed).</p>
+
+<p>These types of metrics don&rsquo;t always indicate whether a service is actually up but more foreshadow whether a service <em>will</em> experience problems.</p>
+
+<p>Black box monitoring on the other hand generally reflects an applications availability through the eyes of the user. One form of black box monitoring is to literally consume the API endpoints of a service. In this way I can look at the HTTP response code, I can examine data, and I can even use the very tests I use in my CI/CD pipeline to assure that the service is continuing to operate as expected.</p>
+
+<p>These metrics are very specific to describing <em>user pain</em> while the former more accurately indicate when a service is approaching a threshold that causes user pain. This is the difference between <em>proactive</em> and <em>reactive</em> monitoring.</p>
+
+<p>Determining availability is really the job of both of these practices, you really cannot have one without the other. Availability is a broader question than just &ldquo;is it up or not&rdquo; though. A colleague of mine, Daniel Torres developed a fundamental set of metrics which he describes as &ldquo;VALET&rdquo;. VALET stands for Volume, Availability, Latency, Errors, and Tickets. The term &ldquo;high availability&rdquo; is really a combination of the businesses tolerance for the above. The business will establish an SLO for each portion of VALET and what &ldquo;highly available&rdquo; means in each category.</p>
+
+<p>Notice I brought SLO&rsquo;s into the picture, high availability really cannot be established without a baseline and a goal. &ldquo;High availability&rdquo; isn&rsquo;t any one architectural model but more the practice of defining baselines and what the minimal acceptable benchmark for availability is. In VALET &ldquo;availability&rdquo; is a category but the term &ldquo;high availability&rdquo; is really a description of all the categories.</p>
+
+<h1 id="dissecting-valet">Dissecting VALET</h1>
+
+<p>We&rsquo;ll use our example web service, Nginx. In this case we&rsquo;re going to assume Nginx actually is a service and is built in a way that it can accept whatever endpoints may occur in something such as <a href="https://consul.io/">Consul Service Discovery</a>. If you&rsquo;re not aware, this is a pretty awesome pattern for microservices if you do it right. Nginx is a beast.</p>
+
+<p><strong>Volume</strong>. You have to look at what the primary product of the given service is. In this case Nginx&rsquo;s product is handling requests. We want to shrink that metric down to the <a href="https://plato.stanford.edu/entries/measurement-science/#StaSciPro">smallest observable number</a>. This makes working with and understanding that number substantially easier. In our case we&rsquo;ll use the ratio of <em>requests per second</em>. It&rsquo;s important that this number reflect <em>all</em> requests, even if they&rsquo;re frivolous or overhead. If you remove metrics from the equation then your predictions will become less certain.</p>
+
+<p><strong>Availability</strong>. This definition will generally grow over time and with your service. Firstly I might start with the number of 200&rsquo;s because I know that if something is <em>not found</em> it will result in a 400 and if something <em>times out</em> it will result in a 500. Again noting, this definition of availability is highly immature. Availability will be a percentage of total requests that return a 2xx response code.</p>
+
+<p><strong>Latency</strong>. Nginx spits out some numbers that are quite useful, but for other services you might have to calculate latency in a different way. For instance, Nginx tells us, for free, how long the request took from the user to the server, it tells us processing time with a backend service, and the time it took for when it received a response from a backend to deliver it to the user. In this instance I really want to narrow my metrics to &ldquo;when Nginx was handling the request, how long did it take?&rdquo; Thus this policy can trickle down to monitoring backends as well.</p>
+
+<p><strong>Errors</strong>. I generally keep this number a count but it could be a percentage. Sometimes knowing the error <em>count</em> can be useful when plotting <em>errors over time</em> whereas to a business person they may be thinking in terms of how error prone is this service. Really it comes down to who your consumer is for a given metric and how to properly represent an <em>error budget</em>. In terms of Nginx it&rsquo;s the total number of 4xx&rsquo;s and 5xx&rsquo;s returned as compared to the total number of requests. You might be saying, but 4xx&rsquo;s could be the result of an application. Yes, and this is where you have to mature your metrics to represent an accurate SLO.</p>
+
+<p><strong>Tickets</strong>. If you&rsquo;re using something like <a href="https://pagerduty.com">PagerDuty</a> or <a href="https://www.atlassian.com/software/jira">JIRA</a> and creating tickets for automatically identified issues then that count goes here. The point is to determine the strain this service puts on a team supporting it - Google defines this as toil. This can be a great indicator for development prioritization.</p>
+
+<h1 id="achieving-high-availability">Achieving high availability</h1>
+
+<p>As I said before, high availability can be achieved through software, infrastructure, or a combination of the two. In another restatement, attaining a higher level of availability can be especially challenging and burdensome for the engineers charged with building and maintaining it. The operational cost should be weighed with the organizational benefit.</p>
+
+<p>I&rsquo;ll supply a real world example:</p>
+
+<p>I was refactoring the code which spun up and maintained our bastion hosts at work. They were originally coded in a way that made them organizationally complex with a twenty-plus step process for provisioning and a fourteen step process for ensuring uptime. SSH hosts cannot be placed behind load balancers as load balancers frequently do not work well with streamed data (such as an SSH tunnel that needs to remain open.) This makes this problem quite challenging from a traditional point of view.</p>
+
+<p>I would be able to code a Lambda on AWS that managed bastion hosts in a round robin, removing bad hosts as they were discovered. During a benchmark I found that an Auto Scaling Group takes about 1-2 minutes to identify an unhealthy host. This means that users would inevitably receive intermittently poor service for 1-2 minutes at the expense of a considerable amount of work. For some context, Route 53 is not the most friendly service to work with and I would need to be pulling user data from the bastion host in order to perform operations on it.</p>
+
+<p>That said I made a decision to live with 1-2 minutes of downtime and instead spend my time building a machine image that would come up quickly and an effective health check to discover problems more quickly. Additionally I noted that the automation currently applied to our bastion hosts was actually ineffective and hadn&rsquo;t been working for some time yet no one had been complaining about a lack of availability. Upon diving into the metrics I found that the bastion host rarely ever went down and when it did it usually correlated to events in which availability zones had become unstable. In this regard it was better to spend my time producing a simple, secure, and yet effective bastion solution rather than concentrating on how many nines I could tack on to 99.9%.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>It isn&rsquo;t always impressive numbers that matter, it&rsquo;s at what cost and benefit to the business that a certain level of availability may imply. Be wise to evaluate and weigh each of these and be ready to rework your strategy occasionally as organizational requirements may change.</p>
+
+<p>Consider this: Google once had a service that by its very nature was &ldquo;highly available&rdquo;. This wasn&rsquo;t on purpose, just by accident the service was very stable. A surprise outage in the service revealed that other services had created hard dependencies which created a larger outage. From the business&rsquo; point of view this service was not one which deserved highly available support and a decision was made to intentionally take the service down for &ldquo;maintenance periods&rdquo; to ensure a lower availability as a means to removing hard external dependencies from their other services.</p>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fvariations-in-high-availability%2f&amp;text=Variations%20in%20High%20Availability&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fvariations-in-high-availability%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fvariations-in-high-availability%2f&amp;title=Variations%20in%20High%20Availability" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fvariations-in-high-availability%2f&amp;title=Variations%20in%20High%20Availability" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fvariations-in-high-availability%2f&amp;title=Variations%20in%20High%20Availability" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fvariations-in-high-availability%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

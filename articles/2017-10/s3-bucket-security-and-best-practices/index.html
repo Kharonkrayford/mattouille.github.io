@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="S3 Bucket Security and Best Practices" />
+<meta property="og:description" content="There&rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
+So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&rsquo;ve identified is it&rsquo;s permissions system known as ACL&rsquo;s and Policies. I&rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&rsquo;s it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/" /><meta property="article:published_time" content="2017-10-16T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-16T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="S3 Bucket Security and Best Practices"/>
+<meta name="twitter:description" content="There&rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
+So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&rsquo;ve identified is it&rsquo;s permissions system known as ACL&rsquo;s and Policies. I&rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&rsquo;s it."/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "S3 Bucket Security and Best Practices",
+  "url": "https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/",
+  "wordCount": "1021",
+  "datePublished": "2017-10-16T00:00:00&#43;00:00",
+  "dateModified": "2017-10-16T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Tutorials"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/">
+
+    <title>S3 Bucket Security and Best Practices | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">S3 Bucket Security and Best Practices</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2017-10-16T00:00:00Z">Mon Oct 16, 2017</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+</p>
+  </header>
+  <hr />
+  
+
+<p>There&rsquo;s been a litany of companies with unsecured S3 buckets including <a href="https://www.theregister.co.uk/2017/09/22/verizon_falls_for_the_old_unguarded_aws_s3_bucket_trick_exposes_internal_system/">Verizon</a>, <a href="https://www.theregister.co.uk/2017/10/10/accenture_amazon_aws_s3/">Accenture</a>, <a href="https://threatpost.com/four-million-time-warner-cable-records-left-on-misconfigured-aws-s3/127807/">TimeWarner</a>, and the list goes on.</p>
+
+<h2 id="so-what-is-a-vulnerable-s3-bucket">So what is a vulnerable S3 bucket?</h2>
+
+<h3 id="acls-and-policies">ACLs and policies</h3>
+
+<p>S3 has some quirks. First and foremost that I&rsquo;ve identified is it&rsquo;s <em>permissions system</em> known as <em><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">ACL&rsquo;s</a></em> and <em><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Policies</a></em>. I&rsquo;m going to kick this off with <strong>vanilla S3 buckets DENY by default.</strong> There&rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&rsquo;s it. If you create an S3 bucket and do nothing else with it, this bucket is largely secure (unless someone gains access to your account, but that&rsquo;s out of scope here).</p>
+
+<p>ACL&rsquo;s are just as they sound, they&rsquo;re <em>access control lists</em> where you can grant permissions or denies to accounts, users, groups, etc&hellip;</p>
+
+<p>Policies are very fine grained, expressive, and written in JSON. They&rsquo;re very comparable to ACL&rsquo;s, except they require referencing <em>existing</em> resources with ARN&rsquo;s (Amazon Resource Names).</p>
+
+<p><strong>So what&rsquo;s the difference?</strong> <a href="https://aws.amazon.com/blogs/security/iam-policies-and-bucket-policies-and-acls-oh-my-controlling-access-to-s3-resources/">Amazon regards S3 ACL&rsquo;s as legacy</a>, so I don&rsquo;t use them aside for the given ACL (<em>ALLOW</em> to resources in your account). In fact, in most cases I&rsquo;ll remove that ACL and define a policy to reflect it if it&rsquo;s needed. The reason I do this is maintaining a <em>single source of truth</em>. <strong>In many cases if you mix ACL&rsquo;s and policies determining the outcome can become very tricky and cumbersome.</strong> Policies reflect on all the objects in an S3 bucket, Amazon phrases this as they&rsquo;re <em>postured at the bucket level</em>. <strong>This means if you find yourself in a predicament where some objects need a policy and others don&rsquo;t they should likely be in different buckets.</strong></p>
+
+<p>Yes, I know you can apply policies to folders, but really in the age of IaaS I&rsquo;m sure you&rsquo;ve discovered this can be cumbersome as well. Let&rsquo;s examine that scenario below:</p>
+
+<p>Let&rsquo;s say I&rsquo;m using Terraform (or CloudFormation) to provision an S3 bucket. The whole goal with IaaS is to provision and require <em>zero</em> manual steps. I define my S3 Bucket, next I need to create a policy and specify the bucket it attaches to. <em>Keep in mind I can only reference things in my policy that already exist</em>. I would actually have to create a script that goes and creates a folder and then executes the policy creation and attachment. In this case it&rsquo;s not only easier but safer to provision different buckets for different policies.</p>
+
+<h2 id="let-the-best-practices-begin">Let the best practices begin.</h2>
+
+<h3 id="reining-in-the-policies">Reining in the policies</h3>
+
+<p>One of the unfortunate things that I see frequently is engineers or developers using <code>Principal: &quot;*&quot;</code> in policies. <em>Principal</em> is the <em>who</em> in <em><strong>who</strong> can use <strong>what</strong></em> while <em>Resource</em> refers to <em>what</em>. The <code>&quot;*&quot;</code> actually indicates that <em>any resource</em> can use the bucket you&rsquo;ve assigned this to, including resources or users outside your account. I can literally log onto another computer with AWS CLI installed and read or post files to your S3 bucket if your policies aren&rsquo;t specified correctly.</p>
+
+<blockquote>
+<p>You can try this by using a computer with no (or different) AWS credentials and the CLI installed. Simply create a file, apply a junk principal policy and copy it in with <code>aws s3 cp file.txt s3://yourbucket/</code>. Voila! Go ahead, make it interesting and throw some ACL denies in there too. Watch as your efforts are futile.</p>
+</blockquote>
+
+<p><code>Principal: &quot;*&quot;</code> is useful if you have a website hosted off of Amazon S3. I might use a policy like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;Version&#34;</span>:<span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+  <span style="color:#f92672">&#34;Id&#34;</span>:<span style="color:#e6db74">&#34;http referer policy example&#34;</span>,
+  <span style="color:#f92672">&#34;Statement&#34;</span>:[
+    {
+      <span style="color:#f92672">&#34;Sid&#34;</span>:<span style="color:#e6db74">&#34;Allow get requests originating from www.example.com and example.com.&#34;</span>,
+      <span style="color:#f92672">&#34;Effect&#34;</span>:<span style="color:#e6db74">&#34;Allow&#34;</span>,
+      <span style="color:#f92672">&#34;Principal&#34;</span>:<span style="color:#e6db74">&#34;*&#34;</span>,
+      <span style="color:#f92672">&#34;Action&#34;</span>:<span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+      <span style="color:#f92672">&#34;Resource&#34;</span>:<span style="color:#e6db74">&#34;arn:aws:s3:::examplebucket/*&#34;</span>,
+      <span style="color:#f92672">&#34;Condition&#34;</span>:{
+        <span style="color:#f92672">&#34;StringLike&#34;</span>:{<span style="color:#f92672">&#34;aws:Referer&#34;</span>:[<span style="color:#e6db74">&#34;http://www.example.com/*&#34;</span>,<span style="color:#e6db74">&#34;http://example.com/*&#34;</span>]}
+      }
+    },
+    {
+      <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;Explicit deny to ensure requests are allowed only from specific referer.&#34;</span>,
+      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Deny&#34;</span>,
+      <span style="color:#f92672">&#34;Principal&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+      <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:*&#34;</span>,
+      <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::examplebucket/*&#34;</span>,
+      <span style="color:#f92672">&#34;Condition&#34;</span>: {
+        <span style="color:#f92672">&#34;StringNotLike&#34;</span>: {<span style="color:#f92672">&#34;aws:Referer&#34;</span>: [<span style="color:#e6db74">&#34;http://www.example.com/*&#34;</span>,<span style="color:#e6db74">&#34;http://example.com/*&#34;</span>]}
+      }
+    }
+  ]
+}</code></pre></div>
+
+<p>In this example not only have I attributed an explicit <em>ALLOW</em> but I&rsquo;ve also attributed an explicit <em>DENY</em>.</p>
+
+<h3 id="reciprocity-is-worth-mentioning">Reciprocity is worth mentioning</h3>
+
+<p>A lot of folks that I find making unsafe S3 policies are doing so because they can&rsquo;t figure out the mess between ACL&rsquo;s and Policies (which I&rsquo;ve now explained) as well as reciprocity between <em>IAM Policies</em> and <em>Bucket Policies</em>. Anything that you reflect in your <em>Bucket Policy</em> should reflect in your <em>IAM Policy</em>. IAM Policies are used conjoiningly with STS:AssumeRole and Trusts. If I grant <em>s3:GetObject</em> in my Bucket Policy, I need to grant <em>s3:GetObject</em> in my IAM Policy TO that resource. <strong>AGAIN</strong>, make it to the specific resource rather than <code>&quot;*&quot;</code> unless you have a very good reason.</p>
+
+<h3 id="lock-everything-down-to-roles">Lock everything down to roles</h3>
+
+<p>I always make a habit of <strong>referencing roles with Principals</strong>. A principal can be assigned to a variety of things such as an <em>account</em>, <em>user</em>, <em>role</em>, and <em>service</em>. That said, just because you <em>can</em> doesn&rsquo;t mean you <em>should</em>. Rather than giving all your EC2 instances access with <code>Service: ec2.amazonaws.com</code> specify the rule and assign an STS Trust to that IAM Profile. You could equate this to the &ldquo;Principal of least privilege&rdquo;, much like buckets and bucket permissions could be described as &ldquo;Doing one thing and doing it well&rdquo;.</p>
+
+<h3 id="kms-and-sse">KMS and SSE</h3>
+
+<p>AWS provides the <em>Key Management Service</em> (For everything) and <em>Server Side Encryption</em> (For S3 Buckets). When you upload and download files/objects you can specify an AWS KMS Key to use. Furthermore you can restrict keys using policies! The same approach you used with bucket policies can be used with KMS Key policies, restricting them to certain roles is <em>always</em> a hardy best practice. This keeps everything segregated but also continuing to flow nicely without stoppages. Additionally, should an instance or resource with a particular role ever be compromised you can simply roll that <em>one</em> KMS key. You can refer to AWS KMS Key&rsquo;s using Bucket Policy conditionals.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+   <span style="color:#f92672">&#34;Version&#34;</span>:<span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+   <span style="color:#f92672">&#34;Id&#34;</span>:<span style="color:#e6db74">&#34;PutObjPolicy&#34;</span>,
+   <span style="color:#f92672">&#34;Statement&#34;</span>:[{
+         <span style="color:#f92672">&#34;Sid&#34;</span>:<span style="color:#e6db74">&#34;DenyUnEncryptedObjectUploads&#34;</span>,
+         <span style="color:#f92672">&#34;Effect&#34;</span>:<span style="color:#e6db74">&#34;Deny&#34;</span>,
+         <span style="color:#f92672">&#34;Principal&#34;</span>:<span style="color:#e6db74">&#34;*&#34;</span>,
+         <span style="color:#f92672">&#34;Action&#34;</span>:<span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+         <span style="color:#f92672">&#34;Resource&#34;</span>:<span style="color:#e6db74">&#34;arn:aws:s3:::YourBucket/*&#34;</span>,
+         <span style="color:#f92672">&#34;Condition&#34;</span>:{
+            <span style="color:#f92672">&#34;StringNotEquals&#34;</span>:{
+               <span style="color:#f92672">&#34;s3:x-amz-server-side-encryption&#34;</span>:<span style="color:#e6db74">&#34;aws:kms&#34;</span>
+            }
+         }
+      }
+   ]
+}</code></pre></div>
+
+<p>The above policy allows you to use <em>any</em> or the <em>default</em> KMS key, however, you can further specify keys in your conditional: <code>&quot;s3:x-amz-server-side-encryption-aws-kms-key-id&quot;: &quot;arn:aws:kms:region:acct-id:key/key-id&quot;</code>.</p>
+
+<p>I won&rsquo;t delve too much into <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">KMS Key Policies but they can be explained here</a> and, again, are much like the bucket policies I explained above.</p>
+
+<h2 id="related-links">Related Links</h2>
+
+<ul>
+<li><a href="https://blog.rapid7.com/2013/03/27/open-s3-buckets/">Hacking S3 Buckets</a></li>
+</ul>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fs3-bucket-security-and-best-practices%2f&amp;text=S3%20Bucket%20Security%20and%20Best%20Practices&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fs3-bucket-security-and-best-practices%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fs3-bucket-security-and-best-practices%2f&amp;title=S3%20Bucket%20Security%20and%20Best%20Practices" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fs3-bucket-security-and-best-practices%2f&amp;title=S3%20Bucket%20Security%20and%20Best%20Practices" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fs3-bucket-security-and-best-practices%2f&amp;title=S3%20Bucket%20Security%20and%20Best%20Practices" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2fs3-bucket-security-and-best-practices%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

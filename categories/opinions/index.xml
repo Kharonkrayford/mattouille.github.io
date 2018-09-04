@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opinions on mattouille.com</title>
+    <link>https://mattouille.com/categories/opinions/</link>
+    <description>Recent content in Opinions on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/categories/opinions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s talk DevOps job titles</title>
+      <link>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/</guid>
+      <description>I&amp;rsquo;ve watched the community struggle on and off with job titles for those working in the DevOps market. DevOps is and always will be simply a set of philosophies, beyond that are three major systems-type fields I see companies using DevOps in: Operations, Platform Engineering, and Release Management.
+Site Reliability Engineering To avoid some initial confusion I&amp;rsquo;m going to address the topic of Site Reliability Engineering. For those that&amp;rsquo;ve read the book and heard the hype you&amp;rsquo;ll realize that SRE is Google&amp;rsquo;s implementation of Operations.</description>
+    </item>
+    
+    <item>
+      <title>Why what Trustico did is so bad</title>
+      <link>https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/</link>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/</guid>
+      <description>&lt;p&gt;If you haven&amp;rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&amp;rsquo;s really the gist of what they did, what these articles don&amp;rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DevOps and SRE in the Enterprise</title>
+      <link>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</guid>
+      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
+    </item>
+    
+    <item>
+      <title>“The Most Forgotten Pattern”</title>
+      <link>https://mattouille.com/articles/2017-05/the-most-forgotten-pattern/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-05/the-most-forgotten-pattern/</guid>
+      <description>&lt;p&gt;Developers love consistent ways of solving repeating problems, but the most consistent problem of them all is never solved repeatedly. Every time we sit down to solve problems with software we apply design patterns to overcome situations that would be contentious if we hadn’t already solved them years ago. There’s no point in reinventing the wheel, right? So why are we sitting here planning development of software for months on end still?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>User error caused a massive S3 blackout</title>
+      <link>https://mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout/</link>
+      <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-03/user-error-caused-a-massive-s3-blackout/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;At 9:37AM PST, an authorized S3 team member using an established playbook executed a command which was intended to remove a small number of servers for one of the S3 subsystems that is used by the S3 billing process. Unfortunately, one of the inputs to the command was entered incorrectly and a larger set of servers was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.
+source: &lt;a href=&#34;https://aws.amazon.com/message/41926/&#34;&gt;https://aws.amazon.com/message/41926/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Is this where we echo one of the great pillars of Linux? &lt;strong&gt;With great power comes great responsibility.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Starting a Career in DevOps</title>
+      <link>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</link>
+      <pubDate>Fri, 24 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-02/starting-a-career-in-devops/</guid>
+      <description>&lt;p&gt;A few years ago I got out of the military as a radio technician, but before I got out I had a ominous conversation with a long time friend explaining that I thought the future of an IT career lied in a mix of systems, programming and virtualization. At the time I really knew nothing about virtualization, had really only web and some Perl/Python experience and a life long love of Linux. Since then, my experience has turned it into a beautiful well-rounded career that’s only growing.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

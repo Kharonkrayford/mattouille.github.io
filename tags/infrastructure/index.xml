@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infrastructure on mattouille.com</title>
+    <link>https://mattouille.com/tags/infrastructure/</link>
+    <description>Recent content in Infrastructure on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Splitting up Terraform &amp; state file separation</title>
+      <link>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</link>
+      <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/</guid>
+      <description>&lt;p&gt;Terraform is fundamentally operated off of these things called &amp;ldquo;state files&amp;rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&amp;rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.&lt;/p&gt;
+
+&lt;p&gt;All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is &lt;a href=&#34;https://github.com/hashicorp/terraform/issues/10474&#34;&gt;complicated and sluggish&lt;/a&gt; at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.&lt;/p&gt;
+
+&lt;p&gt;What Terraform really enables is an organization of infrastructure that can be reused, version controlled, and browsed by anyone in the organization. Nobody goes to the S3 bucket and views the Terraform state file, rather, they view the code that generated that state file hence it&amp;rsquo;s important not to make manual modifications to infrastructure once an orchestrator has run.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Variations in High Availability</title>
+      <link>https://mattouille.com/articles/2017-10/variations-in-high-availability/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/variations-in-high-availability/</guid>
+      <description>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&amp;rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</description>
+    </item>
+    
+  </channel>
+</rss>

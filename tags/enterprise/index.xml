@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Enterprise on mattouille.com</title>
+    <link>https://mattouille.com/tags/enterprise/</link>
+    <description>Recent content in Enterprise on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/tags/enterprise/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DevOps and SRE in the Enterprise</title>
+      <link>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-01/devops-and-sre-in-the-enterprise/</guid>
+      <description>At start ups we have the luxury of starting from the ground up. Philosophical and cultural revolutions are always easier to consider when simply nothing exists. This is a common complaint of large enterprises when they examine DevOps, SRE, or Production Engineering for their own organizations. Subsequently they end up morphing the core beliefs of those philosophies to fit their existing culture. While this can be done it really results in a lot of confusion and frustration especially at the ground level where, in the aforementioned disciplines, most of the work and decision making takes place.</description>
+    </item>
+    
+  </channel>
+</rss>

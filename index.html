@@ -1,131 +1,410 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- JSON LD -->
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Blog",
-  "name": "{{ site.title }}",
-  "url": "{{ site.url }}",
-  "description": "{{ site.description }}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ site.title }}"
-  },
-  "BlogPosts": [
-    {%- for post in site.posts -%}
-    {%- if post.author -%}
-      {%- assign author = site.data.authors[post.author] -%}
-    {%- else -%}
-      {%- assign author = site.owner.name -%}
-    {%- endif -%}
-    {%- assign date_published = post.date | date: "%Y-%m-%d" -%}
-    {%- assign date_modified = post.modified | date: "%Y-%m-%d" -%}
-    {
-      "@type": "blogPosting",
-      "mainEntityOfPage": "{{ site.url }}{{ post.url }}",
-      "headline": "{{ post.title }}",
-      "author": "{{ author }}",
-      "datePublished": "{{ date_published }}",
-      "dateCreated": "{{ date_published }}",
-      {% if page.modified -%}
-      "dateModified": "{{ date_modified }}",
-      {% endif -%}
-      "image": {
-        "@type": "imageObject",
-        {% if page.image.feature contains 'https' or page.image.feature contains 'http' -%}
-        "url": "{{ page.image.feature }}",
-        {%- elsif page.image.feature -%}"url": "{{ site.url }}/assets/{{ page.image.feature }}",
-        {%- else -%}"url": "{{ site.url }}/assets/mattouille-com-logo.png",
-        {% endif -%}
-        "width": 600,
-        "height": 400
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "{{ site.title }}",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "{{ site.url }}/assets/mattouille-com-google-logo.png",
-          "width": 90,
-          "height": 60
-        }
-      }
-    }{% unless post == site.posts.last %},{% endunless %}
-    {% endfor %}
-  ]
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="mattouille.com" />
+<meta property="og:description" content="Tutorials, opinions, and musings by Matt Ouille" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mattouille.com/" />
+<meta property="og:updated_time" content="2018-08-11T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="mattouille.com"/>
+<meta name="twitter:description" content="Tutorials, opinions, and musings by Matt Ouille"/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+      
+    
+
+    <link rel="canonical" href="https://mattouille.com/">
+
+    <title>mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+    <!-- RSS 2.0 feed -->
+    <link href="https://mattouille.com/index.xml" rel="alternate" type="application/rss+xml" title="mattouille.com" />
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
 }
 </script>
-<!-- End JSON LD -->
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-    <!-- Blog Entries Column -->
-    <div class="col-md-8">
-      <h1 class="display-4">Latest Posts
-      </h1>
-      {%- for post in paginator.posts -%}
 
-      <!-- Blog Post -->
-      <div class="card mb-4">
-        {%- if post.image -%}
-        <img class="card-img-top" src="/assets/{{ post.image.feature }}" alt="{{ post.image.alt }}">
-        {%- endif -%}
-        <div class="card-body">
-          <h2 class="card-title">{{ post.title }}</h2>
-          <p class="card-text">
-            <i class="fa fa-folder-open"></i> {{ post.categories }} 
-            <i class="fa fa-tags"></i> 
-            {%- for tag in post.tags -%}
-            &nbsp;<span class="badge badge-primary">{{ tag }}</span> 
-            {%- endfor -%}
-          </p>
-          <p class="card-text">{{ post.excerpt }}</p>
-          <a href="{{ site.url }}{{ post.url }}" class="btn btn-primary">Read More &rarr;</a>
-        </div>
-        <div class="card-footer text-muted">
-          {%- assign date_format = "%b %-d, %Y" -%}
-          Posted on {{ post.date | date: date_format }}
-        </div>
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home<span class="sr-only">(current)</span></a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
       </div>
-
-      {%- endfor -%}
-
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center mb-4">
-          {%- if paginator.previous_page_path -%}
-          <li class="page-item">
-            <a class="page-link" href="{{ site.url }}{{ paginator.previous_page_path }}">&larr; Older</a>
-          </li>
-          {%- endif -%}
-
-          {% for page in (1..paginator.total_pages) %}
-          {% if page == paginator.page %}
-          <li class="page-item">
-            <a class="page-link disabled"><strong>{{ page }}</strong></a>
-          </li>
-          {% elsif page == 1 %}
-          <li class="page-item">
-            <a class="page-link" href="/">{{ page }}</a>
-          </li>
-          {% else %}
-          <li class="page-item">
-            <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
-
-          {%- if paginator.next_page_path -%}
-          <li class="page-item">
-            <a class="page-link" href="{{ site.url }}{{ paginator.next_page_path }}">Newer &rarr;</a>
-          </li>
-          {%- endif -%}
-      </ul>
-
     </div>
-    {%- include sidebar.html -%}
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+    <h1 class="display-4">Latest Posts</h1>
+    
+    
+    
+    
+    
+        
+            
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/">Kubernetes through iteration with a startup</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/kubernetes" rel="tag">Kubernetes</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/distributed-systems" rel="tag">Distributed Systems</a></span>
+
+
+    </p>
+    <p class="card-text">At Capstone Metering we&rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&rsquo;s to learn and ascertain direction for our engineering organization.</p>
+    <a href="https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/" class="btn btn-primary">Read more →</a>
   </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-08-11T00:00:00Z">Sat Aug 11, 2018</time>
+  </div>
+</article> 
+
+        
+    
+        
+            
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/">Let&rsquo;s talk DevOps job titles</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/opinions" rel="category tag">Opinions</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/devops" rel="tag">DevOps</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/site-reliability-engineering" rel="tag">Site Reliability Engineering</a></span>
+
+
+    </p>
+    <p class="card-text">I&rsquo;ve watched the community struggle on and off with job titles for those working in the DevOps market. DevOps is and always will be simply a set of philosophies, beyond that are three major systems-type fields I see companies using DevOps in: Operations, Platform Engineering, and Release Management.
+Site Reliability Engineering To avoid some initial confusion I&rsquo;m going to address the topic of Site Reliability Engineering. For those that&rsquo;ve read the book and heard the hype you&rsquo;ll realize that SRE is Google&rsquo;s implementation of Operations.</p>
+    <a href="https://mattouille.com/articles/2018-06/lets-talk-devops-job-titles/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-06-10T00:00:00Z">Sun Jun 10, 2018</time>
+  </div>
+</article> 
+
+        
+    
+        
+            
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/">Splitting up Terraform &amp; state file separation</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/workshops" rel="category tag">Workshops</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/infrastructure" rel="tag">Infrastructure</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/devops" rel="tag">DevOps</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/terraform" rel="tag">Terraform</a></span>
+
+
+    </p>
+    <p class="card-text"><p>Terraform is fundamentally operated off of these things called &ldquo;state files&rdquo;. State files literally are the single source of truth, as far as Terraform is concerned, in regard to your infrastructure. They&rsquo;re formatted in regular JSON but carry a lot of metadata that helps Terraform plan and predict what will happen with your infrastructure.</p>
+
+<p>All infrastructure orchestrators have to work off of some sort of state. Interpreting live infrastructure state is <a href="https://github.com/hashicorp/terraform/issues/10474">complicated and sluggish</a> at scale so many of them resort to some sort of centrally hosted file system that indicates this state to them. CloudFormation actually does much of the same thing with CloudFormation templates in S3 Buckets, you just see less of it exposed to you.</p>
+
+<p>What Terraform really enables is an organization of infrastructure that can be reused, version controlled, and browsed by anyone in the organization. Nobody goes to the S3 bucket and views the Terraform state file, rather, they view the code that generated that state file hence it&rsquo;s important not to make manual modifications to infrastructure once an orchestrator has run.</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2018-04/splitting-up-terraform--state-file-separation/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-04-06T00:00:00Z">Fri Apr 6, 2018</time>
+  </div>
+</article> 
+
+        
+    
+        
+            
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/">How an automation engineer migrates to Google Music</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/workshops" rel="category tag">Workshops</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/automation" rel="tag">Automation</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/python-3" rel="tag">Python 3</a></span>
+
+
+    </p>
+    <p class="card-text"><p>I recently posted on Facebook that I was ditching Facebook and all of the apps dependent on it. While Spotify isn&rsquo;t inherently dependent on it, I also wanted the opportunity to use Google Music for some of my favorite podcasts. Thus, I made the decision that Spotify was going down too.</p>
+
+<p>Migrating from Spotify to Google Play Music is already kind of a difficult task. I&rsquo;ve had years of being on Spotify, to the point where I have 850 tracks on playlists and my library. I wanted a way to move my playlists I&rsquo;ve built over the years over to Google Music. I found a service called <a href="https://soundiiz.com">Soundiiz</a> that performs a very nifty function at a price of $4.95. It matches Spotify tracks to Google Play tracks and copies your playlist over. Unfortunately, I found that this only worked for playlists and not my music library. Thus, I took things into my own hands.</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2018-03/how-an-automation-engineer-migrates-to-google-music/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-03-25T00:00:00Z">Sun Mar 25, 2018</time>
+  </div>
+</article> 
+
+        
+    
+        
+            
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/">Why what Trustico did is so bad</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/opinions" rel="category tag">Opinions</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/security" rel="tag">Security</a></span>
+
+
+    </p>
+    <p class="card-text"><p>If you haven&rsquo;t heard, last Wednesday it was revealed that Trustico, a large reseller of TLS certificates, violated customer trust by emailing another reseller 23,000 of their customer private keys. That&rsquo;s really the gist of what they did, what these articles don&rsquo;t really cover is the underlying reasons why this is directly bad and why what it means is even worse.</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2018-03/why-what-trustico-did-is-so-bad/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2018-03-04T00:00:00Z">Sun Mar 4, 2018</time>
+  </div>
+</article> 
+
+        
+    
+    
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a href="" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/page/5/">5</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/page/5/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
 </div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on mattouille.com</title>
+    <link>https://mattouille.com/tags/programming/</link>
+    <description>Recent content in Programming on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Variations in High Availability</title>
+      <link>https://mattouille.com/articles/2017-10/variations-in-high-availability/</link>
+      <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2017-10/variations-in-high-availability/</guid>
+      <description>High availability is a term thrown around quite a bit these days. Many professionals conflate high availability with the idea of a theoretical 100% availability. I&amp;rsquo;ll be the barer of bad news in saying such a thing rarely exists, is even harder/more expensive to obtain, and often not worth it. Rather, I encourage teams to identify what high availability means to them. This article will be an exercise in exactly that.</description>
+    </item>
+    
+  </channel>
+</rss>

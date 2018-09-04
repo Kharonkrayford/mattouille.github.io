@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Taking Security a Step Further with VPC Endpoints" />
+<meta property="og:description" content="Ever since I wrote S3 Bucket Security and Best Practices I&rsquo;ve been playing with how to extend security within a given AWS account.
+
+Policies and KMS are great but to me assurance comes in threes. That said I don&rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&rsquo;s served over a public API!
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/" /><meta property="article:published_time" content="2017-10-29T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-10-29T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="Taking Security a Step Further with VPC Endpoints"/>
+<meta name="twitter:description" content="Ever since I wrote S3 Bucket Security and Best Practices I&rsquo;ve been playing with how to extend security within a given AWS account.
+
+Policies and KMS are great but to me assurance comes in threes. That said I don&rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&rsquo;s served over a public API!
+
+"/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Taking Security a Step Further with VPC Endpoints",
+  "url": "https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/",
+  "wordCount": "914",
+  "datePublished": "2017-10-29T00:00:00&#43;00:00",
+  "dateModified": "2017-10-29T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "keywords": "Tutorials, S3, AWS, Security"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://mattouille.com/articles/2017-10/taking-security-a-step-further-with-vpc-endpoints/">
+
+    <title>Taking Security a Step Further with VPC Endpoints | mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+
+
+<article>
+  <header>
+    <h1 class="display-4">Taking Security a Step Further with VPC Endpoints</h2>
+    <p class="blog-post-meta"><p><i class="fa fa-calendar"></i> <time datetime="2017-10-29T00:00:00Z">Sun Oct 29, 2017</time> by Matt Ouille 
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+<i class="fa fa-tags" aria-hidden="true"></i>&nbsp;<span class="badge badge-primary"><a class="text-white" href="/tags/s3" rel="tag">S3</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/aws" rel="tag">AWS</a></span>, <span class="badge badge-primary"><a class="text-white" href="/tags/security" rel="tag">Security</a></span>
+
+</p>
+  </header>
+  <hr />
+  <p>Ever since I wrote <a href="{{ site.baseurl }}{% post_url 2017-10-16-s3-bucket-security-and-best-practices %}">S3 Bucket Security and Best Practices</a> I&rsquo;ve been playing with how to extend security within a given AWS account.</p>
+
+<p>Policies and KMS are great but to me assurance comes in threes. That said I don&rsquo;t see VPC Endpoints discussed very much when people are talking about S3 Bucket Security, especially for something that&rsquo;s served over a public API!</p>
+
+<p></p>
+
+<p>Consider the following diagram, where the blue line is how traffic normally reaches S3 and red is how traffic flows when using a VPC Endpoint:</p>
+
+<p><img src="/img/posts/2017-10/VPC%20Endpoint%20Diagram.png" alt="VPC Endpoint Diagram" /></p>
+
+<p><strong>Scenario</strong></p>
+
+<ol>
+<li>I have an EC2 instance that utilizes CloudInit and needs some shell files to boot and appear healthy. This instance has no public address and utilizes a NAT gateway to get to the internet.</li>
+<li>My shell files are stored in S3 because they&rsquo;re, of course, tested and uploaded as part of my CI/CD process.</li>
+<li>EC2 instance boots from an AMI and executes UserData. CloudInit makes the call to fetch my shell scripts.</li>
+<li>A HTTPS request is sent from my EC2 instance to my S3 Bucket for the object.</li>
+<li>The request is picked up by my NAT Gateway, which is in a public subnet, due to the requests destination address being public.</li>
+<li>S3 receives the HTTPS request, responds with the object and it makes it&rsquo;s way back to the EC2 instance in the reverse order.</li>
+</ol>
+
+<p>What if I told you that you can now skip step 5? Welcome to VPC Endpoints. Let&rsquo;s look at some of the benefits of VPC Endpoints, specifically with regard to Amazon S3:</p>
+
+<ul>
+<li>Skipping the NAT Gateway</li>
+<li>S3 is directly accessed by a private address</li>
+<li>Filter access to S3 based on VPC or instance.</li>
+<li>Traffic never leaves Amazon&rsquo;s network, therefore for large organizations, the cost savings are dramatic.</li>
+</ul>
+
+<p class="alert alert-warning"><em><strong>Warning:</strong> if you implement this form of security, you cannot do cross-region requests and requests can only be in IPv4.</em></p>
+
+<p>Let&rsquo;s look at that last point because it&rsquo;s what gets me most excited. Here&rsquo;s the words directly from Amazon:</p>
+
+<blockquote>
+<p>Use your route tables to control which instances can access resources in Amazon S3 via the endpoint.</p>
+
+<p>For bucket policies, you can restrict access to a specific endpoint or to a specific VPC</p>
+</blockquote>
+
+<p>That&rsquo;s three different ways I can control access and from two different perspectives. VPC Endpoints can be applied to select or all route tables. While I do like to maintain a single source of truth this, at least the second part, is Amazon&rsquo;s effort to make access to S3 Buckets from EC2 instances fall in line with the way they treat relationships between IAM and S3 Buckets. Basically the concept boils down to reciprocation so be especially careful to be clear and concise.</p>
+
+<h3 id="bucket-policy-via-vpc-endpoint">Bucket Policy via VPC Endpoint</h3>
+
+<p class="alert alert-info"><em><strong>Note</strong>: Keep in mind every subnet has it&rsquo;s own route table. Every AZ also has a subnet.</em></p>
+
+<p class="alert alert-info"><em><strong>Note</strong>: You cannot use aws:sourceVpc to authenticate addresses through a VPC Endpoint. This will fail.</em></p>
+
+<p>I love this because I like having bucket policies as my single source of truth, they&rsquo;re very expressive and easy to understand. Let&rsquo;s get started.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+  <span style="color:#f92672">&#34;Id&#34;</span>: <span style="color:#e6db74">&#34;Policy1415115909152&#34;</span>,
+  <span style="color:#f92672">&#34;Statement&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;Access-to-specific-VPCE-only&#34;</span>,
+      <span style="color:#f92672">&#34;Principal&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+      <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:*&#34;</span>,
+      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Deny&#34;</span>,
+      <span style="color:#f92672">&#34;Resource&#34;</span>: [<span style="color:#e6db74">&#34;arn:aws:s3:::my_secure_bucket&#34;</span>,
+                   <span style="color:#e6db74">&#34;arn:aws:s3:::my_secure_bucket/*&#34;</span>],
+      <span style="color:#f92672">&#34;Condition&#34;</span>: {
+        <span style="color:#f92672">&#34;StringNotEquals&#34;</span>: {
+          <span style="color:#f92672">&#34;aws:sourceVpce&#34;</span>: <span style="color:#e6db74">&#34;vpce-1a2b3c4d&#34;</span>
+        }
+      }
+    }
+  ]
+}</code></pre></div>
+
+<p>The above policy example restricts access to a specific VPC Endpoint. This is the equivalent of restricting access to a specified VPC. I have not tested this with cross account VPC Endpoints in the same region, but I didn&rsquo;t read anything that says you can&rsquo;t do it. I imagine this could be extremely useful for those using Amazon Organizations. This allows you to be very specific about which route tables/subnets would have access.</p>
+
+<h3 id="bucket-policy-via-vpc">Bucket Policy via VPC</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+  <span style="color:#f92672">&#34;Id&#34;</span>: <span style="color:#e6db74">&#34;Policy1415115909152&#34;</span>,
+  <span style="color:#f92672">&#34;Statement&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;Access-to-specific-VPC-only&#34;</span>,
+      <span style="color:#f92672">&#34;Principal&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+      <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:*&#34;</span>,
+      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Deny&#34;</span>,
+      <span style="color:#f92672">&#34;Resource&#34;</span>: [<span style="color:#e6db74">&#34;arn:aws:s3:::my_secure_bucket&#34;</span>,
+                   <span style="color:#e6db74">&#34;arn:aws:s3:::my_secure_bucket/*&#34;</span>],
+      <span style="color:#f92672">&#34;Condition&#34;</span>: {
+        <span style="color:#f92672">&#34;StringNotEquals&#34;</span>: {
+          <span style="color:#f92672">&#34;aws:sourceVpc&#34;</span>: <span style="color:#e6db74">&#34;vpc-111bbb22&#34;</span>
+        }
+      }
+    }
+  ]
+}</code></pre></div>
+
+<p>A little bit more generally we can strict the bucket policy to a given VPC. If both your public and your private subnets need access to a bucket, then this is a good method to use.</p>
+
+<h3 id="endpoint-policy">Endpoint Policy</h3>
+
+<p>This works in a similar way that IAM policies do with S3 Bucket Policy.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;Statement&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;Access-to-specific-bucket-only&#34;</span>,
+      <span style="color:#f92672">&#34;Principal&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+      <span style="color:#f92672">&#34;Action&#34;</span>: [
+        <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+        <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>
+      ],
+      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+      <span style="color:#f92672">&#34;Resource&#34;</span>: [<span style="color:#e6db74">&#34;arn:aws:s3:::my_secure_bucket&#34;</span>,
+                   <span style="color:#e6db74">&#34;arn:aws:s3:::my_secure_bucket/*&#34;</span>]
+    }
+  ]
+}</code></pre></div>
+
+<p>Every VPC Endpoint has a policy attached to it. In this case you can restrict the buckets that can be accessed through this policy. I think this is a good thing to do regardless of your circumstance.</p>
+
+<h3 id="multiple-vpc-endpoints">Multiple VPC Endpoints</h3>
+
+<p>Another strategy is to have multiple VPC endpoints even for the same service. While route tables cannot overlap you could segregate which route tables/subnets have access to privileges. You then check the VPC Endpoint inside the bucket policy and assign it&rsquo;s privilege.</p>
+
+<p>I think by now we&rsquo;ve learned that systems being compromised is almost inevitable, whether it&rsquo;s an employee at the company, a customer, deliberate, or unintentional - it doesn&rsquo;t matter. Using VPC Endpoint policies helps limit the effect that compromise can have on your environment. When played in combination with expressive bucket policies and KMS keys we&rsquo;re able to hone the instances access to a limited subset of actions and resources. Identifying least privilege is often the easy part, enforcing it is where the work comes in.</p>
+
+<p>I hope this has been an educational caveat on my previous article, as always if you have questions/comments/concerns you can get a hold of me on Reddit, LinkedIn, or IRC!</p>
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+  <section>
+  <h4>Share</h4>
+  <ul class="list-inline">
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//twitter.com/share?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2ftaking-security-a-step-further-with-vpc-endpoints%2f&amp;text=Taking%20Security%20a%20Step%20Further%20with%20VPC%20Endpoints&amp;via=" target="_blank" class="share-btn twitter">
+        <i class="fa fa-lg fa-twitter"></i>
+        </a>
+    </li>
+    
+
+    
+    
+
+    
+    <li class="list-inline-item">
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2ftaking-security-a-step-further-with-vpc-endpoints%2f" target="_blank" class="share-btn facebook">
+        <i class="fa fa-lg fa-facebook"></i>
+        </a>
+    </li>
+    
+    
+    <li class="list-inline-item">
+      <a href="//reddit.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2ftaking-security-a-step-further-with-vpc-endpoints%2f&amp;title=Taking%20Security%20a%20Step%20Further%20with%20VPC%20Endpoints" target="_blank" class="share-btn reddit">
+        <i class="fa fa-lg fa-reddit-alien"></i>
+      </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2ftaking-security-a-step-further-with-vpc-endpoints%2f&amp;title=Taking%20Security%20a%20Step%20Further%20with%20VPC%20Endpoints" target="_blank" class="share-btn linkedin">
+        <i class="fa fa-lg fa-linkedin"></i> </a>
+    </li>
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2ftaking-security-a-step-further-with-vpc-endpoints%2f&amp;title=Taking%20Security%20a%20Step%20Further%20with%20VPC%20Endpoints" target="_blank" class="share-btn stumbleupon">
+        <i class="fa fa-lg fa-stumbleupon"></i>
+      </a>
+    </li>
+    
+
+    
+    
+
+    
+    
+    <li class="list-inline-item">
+      <a href="mailto:?subject=Check out this post by Matt%20Ouille&amp;body=https%3a%2f%2fmattouille.com%2farticles%2f2017-10%2ftaking-security-a-step-further-with-vpc-endpoints%2f" target="_blank" class="share-btn email">
+        <i class="fa fa-lg fa-envelope"></i>
+      </a>
+    </li>
+    
+  </ul>
+</section>
+  
+
+  
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mattouille" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

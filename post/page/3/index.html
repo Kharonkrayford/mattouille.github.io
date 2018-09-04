@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="Tutorials, opinions, and musings by Matt Ouille" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mattouille.com/post/" />
+<meta property="og:updated_time" content="2017-10-21T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mattouille.com/img/mattouille-com-logo.png"/>
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content="Tutorials, opinions, and musings by Matt Ouille"/>
+<meta name="generator" content="Hugo 0.48-DEV" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Blog",
+  "headline": "mattouille.com",
+  "url" : "https://mattouille.com/post/",
+  "author": {
+    "@type": "Person",
+    "name": "Matt Ouille"
+  },
+  "dateModified": "2017-10-21T00:00:00&#43;00:00",
+  "keywords": "blog,opinions,tutorials,workshops,automation,aws,ci/cd,cloudformation,cloudfront,devops,distributed-systems,enterprise,infrastructure,kubernetes,linux,programming,python-3,s3,security,sendgrid,site-reliability-engineering,terraform,travis-ci,ubuntu,",
+  "description": "Tutorials, opinions, and musings by Matt Ouille"
+}
+</script>
+
+
+    <link rel="canonical" href="https://mattouille.com/post/">
+
+    <title>mattouille.com</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://mattouille.com/css/style.css" rel="stylesheet" integrity="sha384-kco99eRDx6eL/cv3tXohGzFCe&#43;CDJSr9M/GanWCiFMXip3zBy7B/NTSWUtMUo7wx" crossorigin="anonymous">
+
+    
+    <!-- RSS 2.0 feed -->
+    <link href="https://mattouille.com/post/index.xml" rel="alternate" type="application/rss+xml" title="mattouille.com" />
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-49694865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+    
+
+<link href="https://mattouille.com/css/cookieconsent.min.css" rel="stylesheet" type="text/css" integrity="sha384-6iYDyQZuuNT7DcPJGXx241czdv2&#43;GDGUcXRiqw1iXrjgYMTorSetxFP3JCMQMwnR" crossorigin="anonymous">
+<script src="https://mattouille.com/js/cookieconsent.min.js" integrity="sha384-PDjg2ZdS3khPzd53i18&#43;7tzB32JVQfFMrTXYo21RqPgUmEVAPwIhxOUF/8sP79CS" crossorigin="anonymous" async></script>
+
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#fff",
+        "text": "#000"
+      },
+      "button": {
+        "background": "#000",
+        "text": "#fff"
+      }
+    },
+    "content": {
+      "message": 'This website uses cookies.',
+      "dismiss": 'Got it!',
+      "link": 'Learn more.',
+      "href": "http:\/\/cookiesandyou.com"
+    },
+    "position": "bottom-right"
+  })});
+</script>
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://mattouille.com/"><strong>matt</strong>ouille<small>.com</small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://mattouille.com/">
+                Home</a>
+          </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                About </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/tutorials/">
+                Tutorials </a>
+            </li>
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/opinions/">
+                Opinions </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+
+          
+  
+  
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-10/a-big-thank-you/">A Big Thank You</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/blog" rel="category tag">Blog</a>
+
+
+
+    </p>
+    <p class="card-text"><p>I owe everyone a tremendous debt of gratitude. I&rsquo;ve been posting on this blog for quite some time. I&rsquo;ve made some transitions from <a href="https://ghost.org/">Ghost</a>, to <a href="https://wordpress.org/">Wordpress</a>, and now to <a href="https://jekyllrb.com/">Jekyll</a>. In that time I also tried out some SaaS platforms like <a href="https://medium.com/">Medium</a> and <a href="https://blogger.com">Blogger</a> but I&rsquo;d rather not remember those times. Thus, you see the articles that are on my current blog - I&rsquo;ve lost a lot but I&rsquo;ve gained a lot. Just like myself my blog had to evolve over time. One thing has remained fairly consistent though: <em>why I write</em>.</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2017-10/a-big-thank-you/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2017-10-21T00:00:00Z">Sat Oct 21, 2017</time>
+  </div>
+</article> 
+
+    
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/">S3 Bucket Security and Best Practices</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+
+    </p>
+    <p class="card-text">There&rsquo;s been a litany of companies with unsecured S3 buckets including Verizon, Accenture, TimeWarner, and the list goes on.
+So what is a vulnerable S3 bucket? ACLs and policies S3 has some quirks. First and foremost that I&rsquo;ve identified is it&rsquo;s permissions system known as ACL&rsquo;s and Policies. I&rsquo;m going to kick this off with vanilla S3 buckets DENY by default. There&rsquo;s a nice little ACL that comes with every bucket that allows access account wide and that&rsquo;s it.</p>
+    <a href="https://mattouille.com/articles/2017-10/s3-bucket-security-and-best-practices/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2017-10-16T00:00:00Z">Mon Oct 16, 2017</time>
+  </div>
+</article> 
+
+    
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/">Docker and Docker-Compose for the developing mind</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+
+    </p>
+    <p class="card-text">What&rsquo;s docker? I think a lot of folks that read my blog will already know what Docker is, however, I&rsquo;ll give a brief explanation anyway. Docker is a wrapper around Linux Containers (LXC) written in Go. It uses some REST API&rsquo;s to communicate with the docker daemon to be able to start up containers and relies on IPTables for networking along with the docker bridge.
+Docker is a powerful tool because the same image I generate locally on my machine can be deployed into production, or the code can be committed and be made part of your CI/CD Pipeline.</p>
+    <a href="https://mattouille.com/articles/2017-09/docker-and-docker-compose-for-the-developing-mind/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2017-09-03T00:00:00Z">Sun Sep 3, 2017</time>
+  </div>
+</article> 
+
+    
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/">Docker commands every dev should know</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+
+    </p>
+    <p class="card-text"><p>Docker is a really awesome containerization platform. It dutifully simplifies LXC (Linux Containers) and enables developers to develop faster. That said, at times Docker can be a tad confusing and things can get out of hand quickly if you&rsquo;re not up to speed on your docker commands. These are all commands that I keep up to date on my GitHub gists page for docker, so I use them regularly as well.</p>
+
+<p></p></p>
+    <a href="https://mattouille.com/articles/2017-07/docker-commands-every-dev-should-know/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2017-07-20T00:00:00Z">Thu Jul 20, 2017</time>
+  </div>
+</article> 
+
+    
+  
+    
+      
+
+
+<article class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title"><a href="https://mattouille.com/articles/2017-06/pointers-in-go/">Pointers in Go</a></h2>
+    <p class="card-text">
+       
+<i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;<a href="/categories/tutorials" rel="category tag">Tutorials</a>
+
+
+
+    </p>
+    <p class="card-text">I&rsquo;ve been learning Go recently and I&rsquo;ve been having some issues solidifying my understanding of pointers, so I thought I&rsquo;d write a quick blog post explaining what I&rsquo;ve learned and how to easily understand it.
+What are pointers and why are they useful? Simply put, pointers are variables that store a memory address to another variable. They&rsquo;re useful because they allow us to essentially dynamically allocate memory. Here&rsquo;s a nice anecdote to get you thinking:</p>
+    <a href="https://mattouille.com/articles/2017-06/pointers-in-go/" class="btn btn-primary">Read more →</a>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on <time datetime="2017-06-25T00:00:00Z">Sun Jun 25, 2017</time>
+  </div>
+</article> 
+
+    
+  
+
+  
+    <nav class="blog-pagination">
+  
+  <a class="btn btn-outline-primary" href="/post/page/2/" rel="prev" role="button">Previous page</a>
+  <a class="btn btn-outline-primary" href="/post/page/4/" rel="next" role="button">Next page</a>
+  
+  
+  
+</nav>
+
+  
+
+
+        </div> <!-- /.blog-main -->
+
+        
+<div class="col-md-4">
+
+  
+  
+  <div class="card my-4">
+    <h5 class="card-header">Social Media</h5>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="http://twitter.com/codencombovers" target="_blank"><i class="fa fa-twitter"></i></a> <strong>@</strong>codencombovers</li> 
+        <li class="list-group-item"><a href="http://linkedin.com/in/mattouille" target="_blank"><i class="fa fa-linkedin"></i></a> mattouille</li><li class="list-group-item"><a href="http://instagram.com/code_n_combovers" target="_blank"><i class="fa fa-instagram"></i></a> code_n_combovers</li>
+        <li class="list-group-item"><a href="http://github.com/mattouille" target="_blank"><i class="fa fa-fw fa-github"></i></a> mattouille</li><li class="list-group-item"><a href="http://stackoverflow.com/users/5854293/matt-o" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i></a> 5854293/matt-o</li></ul>
+    </div>
+  </div>
+  
+
+  <a class="twitter-timeline"
+  href="https://twitter.com/codencombovers"
+  data-tweet-limit="5">
+  Tweets by @codencombovers
+  </a>
+  
+</div>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    
+
+    
+    <footer class="py-5 bg-dark">
+        <div class="container">
+          
+            <p class="m-0 text-center text-white">&copy; Matt Ouille 2018</p>
+            <p class="m-0 text-center text-white small"><img src="https://travis-ci.org/mattouille/mattouille.github.io.svg?branch=master" alt="Build Status" />      Opinions are my own.</p>
+          
+          <p class="m-0 text-center">
+              <a class="text-white small" href="#">Back to top</a>
+          </p>
+        </div>
+        
+    </footer>
+    
+
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on mattouille.com</title>
+    <link>https://mattouille.com/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on mattouille.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://mattouille.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes through iteration with a startup</title>
+      <link>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</link>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mattouille.com/articles/2018-08/kubernetes-through-iteration-with-a-startup/</guid>
+      <description>At Capstone Metering we&amp;rsquo;ve been building our new application on top of Kubernetes like many other businesses. For those that are unfamiliar, Capstone is a software company that provides specialized services for automation and we&amp;rsquo;re also your average device tech startup. Architecting the stack in our case was equally important as architecting the software itself. We&amp;rsquo;ve been pretty hell bent on this continuous iteration approach where we used MVP&amp;rsquo;s to learn and ascertain direction for our engineering organization.</description>
+    </item>
+    
+  </channel>
+</rss>
